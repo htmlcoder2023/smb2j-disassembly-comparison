@@ -549,6 +549,105 @@ FDSBIOS_DELAY     = $e149
 FDSBIOS_LOADFILES = $e1f8
 FDSBIOS_WRITEFILE = $e239
 
+;SUBROUTINES IN SM2DATA2 AND SM2DATA4
+UpsideDownPipe_High    = $c470
+UpsideDownPipe_Low     = $c475
+WindOn                 = $c5be
+WindOff                = $c5c2
+SimulateWind           = $c550
+BlowPlayerAround       = $c4fe
+MoveUpsideDownPiranhaP = $c4c0
+
+;SUBROUTINES IN SM2DATA3
+EraseLivesLines           = $c710
+RunMushroomRetainers      = $c727
+EndingDiskRoutines        = $c738
+ChangeHalfwayPages        = $c3d6
+AwardExtraLives           = $c686
+PrintVictoryMsgsForWorld8 = $c642
+FadeToBlue                = $c6ca
+ScreenSubsForFinalRoom    = $c5fe
+
+;LABELS FROM SM2DATA3
+WriteNameToVictoryMsg = $c858
+UnusedAttribData      = $c876
+FinalRoomPalette      = $c87f
+ThankYouMessageFinal  = $c893
+PeaceIsPavedMsg       = $c8ab
+WithKingdomSavedMsg   = $c8c1
+HurrahMsg             = $c8d7
+OurOnlyHeroMsg        = $c8eb
+ThisEndsYourTripMsg   = $c8fc
+OfALongFriendshipMsg  = $c913
+PointsAddedMsg        = $c92b
+ForEachPlayerLeftMsg  = $c943
+PrincessPeachsRoom    = $c95c
+FantasyWorld9Msg      = $c97d
+SuperPlayerMsg        = $c9c0
+
+;level labels from other files
+;from sm2data2
+E_CastleArea5      = $c5d0
+E_CastleArea6      = $c609
+E_CastleArea7      = $c630
+E_CastleArea8      = $c66f
+E_GroundArea12     = $c6af
+E_GroundArea13     = $c6e0
+E_GroundArea14     = $c708
+E_GroundArea15     = $c72c
+E_GroundArea16     = $c749
+E_GroundArea17     = $c77a
+E_GroundArea18     = $c7a6
+E_GroundArea19     = $c7bf
+E_GroundArea22     = $c7e7
+E_GroundArea23     = $c80a
+E_GroundArea24     = $c831
+E_GroundArea29     = $c832
+E_UndergroundArea4 = $c83b
+E_UndergroundArea5 = $c85c
+E_WaterArea2       = $c876
+E_WaterArea4       = $c8a6
+E_WaterArea5       = $c8b4
+L_CastleArea5      = $c8c9
+L_CastleArea6      = $c996
+L_CastleArea7      = $ca25
+L_CastleArea8      = $cab8
+L_GroundArea12     = $cb8f
+L_GroundArea13     = $cc30
+L_GroundArea14     = $cc8f
+L_GroundArea15     = $cd0e
+L_GroundArea16     = $cd7b
+L_GroundArea17     = $cdfe
+L_GroundArea18     = $ce5b
+L_GroundArea19     = $ced6
+L_GroundArea22     = $cf4b
+L_GroundArea23     = $cfb6
+L_GroundArea24     = $d01a
+L_GroundArea29     = $d01b
+L_UndergroundArea4 = $d052
+L_UndergroundArea5 = $d11f
+L_WaterArea2       = $d160
+L_WaterArea4       = $d229
+L_WaterArea5       = $d242
+
+;from sm2data3
+E_CastleArea9      = $ca80
+E_CastleArea10     = $ca8a
+E_GroundArea25     = $ca90
+E_GroundArea26     = $ca94
+E_GroundArea27     = $ca94
+E_WaterArea6       = $ca94
+E_WaterArea7       = $cab5
+E_WaterArea8       = $caba
+L_CastleArea9      = $cacb
+L_CastleArea10     = $cb2e
+L_GroundArea25     = $cb3f
+L_GroundArea26     = $cb4e
+L_GroundArea27     = $cb4f
+L_WaterArea6       = $cb50
+L_WaterArea7       = $cb97
+L_WaterArea8       = $cbda
+
 ;-------------------------------------------------------------------------------------
 ;CONSTANTS
 
@@ -663,137 +762,10 @@ GameMode              = 1
 VictoryMode           = 2
 GameOverMode          = 3
 
-; imports from other files
-;SUBROUTINES IN SM2DATA2 AND SM2DATA4
-.import UpsideDownPipe_High
-.import UpsideDownPipe_Low
-.import WindOn
-.import WindOff
-.import SimulateWind
-.import BlowPlayerAround
-.import MoveUpsideDownPiranhaP
-.import ChangeHalfwayPages
-;SUBROUTINES IN SM2DATA3
-.import EraseLivesLines
-.import RunMushroomRetainers
-.import EndingDiskRoutines
-.import AwardExtraLives
-.import PrintVictoryMsgsForWorld8
-.import FadeToBlue
-.import ScreenSubsForFinalRoom
-;LABELS FROM SM2DATA3
-.import WriteNameToVictoryMsg
-.import UnusedAttribData
-.import FinalRoomPalette
-.import ThankYouMessageFinal
-.import PeaceIsPavedMsg
-.import WithKingdomSavedMsg
-.import HurrahMsg
-.import OurOnlyHeroMsg
-.import ThisEndsYourTripMsg
-.import OfALongFriendshipMsg
-.import PointsAddedMsg
-.import ForEachPlayerLeftMsg
-.import PrincessPeachsRoom
-.import FantasyWorld9Msg
-.import SuperPlayerMsg
-;from sm2data2
-.import E_CastleArea5
-.import E_CastleArea6
-.import E_CastleArea7
-.import E_CastleArea8
-.import E_GroundArea12
-.import E_GroundArea13
-.import E_GroundArea14
-.import E_GroundArea15
-.import E_GroundArea16
-.import E_GroundArea17
-.import E_GroundArea18
-.import E_GroundArea19
-.import E_GroundArea22
-.import E_GroundArea23
-.import E_GroundArea24
-.import E_GroundArea29
-.import E_UndergroundArea4
-.import E_UndergroundArea5
-.import E_WaterArea2
-.import E_WaterArea4
-.import E_WaterArea5
-.import L_CastleArea5
-.import L_CastleArea6
-.import L_CastleArea7
-.import L_CastleArea8
-.import L_GroundArea12
-.import L_GroundArea13
-.import L_GroundArea14
-.import L_GroundArea15
-.import L_GroundArea16
-.import L_GroundArea17
-.import L_GroundArea18
-.import L_GroundArea19
-.import L_GroundArea22
-.import L_GroundArea23
-.import L_GroundArea24
-.import L_GroundArea29
-.import L_UndergroundArea4
-.import L_UndergroundArea5
-.import L_WaterArea2
-.import L_WaterArea4
-.import L_WaterArea5
-;from sm2data3
-.import E_CastleArea9
-.import E_CastleArea10
-.import E_GroundArea25
-.import E_GroundArea26
-.import E_GroundArea27
-.import E_WaterArea6
-.import E_WaterArea7
-.import E_WaterArea8
-.import L_CastleArea9
-.import L_CastleArea10
-.import L_GroundArea25
-.import L_GroundArea26
-.import L_GroundArea27
-.import L_WaterArea6
-.import L_WaterArea7
-.import L_WaterArea8
+;-------------------------------------------------------------------------------------
+;DIRECTIVES
 
-; exports to other files
-.export SoundEngineJSRCode
-.export MoveSpritesOffscreen
-.export FreqRegLookupTbl
-.export NextWorld
-.export WriteTopStatusLine
-.export WriteBottomStatusLine
-.export GetAreaPalette
-.export GetBackgroundColor
-.export EndAreaPoints
-.export JumpEngine
-.export Square2SfxHandler
-.export PrintStatusBarNumbers
-.export DiskIDString
-.export EnemyGfxHandler
-.export SoundEngine
-.export DiskScreen
-.export WaitForEject
-.export WaitForReinsert
-.export ResetDiskVars
-.export DiskErrorHandler
-.export AttractModeSubs
-.export InitScreenPalette
-; sm2data4
-.export HalfwayPageNybbles
-.export GetPipeHeight
-.export FindEmptyEnemySlot
-.export SetupPiranhaPlant
-.export VerticalPipeData
-.export RenderUnderPart
-.export MetatileBuffer
-.export GetAreaType
-.export E_GroundArea21
-.export E_GroundArea28
-.export L_GroundArea10
-.export L_GroundArea28
+       .base $6000
 
 ;-------------------------------------------------------------------------------------
 
@@ -843,17 +815,17 @@ EndlessLoop:
 ;-------------------------------------------------------------------------------------
 
 VRAM_AddrTable:
-   .word VRAM_Buffer1, WaterPaletteData, GroundPaletteData, UndergroundPaletteData
-   .word CastlePaletteData, TitleScreenGfxData, VRAM_Buffer2, VRAM_Buffer2
-   .word BowserPaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData
-   .word ThankYouMessage, MushroomRetainerMsg, UnusedAttribData, FinalRoomPalette
-   .word ThankYouMessageFinal, PeaceIsPavedMsg, WithKingdomSavedMsg, HurrahMsg
-   .word OurOnlyHeroMsg, ThisEndsYourTripMsg, OfALongFriendshipMsg, PointsAddedMsg
-   .word ForEachPlayerLeftMsg, DiskErrorMainMsg, DiskScreenPalette, PrincessPeachsRoom
-   .word MenuCursorTemplate, FantasyWorld9Msg, SuperPlayerMsg
+   .dw VRAM_Buffer1, WaterPaletteData, GroundPaletteData, UndergroundPaletteData
+   .dw CastlePaletteData, TitleScreenGfxData, VRAM_Buffer2, VRAM_Buffer2
+   .dw BowserPaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData
+   .dw ThankYouMessage, MushroomRetainerMsg, UnusedAttribData, FinalRoomPalette
+   .dw ThankYouMessageFinal, PeaceIsPavedMsg, WithKingdomSavedMsg, HurrahMsg
+   .dw OurOnlyHeroMsg, ThisEndsYourTripMsg, OfALongFriendshipMsg, PointsAddedMsg
+   .dw ForEachPlayerLeftMsg, DiskErrorMainMsg, DiskScreenPalette, PrincessPeachsRoom
+   .dw MenuCursorTemplate, FantasyWorld9Msg, SuperPlayerMsg
 
 VRAM_Buffer_Offset:
-   .byte <VRAM_Buffer1_Offset, <VRAM_Buffer2_Offset
+   .db <VRAM_Buffer1_Offset, <VRAM_Buffer2_Offset
 
 ;-------------------------------------------------------------------------------------
 
@@ -912,7 +884,6 @@ InitVRAMVars:
    lda Mirror_PPU_MASK
    sta PPU_MASK              ;dump PPU control register 2
    cli
-SoundEngineJSRCode:
    jsr SoundEngine           ;run subs that need to be run on every frame
    jsr ReadJoypads
    jsr PauseRoutine
@@ -1106,16 +1077,16 @@ OperModeExecutionTree:
       lda OperMode     ;this is the heart of the entire program,
       jsr JumpEngine   ;most of what goes on starts here
 
-      .word AttractModeSubs
-      .word GameModeSubs
-      .word VictoryModeMain
-      .word GameOverSubs
+      .dw AttractModeSubs
+      .dw GameModeSubs
+      .dw VictoryModeMain
+      .dw GameOverSubs
 
 ;-------------------------------------------------------------------------------------
 
 MoveAllSpritesOffscreen:
               ldy #$00                ;this routine moves all sprites off the screen
-              .byte $2c                 ;BIT instruction opcode
+              .db $2c                 ;BIT instruction opcode
 
 MoveSpritesOffscreen:
               ldy #$04                ;this routine moves all but sprite 0
@@ -1154,36 +1125,36 @@ VictoryModeSubroutines:
     lda OperMode_Task             ;after running the first two subs in the first set
     jsr JumpEngine
 
-    .word BridgeCollapse
-    .word SetupVictoryMode
-    .word PlayerVictoryWalk
-    .word PrintVictoryMessages
-    .word EndCastleAward
-    .word EndWorld1Thru7
+    .dw BridgeCollapse
+    .dw SetupVictoryMode
+    .dw PlayerVictoryWalk
+    .dw PrintVictoryMessages
+    .dw EndCastleAward
+    .dw EndWorld1Thru7
 
 VictoryModeSubsForW8:
     lda OperMode_Task
     jsr JumpEngine
 
-    .word BridgeCollapse
-    .word SetupVictoryMode
-    .word PlayerVictoryWalk
-    .word StartVMDelay
-    .word ContinueVMDelay
-    .word VictoryModeDiskRoutines
-    .word ScreenSubsForFinalRoom    ;all these subs are in SM2DATA3
-    .word PrintVictoryMsgsForWorld8 
-    .word EndCastleAward            ;except this one
-    .word AwardExtraLives           
-    .word FadeToBlue
-    .word EraseLivesLines
-    .word RunMushroomRetainers
-    .word EndingDiskRoutines
+    .dw BridgeCollapse
+    .dw SetupVictoryMode
+    .dw PlayerVictoryWalk
+    .dw StartVMDelay
+    .dw ContinueVMDelay
+    .dw VictoryModeDiskRoutines
+    .dw ScreenSubsForFinalRoom    ;all these subs are in SM2DATA3
+    .dw PrintVictoryMsgsForWorld8 
+    .dw EndCastleAward            ;except this one
+    .dw AwardExtraLives           
+    .dw FadeToBlue
+    .dw EraseLivesLines
+    .dw RunMushroomRetainers
+    .dw EndingDiskRoutines
 
 ;-------------------------------------------------------------------------------------
 
 WorldBits:
-    .byte $01, $02, $04, $08, $10, $20, $40, $80
+    .db $01, $02, $04, $08, $10, $20, $40, $80
 
 SetupVictoryMode:
          ldx ScreenRight_PageLoc ;get page location of right side of screen
@@ -1322,25 +1293,25 @@ EndExit:   rts
 ;data is used as tiles for numbers
 ;that appear when you defeat enemies
 FloateyNumTileData:
-      .byte $ff, $ff ;dummy
-      .byte $f6, $fb ; "100"
-      .byte $f7, $fb ; "200"
-      .byte $f8, $fb ; "400"
-      .byte $f9, $fb ; "500"
-      .byte $fa, $fb ; "800"
-      .byte $f6, $50 ; "1000"
-      .byte $f7, $50 ; "2000"
-      .byte $f8, $50 ; "4000"
-      .byte $f9, $50 ; "5000"
-      .byte $fa, $50 ; "8000"
-      .byte $fd, $fe ; "1-UP"
+      .db $ff, $ff ;dummy
+      .db $f6, $fb ; "100"
+      .db $f7, $fb ; "200"
+      .db $f8, $fb ; "400"
+      .db $f9, $fb ; "500"
+      .db $fa, $fb ; "800"
+      .db $f6, $50 ; "1000"
+      .db $f7, $50 ; "2000"
+      .db $f8, $50 ; "4000"
+      .db $f9, $50 ; "5000"
+      .db $fa, $50 ; "8000"
+      .db $fd, $fe ; "1-UP"
 
 ;high nybble is digit number, low nybble is number to
 ;add to the digit of the player's score
 ScoreUpdateData:
-      .byte $ff ;dummy
-      .byte $41, $42, $44, $45, $48
-      .byte $31, $32, $34, $35, $38, $00
+      .db $ff ;dummy
+      .db $41, $42, $44, $45, $48
+      .db $31, $32, $34, $35, $38, $00
 
 FloateyNumbersRoutine:
               lda FloateyNum_Control,x     ;load control for floatey number
@@ -1424,29 +1395,28 @@ ScreenRoutines:
    lda ScreenRoutineTask
    jsr JumpEngine
 
-   .word InitScreen
-   .word SetupIntermediate
-   .word WriteTopStatusLine
-   .word WriteBottomStatusLine
-   .word DisplayTimeUp
-   .word ResetSpritesAndScreenTimer
-   .word DisplayIntermediate
-   .word DemoReset
-   .word ResetSpritesAndScreenTimer
-   .word AreaParserTaskControl
-   .word GetAreaPalette
-   .word GetBackgroundColor
-   .word GetAlternatePalette1
-   .word DrawTitleScreen
-   .word ClearBuffersDrawIcon
-   .word WriteTopScore
+   .dw InitScreen
+   .dw SetupIntermediate
+   .dw WriteTopStatusLine
+   .dw WriteBottomStatusLine
+   .dw DisplayTimeUp
+   .dw ResetSpritesAndScreenTimer
+   .dw DisplayIntermediate
+   .dw DemoReset
+   .dw ResetSpritesAndScreenTimer
+   .dw AreaParserTaskControl
+   .dw GetAreaPalette
+   .dw GetBackgroundColor
+   .dw GetAlternatePalette1
+   .dw DrawTitleScreen
+   .dw ClearBuffersDrawIcon
+   .dw WriteTopScore
 
 InitScreen:
       jsr MoveAllSpritesOffscreen ;initialize all sprites including sprite #0
       jsr InitializeNameTables    ;and erase both name and attribute tables
       lda OperMode
       beq NextSubtask             ;if in attact mode, do not set pointer control
-InitScreenPalette:
       ldx #$03                    ;otherwise set for underground palette
       jmp SetVRAMAddr_A
 
@@ -1467,7 +1437,7 @@ SetupIntermediate:
       jmp IncSubtask           ;then move onto the next task
 
 AreaPalette:
-      .byte $01, $02, $03, $04
+      .db $01, $02, $03, $04
 
 GetAreaPalette:
                ldy AreaType             ;select appropriate palette to load
@@ -1479,15 +1449,15 @@ NextSubtask:   jmp IncSubtask           ;move onto next task
 ;$00 - used as temp counter in GetPlayerColors
 
 BGColorCtrl_Addr:
-      .byte $00, $09, $0a, $04
+      .db $00, $09, $0a, $04
 
 BackgroundColors:
-      .byte $22, $22, $0f, $0f ;used by area type if bg color ctrl not set
-      .byte $0f, $22, $0f, $0f ;used by background color control if set
+      .db $22, $22, $0f, $0f ;used by area type if bg color ctrl not set
+      .db $0f, $22, $0f, $0f ;used by background color control if set
 
 PlayerColors:
-      .byte $22, $16, $27, $18 ;player's normal colors, may be overwritten
-      .byte $22, $37, $27, $16 ;player's colors after grabbing fire flower
+      .db $22, $16, $27, $18 ;player's normal colors, may be overwritten
+      .db $22, $37, $27, $16 ;player's colors after grabbing fire flower
 
 GetBackgroundColor:
            ldy BackgroundColorCtrl   ;check background color control
@@ -1647,53 +1617,53 @@ OutputCol: lda #$06                  ;set vram buffer to output rendered column 
 
 GameText:
 TopStatusBarLine:
-  .byte $20, $43, $05, $16, $0a, $1b, $12, $18 ;"MARIO"
-  .byte $20, $52, $0b, $20, $18, $1b, $15, $0d ;"WORLD  TIME"
-  .byte $24, $24, $1d, $12, $16, $0e
-  .byte $20, $68, $05, $00, $24, $24, $2e, $29 ;score trailing digit and coin display
-  .byte $23, $c0, $7f, $aa ;attribute table data, clears name table 0 to palette 2
-  .byte $23, $c2, $01, $ea ;attribute table data, used for coin icon in status bar
-  .byte $ff ;end of data block
+  .db $20, $43, $05, $16, $0a, $1b, $12, $18 ;"MARIO"
+  .db $20, $52, $0b, $20, $18, $1b, $15, $0d ;"WORLD  TIME"
+  .db $24, $24, $1d, $12, $16, $0e
+  .db $20, $68, $05, $00, $24, $24, $2e, $29 ;score trailing digit and coin display
+  .db $23, $c0, $7f, $aa ;attribute table data, clears name table 0 to palette 2
+  .db $23, $c2, $01, $ea ;attribute table data, used for coin icon in status bar
+  .db $ff ;end of data block
 
 WorldLivesDisplay:
-  .byte $21, $cd, $07, $24, $24 ;cross with spaces used on
-  .byte $29, $24, $24, $24, $24 ;lives display
-  .byte $21, $4b, $09, $20, $18 ;"WORLD  - " used on lives display
-  .byte $1b, $15, $0d, $24, $24, $28, $24
-  .byte $22, $0c, $47, $24 ;possibly used to clear time up
-  .byte $23, $dc, $01, $ba ;attribute table data for crown if more than 9 lives
-  .byte $ff
+  .db $21, $cd, $07, $24, $24 ;cross with spaces used on
+  .db $29, $24, $24, $24, $24 ;lives display
+  .db $21, $4b, $09, $20, $18 ;"WORLD  - " used on lives display
+  .db $1b, $15, $0d, $24, $24, $28, $24
+  .db $22, $0c, $47, $24 ;possibly used to clear time up
+  .db $23, $dc, $01, $ba ;attribute table data for crown if more than 9 lives
+  .db $ff
 
 TimeUp:
-  .byte $22, $0c, $07, $1d, $12, $16, $0e, $24, $1e, $19 ; "TIME UP"
-  .byte $ff
+  .db $22, $0c, $07, $1d, $12, $16, $0e, $24, $1e, $19 ; "TIME UP"
+  .db $ff
 
 GameOver:
-  .byte $21, $6b, $09, $10, $0a, $16, $0e, $24 ;"GAME OVER"
-  .byte $18, $1f, $0e, $1b
-  .byte $21, $eb, $08, $0c, $18, $17, $1d, $12, $17, $1e, $0e ;"CONTINUE"
-  .byte $22, $0c, $47, $24
-  .byte $22, $4b, $05, $1b, $0e, $1d, $1b, $22 ;"RETRY"
-  .byte $ff
+  .db $21, $6b, $09, $10, $0a, $16, $0e, $24 ;"GAME OVER"
+  .db $18, $1f, $0e, $1b
+  .db $21, $eb, $08, $0c, $18, $17, $1d, $12, $17, $1e, $0e ;"CONTINUE"
+  .db $22, $0c, $47, $24
+  .db $22, $4b, $05, $1b, $0e, $1d, $1b, $22 ;"RETRY"
+  .db $ff
 
 WarpZone:
-  .byte $25, $84, $15
-  .byte $20, $0e, $15, $0c, $18, $16, $0e, $24, $1d, $18 ; "WELCOME TO WARP ZONE!"
-  .byte $24, $20, $0a, $1b, $19, $24, $23, $18, $17, $0e
-  .byte $2b
-  .byte $26, $2d, $01, $24 ;blank filler for world number
-  .byte $27, $d9, $46, $aa ;attribute data
-  .byte $27, $e1, $45, $aa
-  .byte $00
+  .db $25, $84, $15
+  .db $20, $0e, $15, $0c, $18, $16, $0e, $24, $1d, $18 ; "WELCOME TO WARP ZONE!"
+  .db $24, $20, $0a, $1b, $19, $24, $23, $18, $17, $0e
+  .db $2b
+  .db $26, $2d, $01, $24 ;blank filler for world number
+  .db $27, $d9, $46, $aa ;attribute data
+  .db $27, $e1, $45, $aa
+  .db $00
 
 WarpZoneNumbers:
-  .byte $02, $03, $04, $01, $06, $07, $08, $05, $0b, $0c, $0d
+  .db $02, $03, $04, $01, $06, $07, $08, $05, $0b, $0c, $0d
 
 GameTextOffsets:
-   .byte <(TopStatusBarLine-GameText)
-   .byte <(WorldLivesDisplay-GameText)
-   .byte <(TimeUp-GameText)
-   .byte <(GameOver-GameText)
+   .db <TopStatusBarLine-GameText
+   .db <WorldLivesDisplay-GameText
+   .db <TimeUp-GameText
+   .db <GameOver-GameText
 
 WriteGameText:
                pha                       ;save text number to stack and use as offset
@@ -1908,17 +1878,17 @@ SetVRAMCtrl: lda #$06
 ;$00 - used as temporary counter in ColorRotation
 
 ColorRotatePalette:
-       .byte $27, $27, $27, $17, $07, $17
+       .db $27, $27, $27, $17, $07, $17
 
 BlankPalette:
-       .byte $3f, $0c, $04, $ff, $ff, $ff, $ff, $00
+       .db $3f, $0c, $04, $ff, $ff, $ff, $ff, $00
 
 ;used based on area type
 Palette3Data:
-       .byte $0f, $07, $12, $0f 
-       .byte $0f, $07, $17, $0f
-       .byte $0f, $07, $17, $1c
-       .byte $0f, $07, $17, $00
+       .db $0f, $07, $12, $0f 
+       .db $0f, $07, $17, $0f
+       .db $0f, $07, $17, $1c
+       .db $0f, $07, $17, $00
 
 ColorRotation:
               lda FrameCounter         ;get frame counter
@@ -1972,11 +1942,11 @@ ExitColorRot: rts                      ;leave
 ;$06, $07 - block buffer address low/high
 
 BlockGfxData:
-       .byte $45, $45, $47, $47
-       .byte $47, $47, $47, $47
-       .byte $57, $58, $59, $5a
-       .byte $24, $24, $24, $24
-       .byte $26, $26, $26, $26
+       .db $45, $45, $47, $47
+       .db $47, $47, $47, $47
+       .db $57, $58, $59, $5a
+       .db $24, $24, $24, $24
+       .db $26, $26, $26, $26
 
 RemoveCoin_Axe:
               ldy #$41                 ;set low byte so offset points to second vram buffer
@@ -2083,208 +2053,208 @@ RemBridge:  lda BlockGfxData,x    ;write top left and top right
 ;METATILE GRAPHICS TABLE
 
 MetatileGraphics_Low:
-  .byte <Palette0_MTiles, <Palette1_MTiles, <Palette2_MTiles, <Palette3_MTiles
+  .db <Palette0_MTiles, <Palette1_MTiles, <Palette2_MTiles, <Palette3_MTiles
 
 MetatileGraphics_High:
-  .byte >Palette0_MTiles, >Palette1_MTiles, >Palette2_MTiles, >Palette3_MTiles
+  .db >Palette0_MTiles, >Palette1_MTiles, >Palette2_MTiles, >Palette3_MTiles
 
 Palette0_MTiles:
-  .byte $24, $24, $24, $24 ;blank
-  .byte $27, $27, $27, $27 ;black metatile
-  .byte $24, $24, $24, $35 ;bush left
-  .byte $36, $25, $37, $25 ;bush middle
-  .byte $24, $38, $24, $24 ;bush right
-  .byte $24, $30, $30, $26 ;mountain left
-  .byte $26, $26, $34, $26 ;mountain left bottom/middle center
-  .byte $24, $31, $24, $32 ;mountain middle top
-  .byte $33, $26, $24, $33 ;mountain right
-  .byte $34, $26, $26, $26 ;mountain right bottom
-  .byte $26, $26, $26, $26 ;mountain middle bottom
-  .byte $24, $c0, $24, $c0 ;bridge guardrail
-  .byte $24, $7f, $7f, $24 ;chain
-  .byte $b8, $ba, $b9, $bb ;tall tree top, top half
-  .byte $b8, $bc, $b9, $bd ;short tree top
-  .byte $ba, $bc, $bb, $bd ;tall tree top, bottom half
-  .byte $60, $64, $61, $65 ;warp pipe end left, points up
-  .byte $62, $66, $63, $67 ;warp pipe end right, points up
-  .byte $60, $64, $61, $65 ;decoration pipe end left, points up
-  .byte $62, $66, $63, $67 ;decoration pipe end right, points up
-  .byte $68, $68, $69, $69 ;pipe shaft left
-  .byte $26, $26, $6a, $6a ;pipe shaft right
-  .byte $4b, $4c, $4d, $4e ;tree ledge left edge
-  .byte $4d, $4f, $4d, $4f ;tree ledge middle
-  .byte $4d, $4e, $50, $51 ;tree ledge right edge
-  .byte $86, $8a, $87, $8b ;sideways pipe end top
-  .byte $88, $8c, $88, $8c ;sideways pipe shaft top
-  .byte $89, $8d, $69, $69 ;sideways pipe joint top
-  .byte $8e, $91, $8f, $92 ;sideways pipe end bottom
-  .byte $26, $93, $26, $93 ;sideways pipe shaft bottom
-  .byte $90, $94, $69, $69 ;sideways pipe joint bottom
-  .byte $a4, $e9, $ea, $eb ;seaplant
-  .byte $24, $24, $24, $24 ;blank, used on bricks or blocks that are hit
-  .byte $24, $2f, $24, $3d ;flagpole ball
-  .byte $a2, $a2, $a3, $a3 ;flagpole shaft
-  .byte $24, $24, $24, $24 ;blank, used in conjunction with vines
+  .db $24, $24, $24, $24 ;blank
+  .db $27, $27, $27, $27 ;black metatile
+  .db $24, $24, $24, $35 ;bush left
+  .db $36, $25, $37, $25 ;bush middle
+  .db $24, $38, $24, $24 ;bush right
+  .db $24, $30, $30, $26 ;mountain left
+  .db $26, $26, $34, $26 ;mountain left bottom/middle center
+  .db $24, $31, $24, $32 ;mountain middle top
+  .db $33, $26, $24, $33 ;mountain right
+  .db $34, $26, $26, $26 ;mountain right bottom
+  .db $26, $26, $26, $26 ;mountain middle bottom
+  .db $24, $c0, $24, $c0 ;bridge guardrail
+  .db $24, $7f, $7f, $24 ;chain
+  .db $b8, $ba, $b9, $bb ;tall tree top, top half
+  .db $b8, $bc, $b9, $bd ;short tree top
+  .db $ba, $bc, $bb, $bd ;tall tree top, bottom half
+  .db $60, $64, $61, $65 ;warp pipe end left, points up
+  .db $62, $66, $63, $67 ;warp pipe end right, points up
+  .db $60, $64, $61, $65 ;decoration pipe end left, points up
+  .db $62, $66, $63, $67 ;decoration pipe end right, points up
+  .db $68, $68, $69, $69 ;pipe shaft left
+  .db $26, $26, $6a, $6a ;pipe shaft right
+  .db $4b, $4c, $4d, $4e ;tree ledge left edge
+  .db $4d, $4f, $4d, $4f ;tree ledge middle
+  .db $4d, $4e, $50, $51 ;tree ledge right edge
+  .db $86, $8a, $87, $8b ;sideways pipe end top
+  .db $88, $8c, $88, $8c ;sideways pipe shaft top
+  .db $89, $8d, $69, $69 ;sideways pipe joint top
+  .db $8e, $91, $8f, $92 ;sideways pipe end bottom
+  .db $26, $93, $26, $93 ;sideways pipe shaft bottom
+  .db $90, $94, $69, $69 ;sideways pipe joint bottom
+  .db $a4, $e9, $ea, $eb ;seaplant
+  .db $24, $24, $24, $24 ;blank, used on bricks or blocks that are hit
+  .db $24, $2f, $24, $3d ;flagpole ball
+  .db $a2, $a2, $a3, $a3 ;flagpole shaft
+  .db $24, $24, $24, $24 ;blank, used in conjunction with vines
 
 Palette1_MTiles:
-  .byte $a2, $a2, $a3, $a3 ;vertical rope
-  .byte $99, $24, $99, $24 ;horizontal rope
-  .byte $24, $a2, $3e, $3f ;left pulley
-  .byte $5b, $5c, $24, $a3 ;right pulley
-  .byte $24, $24, $24, $24 ;blank used for balance rope
-  .byte $9d, $47, $9e, $47 ;castle top
-  .byte $47, $47, $27, $27 ;castle window left
-  .byte $47, $47, $47, $47 ;castle brick wall
-  .byte $27, $27, $47, $47 ;castle window right
-  .byte $a9, $47, $aa, $47 ;castle top w/ brick
-  .byte $9b, $27, $9c, $27 ;entrance top
-  .byte $27, $27, $27, $27 ;entrance bottom
-  .byte $52, $52, $52, $52 ;green ledge stump
-  .byte $80, $a0, $81, $a1 ;fence
-  .byte $be, $be, $bf, $bf ;tree trunk
-  .byte $45, $47, $45, $47 ;breakable brick w/ line 
-  .byte $47, $47, $47, $47 ;breakable brick 
-  .byte $45, $47, $45, $47 ;breakable brick (not used)
-  .byte $45, $47, $45, $47 ;brick with line (power-up)
-  .byte $45, $47, $45, $47 ;brick with line (poison shroom)
-  .byte $45, $47, $45, $47 ;brick with line (vine)
-  .byte $45, $47, $45, $47 ;brick with line (star)
-  .byte $45, $47, $45, $47 ;brick with line (coins)
-  .byte $45, $47, $45, $47 ;brick with line (1-up)
-  .byte $47, $47, $47, $47 ;brick (power-up)
-  .byte $47, $47, $47, $47 ;brick (poison shroom)
-  .byte $47, $47, $47, $47 ;brick (vine)
-  .byte $47, $47, $47, $47 ;brick (star)
-  .byte $47, $47, $47, $47 ;brick (coins)
-  .byte $47, $47, $47, $47 ;brick (1-up)
-  .byte $24, $24, $24, $24 ;hidden block (1 coin)
-  .byte $24, $24, $24, $24 ;hidden block (1-up)
-  .byte $24, $24, $24, $24 ;hidden block (poison shroom)
-  .byte $24, $24, $24, $24 ;hidden block (power-up)
-  .byte $ab, $ac, $ad, $ae ;solid block (3-d block)
-  .byte $5d, $5e, $5d, $5e ;solid block (white wall)
-  .byte $c1, $24, $c1, $24 ;bridge
-  .byte $c6, $c8, $c7, $c9 ;bullet bill cannon barrel
-  .byte $ca, $cc, $cb, $cd ;bullet bill cannon top
-  .byte $2a, $2a, $40, $40 ;bullet bill cannon bottom
-  .byte $24, $24, $24, $24 ;blank used for jumpspring
-  .byte $24, $47, $24, $47 ;half brick used for jumpspring
-  .byte $82, $83, $84, $85 ;solid block (water level, green rock)
-  .byte $b4, $b6, $b5, $b7 ;cracked rock terrain
-  .byte $24, $47, $24, $47 ;half brick (not used)
-  .byte $86, $8a, $87, $8b ;water pipe top
-  .byte $8e, $91, $8f, $92 ;water pipe bottom
-  .byte $24, $2f, $24, $3d ;flag ball (residual object)
+  .db $a2, $a2, $a3, $a3 ;vertical rope
+  .db $99, $24, $99, $24 ;horizontal rope
+  .db $24, $a2, $3e, $3f ;left pulley
+  .db $5b, $5c, $24, $a3 ;right pulley
+  .db $24, $24, $24, $24 ;blank used for balance rope
+  .db $9d, $47, $9e, $47 ;castle top
+  .db $47, $47, $27, $27 ;castle window left
+  .db $47, $47, $47, $47 ;castle brick wall
+  .db $27, $27, $47, $47 ;castle window right
+  .db $a9, $47, $aa, $47 ;castle top w/ brick
+  .db $9b, $27, $9c, $27 ;entrance top
+  .db $27, $27, $27, $27 ;entrance bottom
+  .db $52, $52, $52, $52 ;green ledge stump
+  .db $80, $a0, $81, $a1 ;fence
+  .db $be, $be, $bf, $bf ;tree trunk
+  .db $45, $47, $45, $47 ;breakable brick w/ line 
+  .db $47, $47, $47, $47 ;breakable brick 
+  .db $45, $47, $45, $47 ;breakable brick (not used)
+  .db $45, $47, $45, $47 ;brick with line (power-up)
+  .db $45, $47, $45, $47 ;brick with line (poison shroom)
+  .db $45, $47, $45, $47 ;brick with line (vine)
+  .db $45, $47, $45, $47 ;brick with line (star)
+  .db $45, $47, $45, $47 ;brick with line (coins)
+  .db $45, $47, $45, $47 ;brick with line (1-up)
+  .db $47, $47, $47, $47 ;brick (power-up)
+  .db $47, $47, $47, $47 ;brick (poison shroom)
+  .db $47, $47, $47, $47 ;brick (vine)
+  .db $47, $47, $47, $47 ;brick (star)
+  .db $47, $47, $47, $47 ;brick (coins)
+  .db $47, $47, $47, $47 ;brick (1-up)
+  .db $24, $24, $24, $24 ;hidden block (1 coin)
+  .db $24, $24, $24, $24 ;hidden block (1-up)
+  .db $24, $24, $24, $24 ;hidden block (poison shroom)
+  .db $24, $24, $24, $24 ;hidden block (power-up)
+  .db $ab, $ac, $ad, $ae ;solid block (3-d block)
+  .db $5d, $5e, $5d, $5e ;solid block (white wall)
+  .db $c1, $24, $c1, $24 ;bridge
+  .db $c6, $c8, $c7, $c9 ;bullet bill cannon barrel
+  .db $ca, $cc, $cb, $cd ;bullet bill cannon top
+  .db $2a, $2a, $40, $40 ;bullet bill cannon bottom
+  .db $24, $24, $24, $24 ;blank used for jumpspring
+  .db $24, $47, $24, $47 ;half brick used for jumpspring
+  .db $82, $83, $84, $85 ;solid block (water level, green rock)
+  .db $b4, $b6, $b5, $b7 ;cracked rock terrain
+  .db $24, $47, $24, $47 ;half brick (not used)
+  .db $86, $8a, $87, $8b ;water pipe top
+  .db $8e, $91, $8f, $92 ;water pipe bottom
+  .db $24, $2f, $24, $3d ;flag ball (residual object)
 
 Palette2_MTiles:
-  .byte $24, $24, $24, $35 ;cloud left
-  .byte $36, $25, $37, $25 ;cloud middle
-  .byte $24, $38, $24, $24 ;cloud right
-  .byte $24, $24, $39, $24 ;cloud bottom left
-  .byte $3a, $24, $3b, $24 ;cloud bottom middle
-  .byte $3c, $24, $24, $24 ;cloud bottom right
-  .byte $41, $26, $41, $26 ;water/lava top
-  .byte $26, $26, $26, $26 ;water/lava
-  .byte $b0, $b1, $b2, $b3 ;cloud level terrain
-  .byte $77, $79, $77, $79 ;bowser's bridge
-  .byte $6b, $70, $2c, $2d ;cloud ledge left edge
-  .byte $6c, $71, $6d, $72 ;cloud ledge middle
-  .byte $6e, $73, $6f, $74 ;cloud ledge right edge
+  .db $24, $24, $24, $35 ;cloud left
+  .db $36, $25, $37, $25 ;cloud middle
+  .db $24, $38, $24, $24 ;cloud right
+  .db $24, $24, $39, $24 ;cloud bottom left
+  .db $3a, $24, $3b, $24 ;cloud bottom middle
+  .db $3c, $24, $24, $24 ;cloud bottom right
+  .db $41, $26, $41, $26 ;water/lava top
+  .db $26, $26, $26, $26 ;water/lava
+  .db $b0, $b1, $b2, $b3 ;cloud level terrain
+  .db $77, $79, $77, $79 ;bowser's bridge
+  .db $6b, $70, $2c, $2d ;cloud ledge left edge
+  .db $6c, $71, $6d, $72 ;cloud ledge middle
+  .db $6e, $73, $6f, $74 ;cloud ledge right edge
 
 Palette3_MTiles:
-  .byte $53, $55, $54, $56 ;question block (coin)
-  .byte $53, $55, $54, $56 ;question block (power-up)
-  .byte $53, $55, $54, $56 ;question block (poison shroom)
-  .byte $a5, $a7, $a6, $a8 ;coin
-  .byte $c2, $c4, $c3, $c5 ;underwater coin
-  .byte $57, $59, $58, $5a ;empty block
-  .byte $7b, $7d, $7c, $7e ;axe
+  .db $53, $55, $54, $56 ;question block (coin)
+  .db $53, $55, $54, $56 ;question block (power-up)
+  .db $53, $55, $54, $56 ;question block (poison shroom)
+  .db $a5, $a7, $a6, $a8 ;coin
+  .db $c2, $c4, $c3, $c5 ;underwater coin
+  .db $57, $59, $58, $5a ;empty block
+  .db $7b, $7d, $7c, $7e ;axe
 
 ;------------------------------------------------------------------------------------
 
 WaterPaletteData:
-  .byte $3f, $00, $20
-  .byte $0f, $15, $12, $25  
-  .byte $0f, $3a, $1a, $0f
-  .byte $0f, $30, $12, $0f
-  .byte $0f, $27, $12, $0f
-  .byte $22, $16, $27, $18
-  .byte $0f, $10, $30, $27
-  .byte $0f, $16, $30, $27
-  .byte $0f, $0f, $30, $10
-  .byte $00
+  .db $3f, $00, $20
+  .db $0f, $15, $12, $25  
+  .db $0f, $3a, $1a, $0f
+  .db $0f, $30, $12, $0f
+  .db $0f, $27, $12, $0f
+  .db $22, $16, $27, $18
+  .db $0f, $10, $30, $27
+  .db $0f, $16, $30, $27
+  .db $0f, $0f, $30, $10
+  .db $00
 
 GroundPaletteData:
-  .byte $3f, $00, $20
-  .byte $0f, $29, $1a, $0f
-  .byte $0f, $36, $17, $0f
-  .byte $0f, $30, $21, $0f
-  .byte $0f, $27, $17, $0f
-  .byte $0f, $16, $27, $18
-  .byte $0f, $1a, $30, $27
-  .byte $0f, $16, $30, $27
-  .byte $0f, $0f, $36, $17
-  .byte $00
+  .db $3f, $00, $20
+  .db $0f, $29, $1a, $0f
+  .db $0f, $36, $17, $0f
+  .db $0f, $30, $21, $0f
+  .db $0f, $27, $17, $0f
+  .db $0f, $16, $27, $18
+  .db $0f, $1a, $30, $27
+  .db $0f, $16, $30, $27
+  .db $0f, $0f, $36, $17
+  .db $00
 
 UndergroundPaletteData:
-  .byte $3f, $00, $20
-  .byte $0f, $29, $1a, $09
-  .byte $0f, $3c, $1c, $0f
-  .byte $0f, $30, $21, $1c
-  .byte $0f, $27, $17, $1c
-  .byte $0f, $16, $27, $18
-  .byte $0f, $1c, $36, $17
-  .byte $0f, $16, $30, $27
-  .byte $0f, $0c, $3c, $1c
-  .byte $00
+  .db $3f, $00, $20
+  .db $0f, $29, $1a, $09
+  .db $0f, $3c, $1c, $0f
+  .db $0f, $30, $21, $1c
+  .db $0f, $27, $17, $1c
+  .db $0f, $16, $27, $18
+  .db $0f, $1c, $36, $17
+  .db $0f, $16, $30, $27
+  .db $0f, $0c, $3c, $1c
+  .db $00
 
 CastlePaletteData:
-  .byte $3f, $00, $20
-  .byte $0f, $30, $10, $00
-  .byte $0f, $30, $10, $00
-  .byte $0f, $30, $16, $00
-  .byte $0f, $27, $17, $00
-  .byte $0f, $16, $27, $18
-  .byte $0f, $1c, $36, $17
-  .byte $0f, $16, $30, $27
-  .byte $0f, $00, $30, $10
-  .byte $00
+  .db $3f, $00, $20
+  .db $0f, $30, $10, $00
+  .db $0f, $30, $10, $00
+  .db $0f, $30, $16, $00
+  .db $0f, $27, $17, $00
+  .db $0f, $16, $27, $18
+  .db $0f, $1c, $36, $17
+  .db $0f, $16, $30, $27
+  .db $0f, $00, $30, $10
+  .db $00
 
 DaySnowPaletteData:
-  .byte $3f, $00, $04
-  .byte $22, $30, $00, $10
-  .byte $00
+  .db $3f, $00, $04
+  .db $22, $30, $00, $10
+  .db $00
 
 NightSnowPaletteData:
-  .byte $3f, $00, $04
-  .byte $0f, $30, $00, $10
-  .byte $00
+  .db $3f, $00, $04
+  .db $0f, $30, $00, $10
+  .db $00
 
 MushroomPaletteData:
-  .byte $3f, $00, $04
-  .byte $22, $27, $16, $0f
-  .byte $00
+  .db $3f, $00, $04
+  .db $22, $27, $16, $0f
+  .db $00
 
 BowserPaletteData:
-  .byte $3f, $14, $04
-  .byte $0f, $1a, $30, $27
-  .byte $00
+  .db $3f, $14, $04
+  .db $0f, $1a, $30, $27
+  .db $00
 
 ThankYouMessage:
-  .byte $25, $48, $10
-  .byte $1d, $11, $0a, $17, $14, $24, $22, $18
-  .byte $1e, $24, $16, $0a, $1b, $12, $18, $2b
-  .byte $00
+  .db $25, $48, $10
+  .db $1d, $11, $0a, $17, $14, $24, $22, $18
+  .db $1e, $24, $16, $0a, $1b, $12, $18, $2b
+  .db $00
 
 MushroomRetainerMsg:
-  .byte $25, $c5, $16
-  .byte $0b, $1e, $1d, $24, $18, $1e, $1b, $24
-  .byte $19, $1b, $12, $17, $0c, $0e, $1c, $1c
-  .byte $24, $12, $1c, $24, $12, $17
-  .byte $26, $05, $0f
-  .byte $0a, $17, $18, $1d, $11, $0e, $1b, $24
-  .byte $0c, $0a, $1c, $1d, $15, $0e, $2b
-  .byte $00
+  .db $25, $c5, $16
+  .db $0b, $1e, $1d, $24, $18, $1e, $1b, $24
+  .db $19, $1b, $12, $17, $0c, $0e, $1c, $1c
+  .db $24, $12, $1c, $24, $12, $17
+  .db $26, $05, $0f
+  .db $0a, $17, $18, $1d, $11, $0e, $1b, $24
+  .db $0c, $0a, $1c, $1d, $15, $0e, $2b
+  .db $00
 
 ;------------------------------------------------------------------------------------
 
@@ -2435,13 +2405,13 @@ WritePPUReg1:
 
 ;status bar name table offset and length data
 StatusBarData:
-      .byte $ef, $06 ; top score display on title screen
-      .byte $62, $06 ; player score
-      .byte $6d, $02 ; coin tally
-      .byte $7a, $03 ; game timer
+      .db $ef, $06 ; top score display on title screen
+      .db $62, $06 ; player score
+      .db $6d, $02 ; coin tally
+      .db $7a, $03 ; game timer
 
 StatusBarOffset:
-      .byte $06, $0c, $12, $18
+      .db $06, $0c, $12, $18
 
 PrintStatusBarNumbers:
       sta $00            ;store player-specific offset
@@ -2546,11 +2516,11 @@ NoTopSc:      rts
 ;-------------------------------------------------------------------------------------
 
 ;unused memory
-      .byte $ff, $ff 
+      .db $ff, $ff 
 
 DefaultSprOffsets:
-      .byte $04, $30, $48, $60, $78, $90, $a8, $c0
-      .byte $d8, $e8, $24, $f8, $fc, $28, $2c
+      .db $04, $30, $48, $60, $78, $90, $a8, $c0
+      .db $d8, $e8, $24, $f8, $fc, $28, $2c
 
 ;-------------------------------------------------------------------------------------
 
@@ -2670,8 +2640,8 @@ SkipByte:     dey
 ;-------------------------------------------------------------------------------------
 
 MusicSelectData:
-      .byte WaterMusic, GroundMusic, UndergroundMusic, CastleMusic
-      .byte CloudMusic, PipeIntroMusic
+      .db WaterMusic, GroundMusic, UndergroundMusic, CastleMusic
+      .db CloudMusic, PipeIntroMusic
 
 GetAreaMusic:
              lda OperMode           ;if in attract mode, leave
@@ -2696,22 +2666,22 @@ ExitGetM:    rts
 ;-------------------------------------------------------------------------------------
 
 PlayerStarting_X_Pos:
-      .byte $28, $18
-      .byte $38, $28
+      .db $28, $18
+      .db $38, $28
 
 AltYPosOffset:
-      .byte $08, $00
+      .db $08, $00
 
 PlayerStarting_Y_Pos:
-      .byte $00, $20, $b0, $50, $00, $00, $b0, $b0
-      .byte $f0
+      .db $00, $20, $b0, $50, $00, $00, $b0, $b0
+      .db $f0
 
 PlayerBGPriorityData:
-      .byte $00, $20, $00, $00, $00, $00, $00, $00
+      .db $00, $20, $00, $00, $00, $00, $00, $00
 
 GameTimerData:
-      .byte $20 ;dummy byte, used as part of bg priority data
-      .byte $04, $03, $02
+      .db $20 ;dummy byte, used as part of bg priority data
+      .db $04, $03, $02
 
 Entrance_GameTimerSetup:
           lda ScreenLeft_PageLoc      ;set current page for area objects
@@ -2777,15 +2747,15 @@ SetPESub: lda #$07                    ;set to run player entrance subroutine
 
 ;page numbers are in order from level numbers 1 to 4
 HalfwayPageNybbles:
-      .byte $66, $60
-      .byte $88, $60
-      .byte $66, $70
-      .byte $77, $60
-      .byte $d6, $00
-      .byte $77, $80
-      .byte $70, $b0
-      .byte $00, $00
-      .byte $00, $00
+      .db $66, $60
+      .db $88, $60
+      .db $66, $70
+      .db $77, $60
+      .db $d6, $00
+      .db $77, $80
+      .db $70, $b0
+      .db $00, $00
+      .db $00, $00
 
 PlayerLoseLife:
              inc DisableScreenFlag    ;disable screen and IRQ updates
@@ -2830,9 +2800,9 @@ GameOverSubs:
       lda OperMode_Task
       jsr JumpEngine
 
-      .word SetupGameOver
-      .word ScreenRoutines
-      .word RunGameOver
+      .dw SetupGameOver
+      .dw ScreenRoutines
+      .dw RunGameOver
 
 ;-------------------------------------------------------------------------------------
 
@@ -2905,14 +2875,14 @@ SkipATRender: rts
 AreaParserTasks:
       jsr JumpEngine
 
-      .word IncrementColumnPos
-      .word RenderAreaGraphics
-      .word RenderAreaGraphics
-      .word AreaParserCore
-      .word IncrementColumnPos
-      .word RenderAreaGraphics
-      .word RenderAreaGraphics
-      .word AreaParserCore
+      .dw IncrementColumnPos
+      .dw RenderAreaGraphics
+      .dw RenderAreaGraphics
+      .dw AreaParserCore
+      .dw IncrementColumnPos
+      .dw RenderAreaGraphics
+      .dw RenderAreaGraphics
+      .dw AreaParserCore
 
 ;-------------------------------------------------------------------------------------
 
@@ -2936,77 +2906,77 @@ NoColWrap: inc BlockBufferColumnPos ;increment column offset where we're at
 ;$06-$07 - used to store block buffer address
 
 BSceneDataOffsets:
-      .byte $00, $30, $60 
+      .db $00, $30, $60 
 
 BackSceneryData:
-   .byte $93, $00, $00, $11, $12, $12, $13, $00 ;clouds
-   .byte $00, $51, $52, $53, $00, $00, $00, $00
-   .byte $00, $00, $01, $02, $02, $03, $00, $00
-   .byte $00, $00, $00, $00, $91, $92, $93, $00
-   .byte $00, $00, $00, $51, $52, $53, $41, $42
-   .byte $43, $00, $00, $00, $00, $00, $91, $92
+   .db $93, $00, $00, $11, $12, $12, $13, $00 ;clouds
+   .db $00, $51, $52, $53, $00, $00, $00, $00
+   .db $00, $00, $01, $02, $02, $03, $00, $00
+   .db $00, $00, $00, $00, $91, $92, $93, $00
+   .db $00, $00, $00, $51, $52, $53, $41, $42
+   .db $43, $00, $00, $00, $00, $00, $91, $92
 
-   .byte $97, $87, $88, $89, $99, $00, $00, $00 ;mountains and bushes
-   .byte $11, $12, $13, $a4, $a5, $a5, $a5, $a6
-   .byte $97, $98, $99, $01, $02, $03, $00, $a4
-   .byte $a5, $a6, $00, $11, $12, $12, $12, $13
-   .byte $00, $00, $00, $00, $01, $02, $02, $03
-   .byte $00, $a4, $a5, $a5, $a6, $00, $00, $00
+   .db $97, $87, $88, $89, $99, $00, $00, $00 ;mountains and bushes
+   .db $11, $12, $13, $a4, $a5, $a5, $a5, $a6
+   .db $97, $98, $99, $01, $02, $03, $00, $a4
+   .db $a5, $a6, $00, $11, $12, $12, $12, $13
+   .db $00, $00, $00, $00, $01, $02, $02, $03
+   .db $00, $a4, $a5, $a5, $a6, $00, $00, $00
 
-   .byte $11, $12, $12, $13, $00, $00, $00, $00 ;trees and fences
-   .byte $00, $00, $00, $9c, $00, $8b, $aa, $aa
-   .byte $aa, $aa, $11, $12, $13, $8b, $00, $9c
-   .byte $9c, $00, $00, $01, $02, $03, $11, $12
-   .byte $12, $13, $00, $00, $00, $00, $aa, $aa
-   .byte $9c, $aa, $00, $8b, $00, $01, $02, $03
+   .db $11, $12, $12, $13, $00, $00, $00, $00 ;trees and fences
+   .db $00, $00, $00, $9c, $00, $8b, $aa, $aa
+   .db $aa, $aa, $11, $12, $13, $8b, $00, $9c
+   .db $9c, $00, $00, $01, $02, $03, $11, $12
+   .db $12, $13, $00, $00, $00, $00, $aa, $aa
+   .db $9c, $aa, $00, $8b, $00, $01, $02, $03
 
 BackSceneryMetatiles:
-   .byte $80, $83, $00 ;cloud left
-   .byte $81, $84, $00 ;cloud middle
-   .byte $82, $85, $00 ;cloud right
-   .byte $02, $00, $00 ;bush left
-   .byte $03, $00, $00 ;bush middle
-   .byte $04, $00, $00 ;bush right
-   .byte $00, $05, $06 ;mountain left
-   .byte $07, $06, $0a ;mountain middle
-   .byte $00, $08, $09 ;mountain right
-   .byte $4d, $00, $00 ;fence
-   .byte $0d, $0f, $4e ;tall tree
-   .byte $0e, $4e, $4e ;short tree
+   .db $80, $83, $00 ;cloud left
+   .db $81, $84, $00 ;cloud middle
+   .db $82, $85, $00 ;cloud right
+   .db $02, $00, $00 ;bush left
+   .db $03, $00, $00 ;bush middle
+   .db $04, $00, $00 ;bush right
+   .db $00, $05, $06 ;mountain left
+   .db $07, $06, $0a ;mountain middle
+   .db $00, $08, $09 ;mountain right
+   .db $4d, $00, $00 ;fence
+   .db $0d, $0f, $4e ;tall tree
+   .db $0e, $4e, $4e ;short tree
 
 FSceneDataOffsets:
-      .byte $00, $0d, $1a
+      .db $00, $0d, $1a
 
 ForeSceneryData:
-   .byte $86, $87, $87, $87, $87, $87, $87   ;in water
-   .byte $87, $87, $87, $87, $6a, $6a
+   .db $86, $87, $87, $87, $87, $87, $87   ;in water
+   .db $87, $87, $87, $87, $6a, $6a
 
-   .byte $00, $00, $00, $00, $00, $45, $47   ;wall
-   .byte $47, $47, $47, $47, $00, $00
+   .db $00, $00, $00, $00, $00, $45, $47   ;wall
+   .db $47, $47, $47, $47, $00, $00
 
-   .byte $00, $00, $00, $00, $00, $00, $00   ;over water
-   .byte $00, $00, $00, $00, $86, $87
+   .db $00, $00, $00, $00, $00, $00, $00   ;over water
+   .db $00, $00, $00, $00, $86, $87
 
 TerrainMetatiles:
-      .byte $6a, $6b, $50, $63
+      .db $6a, $6b, $50, $63
 
 TerrainRenderBits:
-      .byte %00000000, %00000000 ;no ceiling or floor
-      .byte %00000000, %00011000 ;no ceiling, floor 2
-      .byte %00000001, %00011000 ;ceiling 1, floor 2
-      .byte %00000111, %00011000 ;ceiling 3, floor 2
-      .byte %00001111, %00011000 ;ceiling 4, floor 2
-      .byte %11111111, %00011000 ;ceiling 8, floor 2
-      .byte %00000001, %00011111 ;ceiling 1, floor 5
-      .byte %00000111, %00011111 ;ceiling 3, floor 5
-      .byte %00001111, %00011111 ;ceiling 4, floor 5
-      .byte %10000001, %00011111 ;ceiling 1, floor 6
-      .byte %00000001, %00000000 ;ceiling 1, no floor
-      .byte %10001111, %00011111 ;ceiling 4, floor 6
-      .byte %11110001, %00011111 ;ceiling 1, floor 9
-      .byte %11111001, %00011000 ;ceiling 1, middle 5, floor 2
-      .byte %11110001, %00011000 ;ceiling 1, middle 4, floor 2
-      .byte %11111111, %00011111 ;completely solid top to bottom
+      .db %00000000, %00000000 ;no ceiling or floor
+      .db %00000000, %00011000 ;no ceiling, floor 2
+      .db %00000001, %00011000 ;ceiling 1, floor 2
+      .db %00000111, %00011000 ;ceiling 3, floor 2
+      .db %00001111, %00011000 ;ceiling 4, floor 2
+      .db %11111111, %00011000 ;ceiling 8, floor 2
+      .db %00000001, %00011111 ;ceiling 1, floor 5
+      .db %00000111, %00011111 ;ceiling 3, floor 5
+      .db %00001111, %00011111 ;ceiling 4, floor 5
+      .db %10000001, %00011111 ;ceiling 1, floor 6
+      .db %00000001, %00000000 ;ceiling 1, no floor
+      .db %10001111, %00011111 ;ceiling 4, floor 6
+      .db %11110001, %00011111 ;ceiling 1, floor 9
+      .db %11111001, %00011000 ;ceiling 1, middle 5, floor 2
+      .db %11110001, %00011000 ;ceiling 1, middle 4, floor 2
+      .db %11111111, %00011111 ;completely solid top to bottom
 
 AreaParserCore:
       lda BackloadingFlag       ;check to see if we are starting right of start
@@ -3149,7 +3119,7 @@ StrBlock: ldy $00                    ;get offset for block buffer
 ;numbers lower than these with the same attribute bits
 ;will not be stored in the block buffer
 BlockBuffLowBounds:
-      .byte $10, $4f, $88, $c0
+      .db $10, $4f, $88, $c0
 
 ;-------------------------------------------------------------------------------------
 ;$00 - used to store area object identifier
@@ -3326,66 +3296,66 @@ RunAObj:  lda $00                    ;get stored value and add offset to it
           adc $07
           jsr JumpEngine
 
- .word VerticalPipe
- .word AreaStyleObject
- .word RowOfBricks
- .word RowOfSolidBlocks
- .word RowOfCoins
- .word ColumnOfBricks
- .word ColumnOfSolidBlocks
- .word VerticalPipe
+ .dw VerticalPipe
+ .dw AreaStyleObject
+ .dw RowOfBricks
+ .dw RowOfSolidBlocks
+ .dw RowOfCoins
+ .dw ColumnOfBricks
+ .dw ColumnOfSolidBlocks
+ .dw VerticalPipe
 
- .word Hole_Empty
- .word PulleyRopeObject
- .word Bridge_High
- .word Bridge_Middle
- .word Bridge_Low
- .word Hole_Water
- .word QuestionBlockRow_High
- .word QuestionBlockRow_Low
+ .dw Hole_Empty
+ .dw PulleyRopeObject
+ .dw Bridge_High
+ .dw Bridge_Middle
+ .dw Bridge_Low
+ .dw Hole_Water
+ .dw QuestionBlockRow_High
+ .dw QuestionBlockRow_Low
 
- .word EndlessRope
- .word BalancePlatRope
- .word CastleObject
- .word StaircaseObject
- .word ExitPipe
- .word FlagBalls_Residual
- .word UpsideDownPipe_High
- .word UpsideDownPipe_Low
+ .dw EndlessRope
+ .dw BalancePlatRope
+ .dw CastleObject
+ .dw StaircaseObject
+ .dw ExitPipe
+ .dw FlagBalls_Residual
+ .dw UpsideDownPipe_High
+ .dw UpsideDownPipe_Low
 
- .word QuestionBlock
- .word QuestionBlock
- .word QuestionBlock
- .word QuestionBlock
- .word Hidden1UpBlock
- .word QuestionBlock
- .word QuestionBlock
- .word BrickWithItem
- .word BrickWithItem
- .word BrickWithItem
- .word BrickWithItem
- .word BrickWithCoins
- .word BrickWithItem
- .word WaterPipe
- .word EmptyBlock
- .word Jumpspring
+ .dw QuestionBlock
+ .dw QuestionBlock
+ .dw QuestionBlock
+ .dw QuestionBlock
+ .dw Hidden1UpBlock
+ .dw QuestionBlock
+ .dw QuestionBlock
+ .dw BrickWithItem
+ .dw BrickWithItem
+ .dw BrickWithItem
+ .dw BrickWithItem
+ .dw BrickWithCoins
+ .dw BrickWithItem
+ .dw WaterPipe
+ .dw EmptyBlock
+ .dw Jumpspring
 
- .word IntroPipe
- .word FlagpoleObject
- .word AxeObj
- .word ChainObj
- .word CastleBridgeObj
- .word ScrollLockObject_Warp
- .word ScrollLockObject
- .word ScrollLockObject
- .word AreaFrenzy
- .word AreaFrenzy
- .word AreaFrenzy
- .word LoopCmdE
- .word WindOn                ;these two are in SM2DATA2 and SM2DATA4
- .word WindOff
+ .dw IntroPipe
+ .dw FlagpoleObject
+ .dw AxeObj
+ .dw ChainObj
+ .dw CastleBridgeObj
+ .dw ScrollLockObject_Warp
+ .dw ScrollLockObject
+ .dw ScrollLockObject
+ .dw AreaFrenzy
+ .dw AreaFrenzy
+ .dw AreaFrenzy
+ .dw LoopCmdE
+ .dw WindOn                ;these two are in SM2DATA2 and SM2DATA4
+ .dw WindOff
 
- .word AlterAreaAttributes
+ .dw AlterAreaAttributes
 
 ;-------------------------------------------------------------------------------------
 ;(these apply to all area object subroutines in this section unless otherwise stated)
@@ -3494,7 +3464,7 @@ NoKillE:   dex               ;do this until all slots are checked
 ;--------------------------------
 
 FrenzyIDData:
-      .byte FlyCheepCheepFrenzy, BBill_CCheep_Frenzy, Stop_Frenzy
+      .db FlyCheepCheepFrenzy, BBill_CCheep_Frenzy, Stop_Frenzy
 
 AreaFrenzy:  ldx $00               ;use area object identifier bit as offset
              lda FrenzyIDData-8,x  ;note that it starts at 8, thus weird address here
@@ -3514,9 +3484,9 @@ ExitAFrenzy: sta EnemyFrenzyQueue  ;store enemy into frenzy queue
 AreaStyleObject:
       lda AreaStyle        ;load level object style and jump to the right sub
       jsr JumpEngine 
-      .word TreeLedge        ;also used for cloud bonus levels
-      .word CloudLedge
-      .word BulletBillCannon
+      .dw TreeLedge        ;also used for cloud bonus levels
+      .dw CloudLedge
+      .dw BulletBillCannon
 
 TreeLedge:
           jsr GetLrgObjAttrib     ;get row and length of green ledge
@@ -3570,7 +3540,7 @@ NoUnder:  ldx $07                    ;load row of ledge
 
 ;tiles used by pulleys and rope object
 PulleyRopeMetatiles:
-      .byte $42, $41, $43
+      .db $42, $41, $43
 
 PulleyRopeObject:
            jsr ChkLrgObjLength       ;get length of pulley/rope object
@@ -3588,17 +3558,17 @@ MushLExit: rts                       ;and leave
 ;$06 - used to store upper limit of rows for CastleObject
 
 CastleMetatiles:
-      .byte $00, $45, $45, $45, $00
-      .byte $00, $48, $47, $46, $00
-      .byte $45, $49, $49, $49, $45
-      .byte $47, $47, $4a, $47, $47
-      .byte $47, $47, $4b, $47, $47
-      .byte $49, $49, $49, $49, $49
-      .byte $47, $4a, $47, $4a, $47
-      .byte $47, $4b, $47, $4b, $47
-      .byte $47, $47, $47, $47, $47
-      .byte $4a, $47, $4a, $47, $4a
-      .byte $4b, $47, $4b, $47, $4b
+      .db $00, $45, $45, $45, $00
+      .db $00, $48, $47, $46, $00
+      .db $45, $49, $49, $49, $45
+      .db $47, $47, $4a, $47, $47
+      .db $47, $47, $4b, $47, $47
+      .db $49, $49, $49, $49, $49
+      .db $47, $4a, $47, $4a, $47
+      .db $47, $4b, $47, $4b, $47
+      .db $47, $47, $47, $47, $47
+      .db $4a, $47, $4a, $47, $4a
+      .db $4b, $47, $4b, $47, $4b
 
 CastleObject:
             jsr GetLrgObjAttrib      ;save lower nybble as starting row
@@ -3689,14 +3659,14 @@ VPipeSectLoop: lda #$00                 ;all the way to the top of the screen
 NoBlankP:      rts
 
 SidePipeShaftData:
-      .byte $15, $14  ;used to control whether or not vertical pipe shaft
-      .byte $00, $00  ;is drawn, and if so, controls the metatile number
+      .db $15, $14  ;used to control whether or not vertical pipe shaft
+      .db $00, $00  ;is drawn, and if so, controls the metatile number
 SidePipeTopPart:
-      .byte $15, $1b  ;top part of sideways part of pipe
-      .byte $1a, $19
+      .db $15, $1b  ;top part of sideways part of pipe
+      .db $1a, $19
 SidePipeBottomPart: 
-      .byte $15, $1e  ;bottom part of sideways part of pipe
-      .byte $1d, $1c
+      .db $15, $1e  ;bottom part of sideways part of pipe
+      .db $1d, $1c
 
 ExitPipe:
       ldy #$03                 ;check if length set, if not set, set it
@@ -3726,10 +3696,10 @@ DrawSidePart: ldy $06                   ;render side pipe part at the bottom
               rts
 
 VerticalPipeData:
-      .byte $11, $10 ;used by pipes that lead somewhere
-      .byte $15, $14
-      .byte $13, $12 ;used by decoration pipes
-      .byte $15, $14
+      .db $11, $10 ;used by pipes that lead somewhere
+      .db $15, $14
+      .db $13, $12 ;used by decoration pipes
+      .db $15, $14
 
 VerticalPipe:
           jsr GetPipeHeight
@@ -3808,7 +3778,7 @@ Hole_Water:
 
 QuestionBlockRow_High:
       lda #$03              ;start on the fourth row
-      .byte $2c               ;BIT instruction opcode
+      .db $2c               ;BIT instruction opcode
 
 QuestionBlockRow_Low:
       lda #$07             ;start on the eighth row
@@ -3824,11 +3794,11 @@ QuestionBlockRow_Low:
 
 Bridge_High:
       lda #$06  ;start on the seventh row from top of screen
-      .byte $2c   ;BIT instruction opcode
+      .db $2c   ;BIT instruction opcode
 
 Bridge_Middle:
       lda #$07  ;start on the eighth row
-      .byte $2c   ;BIT instruction opcode
+      .db $2c   ;BIT instruction opcode
 
 Bridge_Low:
       lda #$09             ;start on the tenth row
@@ -3902,7 +3872,7 @@ DrawRope: lda #$40            ;render the actual rope
 ;--------------------------------
 
 CoinMetatileData:
-      .byte $c4, $c3, $c3, $c3
+      .db $c4, $c3, $c3, $c3
 
 RowOfCoins:
       ldy AreaType            ;get area type
@@ -3912,10 +3882,10 @@ RowOfCoins:
 ;--------------------------------
 
 C_ObjectRow:
-      .byte $06, $07, $08
+      .db $06, $07, $08
 
 C_ObjectMetatile:
-      .byte $c6, $0c, $89
+      .db $c6, $0c, $89
 
 CastleBridgeObj:
       ldy #$0c                  ;load length of 13 columns
@@ -3942,11 +3912,11 @@ ColObj: ldy #$00             ;column length of 1
 ;--------------------------------
 
 SolidBlockMetatiles:
-      .byte $6a, $62, $62, $63
+      .db $6a, $62, $62, $63
 
 BrickMetatiles:
-      .byte $1f, $4f, $50, $50
-      .byte $88 ;used only by row of bricks object
+      .db $1f, $4f, $50, $50
+      .db $88 ;used only by row of bricks object
 
 RowOfBricks:
             ldy AreaType           ;load area type obtained from area offset pointer
@@ -4014,10 +3984,10 @@ StrCOffset:  stx Cannon_Offset        ;save new offset and leave
 ;--------------------------------
 
 StaircaseHeightData:
-      .byte $07, $07, $06, $05, $04, $03, $02, $01, $00
+      .db $07, $07, $06, $05, $04, $03, $02, $01, $00
 
 StaircaseRowData:
-      .byte $03, $03, $04, $05, $06, $07, $08, $09, $0a
+      .db $03, $03, $04, $05, $06, $07, $08, $09, $0a
 
 StaircaseObject:
            jsr ChkLrgObjLength       ;check and load length
@@ -4101,7 +4071,7 @@ ExitDecBlock: rts
 ;--------------------------------
 
 HoleMetatiles:
-      .byte $87, $00, $00, $00
+      .db $87, $00, $00, $00
 
 Hole_Empty:
             jsr ChkLrgObjLength          ;get lower nybble and save as length
@@ -4207,8 +4177,8 @@ GetAreaObjYPosition:
 ;$06-$07 - used to store block buffer address used as indirect
 
 BlockBufferAddr:
-      .byte <Block_Buffer_1, <Block_Buffer_2
-      .byte >Block_Buffer_1, >Block_Buffer_2
+      .db <Block_Buffer_1, <Block_Buffer_2
+      .db >Block_Buffer_1, >Block_Buffer_2
 
 GetBlockBufferAddr:
       pha                      ;take value of A, save
@@ -4232,11 +4202,11 @@ GameModeSubs:
       lda OperMode_Task
       jsr JumpEngine
 
-      .word GameModeDiskRoutines
-      .word InitializeArea
-      .word ScreenRoutines
-      .word SecondaryGameSetup
-      .word GameCoreRoutine
+      .dw GameModeDiskRoutines
+      .dw InitializeArea
+      .dw ScreenRoutines
+      .dw SecondaryGameSetup
+      .dw GameCoreRoutine
 
 GameCoreRoutine:
       jsr GameRoutines           ;execute one of many possible subs
@@ -4388,10 +4358,10 @@ InitPlatScrl: lda #$00                   ;nullify platform force imposed on scro
               rts
 
 X_SubtracterData:
-      .byte $00, $10
+      .db $00, $10
 
 OffscrJoypadBitsData:
-      .byte $01, $02
+      .db $01, $02
 
 ;-------------------------------------------------------------------------------------
 
@@ -4411,19 +4381,19 @@ GameRoutines:
       lda GameEngineSubroutine  ;run routine based on number (a few of these routines are   
       jsr JumpEngine            ;merely placeholders as conditions for other routines)
 
-      .word Entrance_GameTimerSetup
-      .word Vine_AutoClimb
-      .word SideExitPipeEntry
-      .word VerticalPipeEntry
-      .word FlagpoleSlide
-      .word PlayerEndLevel
-      .word PlayerLoseLife
-      .word PlayerEntrance
-      .word PlayerCtrlRoutine
-      .word PlayerChangeSize
-      .word PlayerInjuryBlink
-      .word PlayerDeath
-      .word PlayerFireFlower
+      .dw Entrance_GameTimerSetup
+      .dw Vine_AutoClimb
+      .dw SideExitPipeEntry
+      .dw VerticalPipeEntry
+      .dw FlagpoleSlide
+      .dw PlayerEndLevel
+      .dw PlayerLoseLife
+      .dw PlayerEntrance
+      .dw PlayerCtrlRoutine
+      .dw PlayerChangeSize
+      .dw PlayerInjuryBlink
+      .dw PlayerDeath
+      .dw PlayerFireFlower
 
 PlayerEntrance:
             lda AltEntranceControl    ;check for mode of alternate entry
@@ -4829,10 +4799,10 @@ ProcMove:  jsr PlayerPhysicsSub      ;run sub related to jumping and swimming
            sty ClimbSideTimer        ;otherwise reset timer now
 MoveSubs:  jsr JumpEngine
 
-      .word OnGroundStateSub
-      .word JumpSwimSub
-      .word FallingSub
-      .word ClimbingSub
+      .dw OnGroundStateSub
+      .dw JumpSwimSub
+      .dw FallingSub
+      .dw ClimbingSub
 
 NoMoveSub: rts
 
@@ -4900,9 +4870,9 @@ ExitMov1: jmp MovePlayerVertically   ;jump to move player vertically, then leave
 ;--------------------------------
 
 ClimbAdderLow:
-      .byte $0e, $04, $fc, $f2
+      .db $0e, $04, $fc, $f2
 ClimbAdderHigh:
-      .byte $00, $00, $ff, $ff
+      .db $00, $00, $ff, $ff
 
 ClimbingSub:
              lda Player_YMF_Dummy
@@ -4953,32 +4923,32 @@ InitCSTimer: sta ClimbSideTimer       ;initialize timer here
 ;$00 - used to store offset to friction data
 
 JumpMForceData:
-      .byte $20, $20, $1e, $28, $28, $0d, $04
+      .db $20, $20, $1e, $28, $28, $0d, $04
 
 FallMForceData:
-      .byte $70, $70, $60, $90, $90, $0a, $09
+      .db $70, $70, $60, $90, $90, $0a, $09
 
 FrictionData:
-      .byte $e4, $98, $d0
+      .db $e4, $98, $d0
 
 PlayerYSpdData:
-      .byte $fc, $fc, $fc, $fb, $fb, $fe, $ff
+      .db $fc, $fc, $fc, $fb, $fb, $fe, $ff
 
 InitMForceData:
-      .byte $00, $00, $00, $00, $00, $80, $00
+      .db $00, $00, $00, $00, $00, $80, $00
 
 MaxLeftXSpdData:
-      .byte $d8, $e8, $f0
+      .db $d8, $e8, $f0
 
 MaxRightXSpdData:
-      .byte $28, $18, $10
-      .byte $0c ;used for pipe intros
+      .db $28, $18, $10
+      .db $0c ;used for pipe intros
 
 Climb_Y_SpeedData:
-      .byte $00, $ff, $01
+      .db $00, $ff, $01
 
 Climb_Y_MForceData:
-      .byte $00, $20, $ff
+      .db $00, $20, $ff
 
 PlayerPhysicsSub:
            lda Player_State          ;check player state
@@ -5131,7 +5101,7 @@ ExitPhy:   rts
 ;-------------------------------------------------------------------------------------
 
 PlayerAnimTmrData:
-      .byte $02, $04, $07
+      .db $02, $04, $07
 
 GetPlayerAnimSpeed:
             ldy #$00                   ;initialize offset in Y
@@ -5263,7 +5233,7 @@ BublLoop: stx ObjectOffset            ;store offset
 BublExit: rts                         ;then leave
 
 FireballXSpdData:
-      .byte $40, $c0
+      .db $40, $c0
 
 FireballObjCore:
          stx ObjectOffset             ;store offset as current object
@@ -5367,10 +5337,10 @@ Y_Bubl:   sta Bubble_Y_Position,x  ;store as new vertical coordinate for air bub
 ExitBubl: rts                      ;leave
 
 Bubble_MForceData:
-      .byte $ff, $50
+      .db $ff, $50
 
 BubbleTimerData:
-      .byte $40, $20
+      .db $40, $20
 
 ;-------------------------------------------------------------------------------------
 
@@ -5511,10 +5481,10 @@ WhPull: lda #$10
 ;-------------------------------------------------------------------------------------
 
 FlagpoleScoreMods:
-      .byte $05, $02, $08, $04, $01
+      .db $05, $02, $08, $04, $01
 
 FlagpoleScoreDigits:
-      .byte $03, $03, $04, $04, $04
+      .db $03, $03, $04, $04, $04
 
 FlagpoleRoutine:
            ldx #$05                  ;set enemy object offset
@@ -5569,7 +5539,7 @@ ExitFlagP: rts
 ;-------------------------------------------------------------------------------------
 
 Jumpspring_Y_PosData:
-      .byte $08, $10, $08, $00
+      .db $08, $10, $08, $00
 
 JumpspringHandler:
            jsr GetEnemyOffscreenBits   ;get offscreen information
@@ -5658,7 +5628,7 @@ NextVO: txa                      ;store object offset to next available vine slo
 ;$02 - used as vertical high nybble of block buffer offset
 
 VineHeightData:
-      .byte $30, $60
+      .db $30, $60
 
 VineObjectHandler:
             cpx #$05                  ;check enemy offset for special use slot
@@ -5751,7 +5721,7 @@ ExitVH:     ldx ObjectOffset          ;get enemy object offset and leave
 ;-------------------------------------------------------------------------------------
 
 CannonBitmasks:
-      .byte %00001111, %00000111
+      .db %00001111, %00000111
 
 ProcessCannons:
            lda AreaType                ;get area type
@@ -5812,7 +5782,7 @@ ExCannon: rts                        ;then leave
 ;--------------------------------
 
 BulletBillXSpdData:
-      .byte $18, $e8
+      .db $18, $e8
 
 BulletBillHandler:
            lda TimerControl          ;if master timer control set,
@@ -5857,11 +5827,11 @@ KillBB:    jsr EraseEnemyObject      ;kill bullet bill and leave
 ;-------------------------------------------------------------------------------------
 
 HammerEnemyOfsData:
-      .byte $04, $04, $04, $05, $05, $05
-      .byte $06, $06, $06
+      .db $04, $04, $04, $05, $05, $05
+      .db $06, $06, $06
 
 HammerXSpdData:
-      .byte $10, $f0
+      .db $10, $f0
 
 SpawnHammerObj:
           lda PseudoRandomBitReg+1 ;get a pseudorandom number from 0 to 8
@@ -6198,7 +6168,7 @@ ExitPUp:   rts                        ;and we're done
 ;$06-$07 - used as block buffer address indirect
 
 BlockYPosAdderData:
-      .byte $04, $12
+      .db $04, $12
 
 PlayerHeadCollision:
            pha                      ;store metatile number to stack
@@ -6307,31 +6277,31 @@ BumpBlock:
            sbc #$06                ;otherwise subtract 6 for second set to get proper number
 BlockCode: jsr JumpEngine          ;run appropriate subroutine depending on block number
 
-      .word MushFlowerBlock
-      .word PoisonMushBlock
-      .word CoinBlock
-      .word CoinBlock
-      .word ExtraLifeMushBlock
-      .word PoisonMushBlock
-      .word MushFlowerBlock
-      .word MushFlowerBlock
-      .word PoisonMushBlock
-      .word VineBlock
-      .word StarBlock
-      .word CoinBlock
-      .word ExtraLifeMushBlock
+      .dw MushFlowerBlock
+      .dw PoisonMushBlock
+      .dw CoinBlock
+      .dw CoinBlock
+      .dw ExtraLifeMushBlock
+      .dw PoisonMushBlock
+      .dw MushFlowerBlock
+      .dw MushFlowerBlock
+      .dw PoisonMushBlock
+      .dw VineBlock
+      .dw StarBlock
+      .dw CoinBlock
+      .dw ExtraLifeMushBlock
 
 MushFlowerBlock:
       lda #$00                ;load mushroom/flower type
-      .byte $2c
+      .db $2c
 
 StarBlock:
       lda #$02                ;load star type
-      .byte $2c
+      .db $2c
 
 PoisonMushBlock:
       lda #$04                ;load poison mushroom type
-      .byte $2c
+      .db $2c
 
 ExtraLifeMushBlock:
       lda #$03                ;load 1-up mushroom type
@@ -6349,10 +6319,10 @@ ExitBlockChk:
 ;--------------------------------
 
 BrickQBlockMetatiles:
-      .byte $c1, $c2, $c0, $5e, $5f, $60, $61 ;used by question blocks
+      .db $c1, $c2, $c0, $5e, $5f, $60, $61 ;used by question blocks
 
-      .byte $52, $53, $54, $55, $56, $57 ;used by ground level bricks
-      .byte $58, $59, $5a, $5b, $5c, $5d ;used by other level bricks
+      .db $52, $53, $54, $55, $56, $57 ;used by ground level bricks
+      .db $58, $59, $5a, $5b, $5c, $5d ;used by other level bricks
 
 BlockBumpedChk:
              ldy #$12                    ;start at end of metatile data
@@ -6640,11 +6610,11 @@ SetXMoveAmt: sty $00                 ;set movement amount here
 ;--------------------------------
 
 MaxSpdBlockData:
-      .byte $06, $08
+      .db $06, $08
 
 ResidualGravityCode:
       ldy #$00       ;this part appears to be residual,
-      .byte $2c        ;no code branches or jumps to it...
+      .db $2c        ;no code branches or jumps to it...
 
 ImposeGravityBlock:
       ldy #$01       ;set offset for maximum speed
@@ -6661,7 +6631,7 @@ ImposeGravitySprObj:
 
 MovePlatformDown:
       lda #$00    ;save value to stack (if branching here, execute next
-      .byte $2c     ;part as BIT instruction)
+      .db $2c     ;part as BIT instruction)
 
 MovePlatformUp:
            lda #$01        ;save value to stack
@@ -6750,7 +6720,7 @@ ExVMove: rts                          ;leave!
 ;-------------------------------------------------------------------------------------
 
 ;some unused bytes
-         .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+         .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
 
 ;-------------------------------------------------------------------------------------
 
@@ -6783,16 +6753,16 @@ ExitELCore: rts
 ;is now missing the loop command object)
 
 LoopCmdWorldNumber:
-  .byte $02, $02, $02, $02, $05, $05, $05, $05, $06, $07, $07, $04
+  .db $02, $02, $02, $02, $05, $05, $05, $05, $06, $07, $07, $04
 
 LoopCmdPageNumber:
-  .byte $03, $05, $08, $09, $03, $06, $07, $0a, $05, $05, $0b, $05
+  .db $03, $05, $08, $09, $03, $06, $07, $0a, $05, $05, $0b, $05
 
 LoopCmdYPosition:
-  .byte $b0, $b0, $40, $30, $b0, $30, $b0, $b0, $f0, $f0, $b0, $f0
+  .db $b0, $b0, $40, $30, $b0, $30, $b0, $b0, $f0, $f0, $b0, $f0
 
 MultiLoopCount:
-  .byte $02, $02, $02, $02, $02, $02, $02, $02, $01, $01, $01, $01
+  .db $02, $02, $02, $02, $02, $02, $02, $02, $01, $01, $01, $01
 
 ExecGameLoopback:
       lda Player_PageLoc        ;send player back four pages
@@ -7064,64 +7034,64 @@ CheckpointEnemyID:
 InitEnemyRoutines:
         jsr JumpEngine
 
-        .word InitNormalEnemy
-        .word InitNormalEnemy
-        .word InitNormalEnemy
-        .word InitRedKoopa
-        .word InitPiranhaPlant
-        .word InitHammerBro
-        .word InitGoomba
-        .word InitBloober
-        .word InitBulletBill
-        .word NoInitCode
-        .word InitCheepCheep
-        .word InitCheepCheep
-        .word InitPodoboo
-        .word InitPiranhaPlant
-        .word InitJumpGPTroopa
-        .word InitRedPTroopa
+        .dw InitNormalEnemy
+        .dw InitNormalEnemy
+        .dw InitNormalEnemy
+        .dw InitRedKoopa
+        .dw InitPiranhaPlant
+        .dw InitHammerBro
+        .dw InitGoomba
+        .dw InitBloober
+        .dw InitBulletBill
+        .dw NoInitCode
+        .dw InitCheepCheep
+        .dw InitCheepCheep
+        .dw InitPodoboo
+        .dw InitPiranhaPlant
+        .dw InitJumpGPTroopa
+        .dw InitRedPTroopa
 
-        .word InitHorizFlySwimEnemy
-        .word InitLakitu
-        .word InitEnemyFrenzy
-        .word NoInitCode
-        .word InitEnemyFrenzy
-        .word InitEnemyFrenzy
-        .word InitEnemyFrenzy
-        .word InitEnemyFrenzy
-        .word EndFrenzy
-        .word NoInitCode
-        .word NoInitCode
-        .word InitShortFirebar
-        .word InitShortFirebar
-        .word InitShortFirebar
-        .word InitShortFirebar
-        .word InitLongFirebar
+        .dw InitHorizFlySwimEnemy
+        .dw InitLakitu
+        .dw InitEnemyFrenzy
+        .dw NoInitCode
+        .dw InitEnemyFrenzy
+        .dw InitEnemyFrenzy
+        .dw InitEnemyFrenzy
+        .dw InitEnemyFrenzy
+        .dw EndFrenzy
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw InitShortFirebar
+        .dw InitShortFirebar
+        .dw InitShortFirebar
+        .dw InitShortFirebar
+        .dw InitLongFirebar
 
-        .word NoInitCode
-        .word NoInitCode
-        .word NoInitCode
-        .word NoInitCode
-        .word InitBalPlatform
-        .word InitVertPlatform
-        .word LargeLiftUp
-        .word LargeLiftDown
-        .word InitHoriPlatform
-        .word InitDropPlatform
-        .word InitHoriPlatform
-        .word PlatLiftUp
-        .word PlatLiftDown
-        .word InitBowser
-        .word PwrUpJmp
-        .word Setup_Vine
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw InitBalPlatform
+        .dw InitVertPlatform
+        .dw LargeLiftUp
+        .dw LargeLiftDown
+        .dw InitHoriPlatform
+        .dw InitDropPlatform
+        .dw InitHoriPlatform
+        .dw PlatLiftUp
+        .dw PlatLiftDown
+        .dw InitBowser
+        .dw PwrUpJmp
+        .dw Setup_Vine
 
-        .word NoInitCode
-        .word NoInitCode
-        .word NoInitCode
-        .word NoInitCode
-        .word NoInitCode
-        .word InitRetainerObj
-        .word EndOfEnemyInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw NoInitCode
+        .dw InitRetainerObj
+        .dw EndOfEnemyInitCode
 
 NoInitCode:
         rts
@@ -7146,7 +7116,7 @@ InitRetainerObj:
       rts
 
 NormalXSpdData:
-      .byte $f8, $f4
+      .db $f8, $f4
 
 InitNormalEnemy:
          ldy #$01              ;load offset of 1 by default
@@ -7164,7 +7134,7 @@ InitRedKoopa:
       rts
 
 HBroWalkingTimerData:
-      .byte $80, $50
+      .db $80, $50
 
 InitHammerBro:
        lda #$00                    ;init horizontal speed and timer used by hammer bro
@@ -7244,9 +7214,9 @@ KillLakitu:
 ;$01-$03 - used to hold pseudorandom difference adjusters
 
 PRDiffAdjustData:
-      .byte $26, $2c, $32, $38
-      .byte $20, $22, $24, $26
-      .byte $13, $14, $15, $16
+      .db $26, $2c, $32, $38
+      .db $20, $22, $24, $26
+      .db $13, $14, $15, $16
 
 LakituAndSpinyHandler:
           lda FrenzyEnemyTimer    ;if timer here not expired, leave
@@ -7347,10 +7317,10 @@ ChpChpEx: rts
 ;--------------------------------
 
 FirebarSpinSpdData:
-      .byte $28, $38, $28, $38, $28
+      .db $28, $38, $28, $38, $28
 
 FirebarSpinDirData:
-      .byte $00, $00, $10, $10, $00
+      .db $00, $00, $10, $10, $00
 
 InitLongFirebar:
       jsr DuplicateEnemyObj       ;create enemy object for long firebar
@@ -7383,18 +7353,18 @@ InitShortFirebar:
 ;$00-$01 - used to hold pseudorandom bits
 
 FlyCCXPositionData:
-      .byte $80, $30, $40, $80
-      .byte $30, $50, $50, $70
-      .byte $20, $40, $80, $a0
-      .byte $70, $40, $90, $68
+      .db $80, $30, $40, $80
+      .db $30, $50, $50, $70
+      .db $20, $40, $80, $a0
+      .db $70, $40, $90, $68
 
 FlyCCXSpeedData:
-      .byte $0e, $05, $06, $0e
-      .byte $1c, $20, $10, $0c
-      .byte $1e, $22, $18, $14
+      .db $0e, $05, $06, $0e
+      .db $1c, $20, $10, $0c
+      .db $1e, $22, $18, $14
 
 FlyCCTimerData:
-      .byte $10, $60, $20, $48
+      .db $10, $60, $20, $48
 
 InitFlyingCheepCheep:
          lda FrenzyEnemyTimer       ;if timer here not expired yet, branch to leave
@@ -7535,10 +7505,10 @@ FlmEx:  rts                     ;and then leave
 ;--------------------------------
 
 FlameYPosData:
-      .byte $90, $80, $70, $90
+      .db $90, $80, $70, $90
 
 FlameYMFAdderData:
-      .byte $ff, $01
+      .db $ff, $01
 
 InitBowserFlame:
         lda FrenzyEnemyTimer        ;if timer not expired yet, branch to leave
@@ -7615,10 +7585,10 @@ FinishFlame:
 ;--------------------------------
 
 FireworksXPosData:
-      .byte $00, $30, $60, $60, $00, $20
+      .db $00, $30, $60, $60, $00, $20
 
 FireworksYPosData:
-      .byte $60, $40, $70, $40, $60, $30
+      .db $60, $40, $70, $40, $60, $30
 
 InitFireworks:
           lda FrenzyEnemyTimer         ;if timer not expired yet, branch to leave
@@ -7663,13 +7633,13 @@ ExitFWk:  rts
 ;--------------------------------
 
 Bitmasks:
-      .byte %00000001, %00000010, %00000100, %00001000, %00010000, %00100000, %01000000, %10000000
+      .db %00000001, %00000010, %00000100, %00001000, %00010000, %00100000, %01000000, %10000000
 
 Enemy17YPosData:
-      .byte $40, $30, $90, $50, $20, $60, $a0, $70
+      .db $40, $30, $90, $50, $20, $60, $a0, $70
 
 SwimCC_IDData:
-      .byte $0a, $0b
+      .db $0a, $0b
 
 BulletBillCheepCheep:
          lda FrenzyEnemyTimer      ;if timer not expired yet, branch to leave
@@ -7842,12 +7812,12 @@ InitEnemyFrenzy:
       jsr JumpEngine
 
 ;frenzy object jump table
-      .word LakituAndSpinyHandler
-      .word NoFrenzyCode
-      .word InitFlyingCheepCheep
-      .word InitBowserFlame
-      .word InitFireworks
-      .word BulletBillCheepCheep
+      .dw LakituAndSpinyHandler
+      .dw NoFrenzyCode
+      .dw InitFlyingCheepCheep
+      .dw InitBowserFlame
+      .dw InitFireworks
+      .dw BulletBillCheepCheep
 
 NoFrenzyCode:
       rts
@@ -7983,10 +7953,10 @@ CommonSmallLift:
 ;--------------------------------
 
 PlatPosDataLow:
-      .byte $08,$0c,$f8
+      .db $08,$0c,$f8
 
 PlatPosDataHigh:
-      .byte $00,$00,$ff
+      .db $00,$00,$ff
 
 PosPlatform:
       lda Enemy_X_Position,x  ;get horizontal coordinate
@@ -8015,43 +7985,43 @@ RunEnemyObjectsCore:
        sbc #$14          ;as value for jump engine
 JmpEO: jsr JumpEngine
 
-      .word RunNormalEnemies  ;for objects $00-$14
+      .dw RunNormalEnemies  ;for objects $00-$14
 
-      .word RunBowserFlame    ;for objects $15-$1f
-      .word RunFireworks
-      .word NoRunCode
-      .word NoRunCode
-      .word NoRunCode
-      .word NoRunCode
-      .word RunFirebarObj
-      .word RunFirebarObj
-      .word RunFirebarObj
-      .word RunFirebarObj
-      .word RunFirebarObj
+      .dw RunBowserFlame    ;for objects $15-$1f
+      .dw RunFireworks
+      .dw NoRunCode
+      .dw NoRunCode
+      .dw NoRunCode
+      .dw NoRunCode
+      .dw RunFirebarObj
+      .dw RunFirebarObj
+      .dw RunFirebarObj
+      .dw RunFirebarObj
+      .dw RunFirebarObj
 
-      .word RunFirebarObj     ;for objects $20-$2f
-      .word RunFirebarObj
-      .word RunFirebarObj
-      .word NoRunCode
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunLargePlatform
-      .word RunSmallPlatform
-      .word RunSmallPlatform
-      .word RunBowser
-      .word PowerUpObjHandler
-      .word VineObjectHandler
+      .dw RunFirebarObj     ;for objects $20-$2f
+      .dw RunFirebarObj
+      .dw RunFirebarObj
+      .dw NoRunCode
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunLargePlatform
+      .dw RunSmallPlatform
+      .dw RunSmallPlatform
+      .dw RunBowser
+      .dw PowerUpObjHandler
+      .dw VineObjectHandler
 
-      .word NoRunCode         ;for objects $30-$35
-      .word RunStarFlagObj
-      .word JumpspringHandler
-      .word NoRunCode
-      .word WarpZoneObject
-      .word RunRetainerObj
+      .dw NoRunCode         ;for objects $30-$35
+      .dw RunStarFlagObj
+      .dw JumpspringHandler
+      .dw NoRunCode
+      .dw WarpZoneObject
+      .dw RunRetainerObj
 
 ;--------------------------------
 
@@ -8086,27 +8056,27 @@ EnemyMovementSubs:
       lda Enemy_ID,x
       jsr JumpEngine
 
-      .word MoveNormalEnemy      ;only objects $00-$14 use this table
-      .word MoveNormalEnemy
-      .word MoveNormalEnemy
-      .word MoveNormalEnemy
-      .word MoveUpsideDownPiranhaP
-      .word ProcHammerBro
-      .word MoveNormalEnemy
-      .word MoveBloober
-      .word MoveBulletBill
-      .word NoMoveCode
-      .word MoveSwimmingCheepCheep
-      .word MoveSwimmingCheepCheep
-      .word MovePodoboo
-      .word MovePiranhaPlant
-      .word MoveJumpingEnemy
-      .word ProcMoveRedPTroopa
-      .word MoveFlyGreenPTroopa
-      .word MoveLakitu
-      .word MoveNormalEnemy
-      .word NoMoveCode            ;dummy
-      .word MoveFlyingCheepCheep
+      .dw MoveNormalEnemy      ;only objects $00-$14 use this table
+      .dw MoveNormalEnemy
+      .dw MoveNormalEnemy
+      .dw MoveNormalEnemy
+      .dw MoveUpsideDownPiranhaP
+      .dw ProcHammerBro
+      .dw MoveNormalEnemy
+      .dw MoveBloober
+      .dw MoveBulletBill
+      .dw NoMoveCode
+      .dw MoveSwimmingCheepCheep
+      .dw MoveSwimmingCheepCheep
+      .dw MovePodoboo
+      .dw MovePiranhaPlant
+      .dw MoveJumpingEnemy
+      .dw ProcMoveRedPTroopa
+      .dw MoveFlyGreenPTroopa
+      .dw MoveLakitu
+      .dw MoveNormalEnemy
+      .dw NoMoveCode            ;dummy
+      .dw MoveFlyingCheepCheep
 
 ;--------------------------------
 
@@ -8163,13 +8133,13 @@ LargePlatformSubroutines:
       sbc #$24
       jsr JumpEngine
 
-      .word BalancePlatform   ;table used by objects $24-$2a
-      .word YMovingPlatform
-      .word MoveLargeLiftPlat
-      .word MoveLargeLiftPlat
-      .word XMovingPlatform
-      .word DropPlatform
-      .word RightPlatform
+      .dw BalancePlatform   ;table used by objects $24-$2a
+      .dw YMovingPlatform
+      .dw MoveLargeLiftPlat
+      .dw MoveLargeLiftPlat
+      .dw XMovingPlatform
+      .dw DropPlatform
+      .dw RightPlatform
 
 ;-------------------------------------------------------------------------------------
 
@@ -8205,13 +8175,13 @@ PdbM: jmp MoveJ_EnemyVertically  ;branch to impose gravity on podoboo
 ;$00 - used in HammerBroJumpCode as bitmask
 
 HammerThrowTmrData:
-      .byte $30, $1c
+      .db $30, $1c
 
 XSpeedAdderData:
-      .byte $00, $e8, $00, $18
+      .db $00, $e8, $00, $18
 
 RevivedXSpeed:
-      .byte $08, $f8, $0c, $f4
+      .db $08, $f8, $0c, $f4
 
 ProcHammerBro:
        lda Enemy_State,x          ;check hammer bro's enemy state for d5 set
@@ -8239,7 +8209,7 @@ DecHT: dec HammerThrowingTimer,x  ;decrement timer
        jmp MoveHammerBroXDir      ;jump to move hammer bro
 
 HammerBroJumpLData:
-      .byte $20, $37
+      .db $20, $37
 
 HammerBroJumpCode:
        lda Enemy_State,x           ;get hammer bro's enemy state
@@ -8467,7 +8437,7 @@ XMRight: sty Enemy_MovingDir,x        ;store as moving direction
 
 
 BlooberBitmasks:
-      .byte %00111111, %00000011
+      .db %00111111, %00000011
 
 MoveBloober:
         lda Enemy_State,x
@@ -8593,8 +8563,8 @@ NotDefB: lda #$e8                   ;set bullet bill's horizontal speed
 ;$03 - used to hold enemy state
 
 SwimCCXMoveData:
-      .byte $40, $80
-      .byte $04, $04 ;residual data, not used
+      .db $40, $80
+      .db $04, $04 ;residual data, not used
 
 MoveSwimmingCheepCheep:
         lda Enemy_State,x         ;check cheep-cheep's enemy object state
@@ -8680,27 +8650,27 @@ ExSwCC: rts                       ;leave
 ;vertical adder is same + 8 bytes, two's compliment
 ;if greater than $08 for proper oscillation
 FirebarPosLookupTbl:
-      .byte $00, $01, $03, $04, $05, $06, $07, $07, $08
-      .byte $00, $03, $06, $09, $0b, $0d, $0e, $0f, $10
-      .byte $00, $04, $09, $0d, $10, $13, $16, $17, $18
-      .byte $00, $06, $0c, $12, $16, $1a, $1d, $1f, $20
-      .byte $00, $07, $0f, $16, $1c, $21, $25, $27, $28
-      .byte $00, $09, $12, $1b, $21, $27, $2c, $2f, $30
-      .byte $00, $0b, $15, $1f, $27, $2e, $33, $37, $38
-      .byte $00, $0c, $18, $24, $2d, $35, $3b, $3e, $40
-      .byte $00, $0e, $1b, $28, $32, $3b, $42, $46, $48
-      .byte $00, $0f, $1f, $2d, $38, $42, $4a, $4e, $50
-      .byte $00, $11, $22, $31, $3e, $49, $51, $56, $58
+      .db $00, $01, $03, $04, $05, $06, $07, $07, $08
+      .db $00, $03, $06, $09, $0b, $0d, $0e, $0f, $10
+      .db $00, $04, $09, $0d, $10, $13, $16, $17, $18
+      .db $00, $06, $0c, $12, $16, $1a, $1d, $1f, $20
+      .db $00, $07, $0f, $16, $1c, $21, $25, $27, $28
+      .db $00, $09, $12, $1b, $21, $27, $2c, $2f, $30
+      .db $00, $0b, $15, $1f, $27, $2e, $33, $37, $38
+      .db $00, $0c, $18, $24, $2d, $35, $3b, $3e, $40
+      .db $00, $0e, $1b, $28, $32, $3b, $42, $46, $48
+      .db $00, $0f, $1f, $2d, $38, $42, $4a, $4e, $50
+      .db $00, $11, $22, $31, $3e, $49, $51, $56, $58
 
 FirebarMirrorData:
-      .byte $01, $03, $02, $00
+      .db $01, $03, $02, $00
 
 FirebarTblOffsets:
-      .byte $00, $09, $12, $1b, $24, $2d
-      .byte $36, $3f, $48, $51, $5a, $63
+      .db $00, $09, $12, $1b, $24, $2d
+      .db $36, $3f, $48, $51, $5a, $63
 
 FirebarYPos:
-      .byte $0c, $18
+      .db $0c, $18
 
 ProcFirebar:
           jsr GetEnemyOffscreenBits   ;get offscreen information
@@ -8918,10 +8888,10 @@ GetVAdder: sta $02                    ;store result here
 ;--------------------------------
 
 PRandomSubtracter:
-      .byte $f8, $a0, $70, $bd, $00
+      .db $f8, $a0, $70, $bd, $00
 
 FlyCCBPriority:
-      .byte $20, $20, $20, $00, $00
+      .db $20, $20, $20, $00, $00
 
 MoveFlyingCheepCheep:
         lda Enemy_State,x          ;check cheep-cheep's enemy state
@@ -8967,7 +8937,7 @@ BPGet:  lda FlyCCBPriority,y       ;load bg priority data and store (this is ver
 ;$01-$03 - used to hold difference adjusters
 
 LakituDiffAdj:
-      .byte $15, $30, $40
+      .db $15, $30, $40
 
 MoveLakitu:
          lda Enemy_State,x          ;check lakitu's enemy state
@@ -9069,10 +9039,10 @@ ExMoveLak: rts                        ;leave!!!
 ;$04-$05 - used to store name table address in little endian order
 
 BridgeCollapseData:
-      .byte $1a ;axe
-      .byte $58 ;chain
-      .byte $98, $96, $94, $92, $90, $8e, $8c ;bridge
-      .byte $8a, $88, $86, $84, $82, $80
+      .db $1a ;axe
+      .db $58 ;chain
+      .db $98, $96, $94, $92, $90, $8e, $8c ;bridge
+      .db $8a, $88, $86, $84, $82, $80
 
 BridgeCollapse:
        ldx BowserFront_Offset    ;get enemy offset for bowser
@@ -9133,7 +9103,7 @@ NoBFall: jmp BowserGfxHandler      ;jump to code that draws bowser
 ;--------------------------------
 
 PRandomRange:
-      .byte $21, $41, $11, $31
+      .db $21, $41, $11, $31
 
 RunBowser:
       lda Enemy_State,x       ;if d5 in enemy state is not set
@@ -9314,7 +9284,7 @@ ProcessBowserHalf:
 ;$01 - used to hold sprite attribute data
 
 FlameTimerData:
-      .byte $bf, $40, $bf, $bf, $bf, $40, $40, $bf
+      .db $bf, $40, $bf, $bf, $bf, $40, $40, $bf
 
 SetFlameTimer:
       ldy BowserFlameTimerCtrl  ;load counter as offset
@@ -9445,13 +9415,13 @@ FireworksSoundScore:
 ;--------------------------------
 
 StarFlagYPosAdder:
-      .byte $00, $00, $08, $08
+      .db $00, $00, $08, $08
 
 StarFlagXPosAdder:
-      .byte $00, $08, $00, $08
+      .db $00, $08, $00, $08
 
 StarFlagTileData:
-      .byte $54, $55, $56, $57
+      .db $54, $55, $56, $57
 
 RunStarFlagObj:
       lda #$00                 ;initialize enemy frenzy buffer
@@ -9461,11 +9431,11 @@ RunStarFlagObj:
       bcs StarFlagExit
       jsr JumpEngine           ;otherwise jump to appropriate sub
       
-      .word StarFlagExit
-      .word GameTimerFireworks
-      .word AwardGameTimerPoints
-      .word RaiseFlagSetoffFWorks
-      .word DelayToAreaEnd
+      .dw StarFlagExit
+      .dw GameTimerFireworks
+      .dw AwardGameTimerPoints
+      .dw RaiseFlagSetoffFWorks
+      .dw DelayToAreaEnd
 
 GameTimerFireworks:
          lda GameTimerDisplay+2 ;check to see if last digit of timer matches
@@ -10061,7 +10031,7 @@ TooFar:   jsr EraseEnemyObject    ;erase object if necessary
 ExScrnBd: rts                     ;leave
 
 ;unused space
- .byte $ff
+ .db $ff
 
 ;-------------------------------------------------------------------------------------
 ;$01 - enemy buffer offset
@@ -10127,7 +10097,7 @@ ExitFBallEnemy:
       rts
 
 BowserIdentities:
-      .byte Goomba, GreenKoopa, BuzzyBeetle, Spiny, Lakitu, Bloober, HammerBro, Bowser, Bowser
+      .db Goomba, GreenKoopa, BuzzyBeetle, Spiny, Lakitu, Bloober, HammerBro, Bowser, Bowser
 
 HandleEnemyFBallCol:
       jsr RelativeEnemyPosition  ;get relative coordinate of enemy
@@ -10302,13 +10272,13 @@ NoPUp: rts
 ;--------------------------------
 
 ResidualXSpdData:
-      .byte $18, $e8
+      .db $18, $e8
 
 KickedShellXSpdData:
-      .byte $30, $d0
+      .db $30, $d0
 
 DemotedKoopaXSpdData:
-      .byte $08, $f8
+      .db $08, $f8
 
 PlayerEnemyCollision:
          lda FrameCounter            ;check counter for d0 set
@@ -10343,7 +10313,7 @@ EColl: lda StarInvincibleTimer       ;if star mario invincibility timer expired,
        jmp ShellOrBlockDefeat        ;hit with a shell, or from beneath
 
 KickedShellPtsData:
-      .byte $0a, $06, $04
+      .db $0a, $06, $04
 
 HandlePECollisions:
        lda Enemy_CollisionBits,x    ;check enemy collision bits for d0 set
@@ -10457,7 +10427,7 @@ KillPlayer:
       bne SetKRout         ;branch to set player's state and other things
 
 StompedEnemyPtsData:
-      .byte $02, $06, $05, $06
+      .db $02, $06, $05, $06
 
 EnemyStomped:
       lda Enemy_ID,x             ;check for spiny, branch to hurt player
@@ -10516,7 +10486,7 @@ ChkForDemoteKoopa:
       rts
 
 RevivalRateData:
-      .byte $10, $0b
+      .db $10, $0b
 
 HandleStompedShellE:
        lda #$04                   ;set defeated state for enemy
@@ -10572,10 +10542,10 @@ ExSFN: rts
 ;$01 - used to hold enemy offset for second enemy
 
 SetBitsMask:
-      .byte %10000000, %01000000, %00100000, %00010000, %00001000, %00000100, %00000010
+      .db %10000000, %01000000, %00100000, %00010000, %00001000, %00000100, %00000010
 
 ClearBitsMask:
-      .byte %01111111, %10111111, %11011111, %11101111, %11110111, %11111011, %11111101
+      .db %01111111, %10111111, %11011111, %11101111, %11110111, %11111011, %11111101
 
 EnemiesCollision:
         lda FrameCounter            ;check counter for d0 set
@@ -10868,14 +10838,14 @@ NoSideC: ldx ObjectOffset           ;return with enemy object buffer offset
 ;-------------------------------------------------------------------------------------
 
 PlayerPosSPlatData:
-      .byte $80, $00
+      .db $80, $00
 
 PositionPlayerOnS_Plat:
       tay                        ;use bounding box counter saved in collision flag
       lda Enemy_Y_Position,x     ;for offset
       clc                        ;add positioning data using offset to the vertical
       adc PlayerPosSPlatData-1,y ;coordinate
-      .byte $2c                    ;BIT instruction opcode
+      .db $2c                    ;BIT instruction opcode
 
 PositionPlayerOnVPlat:
          lda Enemy_Y_Position,x    ;get vertical coordinate
@@ -10928,7 +10898,7 @@ GetEnemyBoundBoxOfsArg:
 ;$eb - used to hold block buffer adder
 
 PlayerBGUpperExtent:
-      .byte $20, $10
+      .db $20, $10
 
 PlayerBGCollision:
           lda DisableCollisionDet   ;if collision detection disabled flag set,
@@ -11148,7 +11118,7 @@ StopPlayerMove:
 ExCSM: rts                       ;leave
       
 AreaChangeTimerData:
-      .byte $a0, $34
+      .db $a0, $34
 
 HandleCoinMetatile:
       jsr ErACM             ;do sub to erase coin metatile from block buffer
@@ -11174,13 +11144,13 @@ ErACM: ldy $02             ;load vertical high nybble offset for block buffer
 ;$06-$07 - block buffer address
 
 ClimbXPosAdder:
-      .byte $f9, $07
+      .db $f9, $07
 
 ClimbPLocAdder:
-      .byte $ff, $00
+      .db $ff, $00
 
 FlagpoleYPosData:
-      .byte $18, $22, $50, $68, $90
+      .db $18, $22, $50, $68, $90
 
 HandleClimbing:
       ldy $04            ;check low nybble of horizontal coordinate returned from
@@ -11393,7 +11363,7 @@ ExIPM: txa                       ;invert contents of X
 ;--------------------------------
 
 SolidMTileUpperExt:
-      .byte $10, $62, $88, $c5
+      .db $10, $62, $88, $c5
 
 CheckForSolidMTiles:
       jsr GetMTileAttrib        ;find appropriate offset based on metatile's 2 MSB
@@ -11401,7 +11371,7 @@ CheckForSolidMTiles:
       rts
 
 ClimbMTileUpperExt:
-      .byte $21, $6f, $8d, $c7
+      .db $21, $6f, $8d, $c7
 
 CheckForClimbMTiles:
       jsr GetMTileAttrib        ;find appropriate offset based on metatile's 2 MSB
@@ -11433,10 +11403,10 @@ ExEBG: rts            ;leave
 ;$06-$07 - address from block buffer routine
 
 EnemyBGCStateData:
-      .byte $01, $01, $02, $02, $02, $05
+      .db $01, $01, $02, $02, $02, $05
 
 EnemyBGCXSpdData:
-      .byte $10, $f0
+      .db $10, $f0
 
 EnemyToBGCollisionDet:
       lda Enemy_State,x        ;check enemy state for d6 set
@@ -11815,18 +11785,18 @@ InitFireballExplode:
 ;this data added to relative coordinates of sprite objects
 ;stored in order: left edge, top edge, right edge, bottom edge
 BoundBoxCtrlData:
-      .byte $02, $08, $0e, $20 
-      .byte $03, $14, $0d, $20
-      .byte $02, $14, $0e, $20
-      .byte $02, $09, $0e, $15
-      .byte $00, $00, $18, $06
-      .byte $00, $00, $20, $0d
-      .byte $00, $00, $30, $0d
-      .byte $00, $00, $08, $08
-      .byte $06, $04, $0a, $08
-      .byte $03, $0e, $0d, $16
-      .byte $00, $02, $10, $15
-      .byte $04, $04, $0c, $1c
+      .db $02, $08, $0e, $20 
+      .db $03, $14, $0d, $20
+      .db $02, $14, $0e, $20
+      .db $02, $09, $0e, $15
+      .db $00, $00, $18, $06
+      .db $00, $00, $20, $0d
+      .db $00, $00, $30, $0d
+      .db $00, $00, $08, $08
+      .db $06, $04, $0a, $08
+      .db $03, $0e, $0d, $16
+      .db $00, $02, $10, $15
+      .db $04, $04, $0c, $1c
 
 GetFireballBoundBox:
       txa         ;add seven bytes to offset
@@ -12076,26 +12046,26 @@ BBChk_E: jsr BlockBufferCollision  ;do collision detection subroutine for sprite
          rts
 
 BlockBufferAdderData:
-      .byte $00, $07, $0e
+      .db $00, $07, $0e
 
 BlockBuffer_X_Adder:
-      .byte $08, $03, $0c, $02, $02, $0d, $0d, $08
-      .byte $03, $0c, $02, $02, $0d, $0d, $08, $03
-      .byte $0c, $02, $02, $0d, $0d, $08, $00, $10
-      .byte $04, $14, $04, $04
+      .db $08, $03, $0c, $02, $02, $0d, $0d, $08
+      .db $03, $0c, $02, $02, $0d, $0d, $08, $03
+      .db $0c, $02, $02, $0d, $0d, $08, $00, $10
+      .db $04, $14, $04, $04
 
 BlockBuffer_Y_Adder:
-      .byte $04, $20, $20, $08, $18, $08, $18, $02
-      .byte $20, $20, $08, $18, $08, $18, $12, $20
-      .byte $20, $18, $18, $18, $18, $18, $14, $14
-      .byte $06, $06, $08, $10
+      .db $04, $20, $20, $08, $18, $08, $18, $02
+      .db $20, $20, $08, $18, $08, $18, $12, $20
+      .db $20, $18, $18, $18, $18, $18, $14, $14
+      .db $06, $06, $08, $10
 
 BlockBufferColli_Feet:
        iny            ;if branched here, increment to next set of adders
 
 BlockBufferColli_Head:
        lda #$00       ;set flag to return vertical coordinate
-       .byte $2c        ;BIT instruction opcode
+       .db $2c        ;BIT instruction opcode
 
 BlockBufferColli_Side:
        lda #$01       ;set flag to return horizontal coordinate
@@ -12143,14 +12113,14 @@ RetYC: and #%00001111              ;and mask out high nybble
 ;-------------------------------------------------------------------------------------
 
 ;unused bytes
-      .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff
+      .db $ff, $ff, $ff, $ff, $ff, $ff, $ff
 
 ;-------------------------------------------------------------------------------------
 ;$00 - offset to vine Y coordinate adder
 ;$02 - offset to sprite data
 
 VineYPosAdder:
-      .byte $00, $30
+      .db $00, $30
 
 DrawVine:
          sty $00                    ;save offset here
@@ -12227,25 +12197,25 @@ StkLp: sta Sprite_Data,y  ;store X or Y coordinate into OAM data
 ;-------------------------------------------------------------------------------------
 
 FirstSprXPos:
-      .byte $04, $00, $04, $00
+      .db $04, $00, $04, $00
 
 FirstSprYPos:
-      .byte $00, $04, $00, $04
+      .db $00, $04, $00, $04
 
 SecondSprXPos:
-      .byte $00, $08, $00, $08
+      .db $00, $08, $00, $08
 
 SecondSprYPos:
-      .byte $08, $00, $08, $00
+      .db $08, $00, $08, $00
 
 FirstSprTilenum:
-      .byte $80, $82, $81, $83
+      .db $80, $82, $81, $83
 
 SecondSprTilenum:
-      .byte $81, $83, $80, $82
+      .db $81, $83, $80, $82
 
 HammerSprAttrib:
-      .byte $03, $03, $c3, $c3
+      .db $03, $03, $c3, $c3
 
 DrawHammer:
             ldy Misc_SprDataOffset,x    ;get misc object OAM data offset
@@ -12301,12 +12271,12 @@ NoHOffscr:  rts                         ;leave
 ;$05 - used as X coordinate for floatey number
 
 FlagpoleScoreNumTiles:
-      .byte $f9, $50
-      .byte $f7, $50
-      .byte $fa, $fb
-      .byte $f8, $fb
-      .byte $f6, $fb
-      .byte $fd, $fe
+      .db $f9, $50
+      .db $f7, $50
+      .db $fa, $fb
+      .db $f8, $fb
+      .db $f6, $fb
+      .db $fd, $fe
 
 FlagpoleGfxHandler:
       ldy Enemy_SprDataOffset,x      ;get sprite data offset for flagpole flag
@@ -12485,7 +12455,7 @@ NotRsNum: lda Misc_Y_Position,x     ;get vertical coordinate
           jmp ExJCGfx               ;then jump to leave (why not an rts here instead?)
 
 JumpingCoinTiles:
-      .byte $60, $61, $62, $63
+      .db $60, $61, $62, $63
 
 JCoinGfxHandler:
          ldy Misc_SprDataOffset,x    ;get coin/floatey number's OAM data offset
@@ -12525,14 +12495,14 @@ ExJCGfx: rts                         ;leave
 
 ;tiles arranged in top left, right, bottom left, right order
 PowerUpGfxTable:
-      .byte $d8, $da, $db, $ff ;regular mushroom
-      .byte $d6, $d6, $d9, $d9 ;fire flower
-      .byte $8d, $8d, $e4, $e4 ;star
-      .byte $d8, $da, $db, $ff ;1-up mushroom
-      .byte $d8, $da, $db, $ff ;poison mushroom
+      .db $d8, $da, $db, $ff ;regular mushroom
+      .db $d6, $d6, $d9, $d9 ;fire flower
+      .db $8d, $8d, $e4, $e4 ;star
+      .db $d8, $da, $db, $ff ;1-up mushroom
+      .db $d8, $da, $db, $ff ;poison mushroom
 
 PowerUpAttributes:
-      .byte $02, $01, $02, $01, $03
+      .db $02, $01, $02, $01, $03
 
 DrawPowerUp:
       ldy Enemy_SprDataOffset+5  ;get power-up's sprite data offset
@@ -12606,67 +12576,67 @@ PUpOfs: jmp SprObjectOffscrChk     ;jump to check to see if power-up is offscree
 ;tiles arranged in top left, right, middle left, right, bottom left, right order
 ;most enemies use more than one frame, thus have more than 6 tiles
 EnemyGraphicsTable:
-      .byte $fc, $fc, $aa, $ab, $ac, $ad ;buzzy beetle
-      .byte $fc, $fc, $ae, $af, $b0, $b1
-      .byte $fc, $a5, $a6, $a7, $a8, $a9 ;koopa troopa
-      .byte $fc, $a0, $a1, $a2, $a3, $a4
-      .byte $69, $a5, $6a, $a7, $a8, $a9 ;koopa paratroopa
-      .byte $6b, $a0, $6c, $a2, $a3, $a4
-      .byte $fc, $fc, $96, $97, $98, $99 ;spiny
-      .byte $fc, $fc, $9a, $9b, $9c, $9d
-      .byte $fc, $fc, $8f, $8e, $8e, $8f ;spiny egg
-      .byte $fc, $fc, $95, $94, $94, $95
-      .byte $fc, $fc, $dc, $dc, $df, $df ;bloober
-      .byte $dc, $dc, $dd, $dd, $de, $de
-      .byte $fc, $fc, $b2, $b3, $b4, $b5 ;cheep-cheep
-      .byte $fc, $fc, $b6, $b3, $b7, $b5
-      .byte $fc, $fc, $70, $71, $72, $73 ;goomba
-      .byte $fc, $fc, $6e, $6e, $6f, $6f ;koopa shell (upside-down)
-      .byte $fc, $fc, $6d, $6d, $6f, $6f
-      .byte $fc, $fc, $6f, $6f, $6e, $6e ;koopa shell
-      .byte $fc, $fc, $6f, $6f, $6d, $6d
-      .byte $fc, $fc, $f4, $f4, $f5, $f5 ;buzzy beetle shell (upside-down)
-      .byte $fc, $fc, $f4, $f4, $f5, $f5
-      .byte $fc, $fc, $f5, $f5, $f4, $f4 ;buzzy beetle
-      .byte $fc, $fc, $f5, $f5, $f4, $f4
-      .byte $fc, $fc, $fc, $fc, $ef, $ef ;defeated goomba
-      .byte $b9, $b8, $bb, $ba, $bc, $bc ;lakitu
-      .byte $fc, $fc, $bd, $bd, $bc, $bc
-      .byte $76, $79, $77, $77, $78, $78 ;princess/door to princess's room
-      .byte $cd, $cd, $ce, $ce, $cf, $cf ;mushroom retainer
-      .byte $7d, $7c, $d1, $8c, $d3, $d2 ;hammer bro
-      .byte $7d, $7c, $89, $88, $8b, $8a
-      .byte $d5, $d4, $e3, $e2, $d3, $d2
-      .byte $d5, $d4, $e3, $e2, $8b, $8a
-      .byte $e5, $e5, $e6, $e6, $eb, $eb ;piranha plant
-      .byte $ec, $ec, $ed, $ed, $ee, $ee
-      .byte $fc, $fc, $d0, $d0, $d7, $d7 ;podoboo
-      .byte $bf, $be, $c1, $c0, $c2, $fc ;bowser front
-      .byte $c4, $c3, $c6, $c5, $c8, $c7 ;bowser rear
-      .byte $bf, $be, $ca, $c9, $c2, $fc ;front frame 2
-      .byte $c4, $c3, $c6, $c5, $cc, $cb ;rear frame 2
-      .byte $fc, $fc, $e8, $e7, $ea, $e9 ;bullet bill
-      .byte $f2, $f2, $f3, $f3, $f2, $f2 ;jumpspring
-      .byte $f1, $f1, $f1, $f1, $fc, $fc
-      .byte $f0, $f0, $fc, $fc, $fc, $fc
+      .db $fc, $fc, $aa, $ab, $ac, $ad ;buzzy beetle
+      .db $fc, $fc, $ae, $af, $b0, $b1
+      .db $fc, $a5, $a6, $a7, $a8, $a9 ;koopa troopa
+      .db $fc, $a0, $a1, $a2, $a3, $a4
+      .db $69, $a5, $6a, $a7, $a8, $a9 ;koopa paratroopa
+      .db $6b, $a0, $6c, $a2, $a3, $a4
+      .db $fc, $fc, $96, $97, $98, $99 ;spiny
+      .db $fc, $fc, $9a, $9b, $9c, $9d
+      .db $fc, $fc, $8f, $8e, $8e, $8f ;spiny egg
+      .db $fc, $fc, $95, $94, $94, $95
+      .db $fc, $fc, $dc, $dc, $df, $df ;bloober
+      .db $dc, $dc, $dd, $dd, $de, $de
+      .db $fc, $fc, $b2, $b3, $b4, $b5 ;cheep-cheep
+      .db $fc, $fc, $b6, $b3, $b7, $b5
+      .db $fc, $fc, $70, $71, $72, $73 ;goomba
+      .db $fc, $fc, $6e, $6e, $6f, $6f ;koopa shell (upside-down)
+      .db $fc, $fc, $6d, $6d, $6f, $6f
+      .db $fc, $fc, $6f, $6f, $6e, $6e ;koopa shell
+      .db $fc, $fc, $6f, $6f, $6d, $6d
+      .db $fc, $fc, $f4, $f4, $f5, $f5 ;buzzy beetle shell (upside-down)
+      .db $fc, $fc, $f4, $f4, $f5, $f5
+      .db $fc, $fc, $f5, $f5, $f4, $f4 ;buzzy beetle
+      .db $fc, $fc, $f5, $f5, $f4, $f4
+      .db $fc, $fc, $fc, $fc, $ef, $ef ;defeated goomba
+      .db $b9, $b8, $bb, $ba, $bc, $bc ;lakitu
+      .db $fc, $fc, $bd, $bd, $bc, $bc
+      .db $76, $79, $77, $77, $78, $78 ;princess/door to princess's room
+      .db $cd, $cd, $ce, $ce, $cf, $cf ;mushroom retainer
+      .db $7d, $7c, $d1, $8c, $d3, $d2 ;hammer bro
+      .db $7d, $7c, $89, $88, $8b, $8a
+      .db $d5, $d4, $e3, $e2, $d3, $d2
+      .db $d5, $d4, $e3, $e2, $8b, $8a
+      .db $e5, $e5, $e6, $e6, $eb, $eb ;piranha plant
+      .db $ec, $ec, $ed, $ed, $ee, $ee
+      .db $fc, $fc, $d0, $d0, $d7, $d7 ;podoboo
+      .db $bf, $be, $c1, $c0, $c2, $fc ;bowser front
+      .db $c4, $c3, $c6, $c5, $c8, $c7 ;bowser rear
+      .db $bf, $be, $ca, $c9, $c2, $fc ;front frame 2
+      .db $c4, $c3, $c6, $c5, $cc, $cb ;rear frame 2
+      .db $fc, $fc, $e8, $e7, $ea, $e9 ;bullet bill
+      .db $f2, $f2, $f3, $f3, $f2, $f2 ;jumpspring
+      .db $f1, $f1, $f1, $f1, $fc, $fc
+      .db $f0, $f0, $fc, $fc, $fc, $fc
 
 EnemyGfxTableOffsets:
-      .byte $0c, $0c, $00, $0c, $c0, $a8, $54, $3c
-      .byte $ea, $18, $48, $48, $cc, $c0, $18, $18
-      .byte $18, $90, $24, $ff, $48, $9c, $d2, $d8
-      .byte $f0, $f6, $fc
+      .db $0c, $0c, $00, $0c, $c0, $a8, $54, $3c
+      .db $ea, $18, $48, $48, $cc, $c0, $18, $18
+      .db $18, $90, $24, $ff, $48, $9c, $d2, $d8
+      .db $f0, $f6, $fc
 
 EnemyAttributeData:
-      .byte $01, $02, $03, $02, $22, $01, $03, $03
-      .byte $03, $01, $01, $02, $02, $21, $01, $02
-      .byte $01, $01, $02, $ff, $02, $02, $01, $01
-      .byte $02, $02, $02
+      .db $01, $02, $03, $02, $22, $01, $03, $03
+      .db $03, $01, $01, $02, $02, $21, $01, $02
+      .db $01, $01, $02, $ff, $02, $02, $01, $01
+      .db $02, $02, $02
 
 EnemyAnimTimingBMask:
-      .byte $08, $18
+      .db $08, $18
 
 JumpspringFrameOffsets:
-      .byte $18, $19, $1a, $19, $18
+      .db $18, $19, $1a, $19, $18
 
 EnemyGfxHandler:
        lda #$02
@@ -13170,7 +13140,7 @@ MoveESprColOffscreen:
 ;$05 - relative X position
 
 DefaultBlockObjTiles:
-      .byte $85, $85, $86, $86             ;brick w/ line (these are sprite tiles, not BG!)
+      .db $85, $85, $86, $86             ;brick w/ line (these are sprite tiles, not BG!)
 
 DrawBlock:
            lda Block_Rel_YPos            ;get relative vertical coordinate of block object
@@ -13331,7 +13301,7 @@ FireA: sta Sprite_Attributes,y  ;store attribute byte and leave
 ;-------------------------------------------------------------------------------------
 
 ExplosionTiles:
-      .byte $68, $67, $66
+      .db $68, $67, $66
 
 DrawExplosion_Fireball:
       ldy Alt_SprDataOffset,x  ;get OAM data offset of alternate sort for fireball's explosion
@@ -13469,46 +13439,46 @@ ExDBub: rts                         ;leave
 ;$00 - used to store player's vertical offscreen bits
 
 PlayerGfxTblOffsets:
-      .byte $20, $28, $c8, $18, $00, $40, $50, $58
-      .byte $80, $88, $b8, $78, $60, $a0, $b0, $b8
+      .db $20, $28, $c8, $18, $00, $40, $50, $58
+      .db $80, $88, $b8, $78, $60, $a0, $b0, $b8
 
 ;tiles arranged in order, 2 tiles per row, top to bottom
 
 PlayerGraphicsTable:
 ;big player table
-      .byte $00, $01, $02, $03, $04, $05, $06, $07 ;walking frame 1
-      .byte $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ;        frame 2
-      .byte $10, $11, $12, $13, $14, $15, $16, $17 ;        frame 3
-      .byte $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ;skidding
-      .byte $20, $21, $22, $23, $24, $25, $26, $27 ;jumping
-      .byte $08, $09, $28, $29, $2a, $2b, $2c, $2d ;swimming frame 1
-      .byte $08, $09, $0a, $0b, $0c, $30, $2c, $2d ;         frame 2
-      .byte $08, $09, $0a, $0b, $2e, $2f, $2c, $2d ;         frame 3
-      .byte $08, $09, $28, $29, $2a, $2b, $5c, $5d ;climbing frame 1
-      .byte $08, $09, $0a, $0b, $0c, $0d, $5e, $5f ;         frame 2
-      .byte $fc, $fc, $08, $09, $58, $59, $5a, $5a ;crouching
-      .byte $08, $09, $28, $29, $2a, $2b, $0e, $0f ;fireball throwing
+      .db $00, $01, $02, $03, $04, $05, $06, $07 ;walking frame 1
+      .db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ;        frame 2
+      .db $10, $11, $12, $13, $14, $15, $16, $17 ;        frame 3
+      .db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ;skidding
+      .db $20, $21, $22, $23, $24, $25, $26, $27 ;jumping
+      .db $08, $09, $28, $29, $2a, $2b, $2c, $2d ;swimming frame 1
+      .db $08, $09, $0a, $0b, $0c, $30, $2c, $2d ;         frame 2
+      .db $08, $09, $0a, $0b, $2e, $2f, $2c, $2d ;         frame 3
+      .db $08, $09, $28, $29, $2a, $2b, $5c, $5d ;climbing frame 1
+      .db $08, $09, $0a, $0b, $0c, $0d, $5e, $5f ;         frame 2
+      .db $fc, $fc, $08, $09, $58, $59, $5a, $5a ;crouching
+      .db $08, $09, $28, $29, $2a, $2b, $0e, $0f ;fireball throwing
 
 ;small player table
-      .byte $fc, $fc, $fc, $fc, $32, $33, $34, $35 ;walking frame 1
-      .byte $fc, $fc, $fc, $fc, $36, $37, $38, $39 ;        frame 2
-      .byte $fc, $fc, $fc, $fc, $3a, $37, $3b, $3c ;        frame 3
-      .byte $fc, $fc, $fc, $fc, $3d, $3e, $3f, $40 ;skidding
-      .byte $fc, $fc, $fc, $fc, $32, $41, $42, $43 ;jumping
-      .byte $fc, $fc, $fc, $fc, $32, $33, $44, $45 ;swimming frame 1
-      .byte $fc, $fc, $fc, $fc, $32, $33, $44, $47 ;         frame 2
-      .byte $fc, $fc, $fc, $fc, $32, $33, $48, $49 ;         frame 3
-      .byte $fc, $fc, $fc, $fc, $32, $33, $90, $91 ;climbing frame 1
-      .byte $fc, $fc, $fc, $fc, $3a, $37, $92, $93 ;         frame 2
-      .byte $fc, $fc, $fc, $fc, $9e, $9e, $9f, $9f ;killed
+      .db $fc, $fc, $fc, $fc, $32, $33, $34, $35 ;walking frame 1
+      .db $fc, $fc, $fc, $fc, $36, $37, $38, $39 ;        frame 2
+      .db $fc, $fc, $fc, $fc, $3a, $37, $3b, $3c ;        frame 3
+      .db $fc, $fc, $fc, $fc, $3d, $3e, $3f, $40 ;skidding
+      .db $fc, $fc, $fc, $fc, $32, $41, $42, $43 ;jumping
+      .db $fc, $fc, $fc, $fc, $32, $33, $44, $45 ;swimming frame 1
+      .db $fc, $fc, $fc, $fc, $32, $33, $44, $47 ;         frame 2
+      .db $fc, $fc, $fc, $fc, $32, $33, $48, $49 ;         frame 3
+      .db $fc, $fc, $fc, $fc, $32, $33, $90, $91 ;climbing frame 1
+      .db $fc, $fc, $fc, $fc, $3a, $37, $92, $93 ;         frame 2
+      .db $fc, $fc, $fc, $fc, $9e, $9e, $9f, $9f ;killed
 
 ;used by both player sizes
-      .byte $fc, $fc, $fc, $fc, $3a, $37, $4f, $4f ;small player standing
-      .byte $fc, $fc, $00, $01, $4c, $4d, $4e, $4e ;intermediate grow frame
-      .byte $00, $01, $4c, $4d, $4a, $4a, $4b, $4b ;big player standing
+      .db $fc, $fc, $fc, $fc, $3a, $37, $4f, $4f ;small player standing
+      .db $fc, $fc, $00, $01, $4c, $4d, $4e, $4e ;intermediate grow frame
+      .db $00, $01, $4c, $4d, $4a, $4a, $4b, $4b ;big player standing
 
 SwimKickTileNum:
-      .byte $31, $46
+      .db $31, $46
 
 PlayerGfxHandler:
         lda InjuryTimer             ;if player's injured invincibility timer
@@ -13610,7 +13580,7 @@ NPROffscr: tya
            rts                           ;then we are done!
 
 IntermediatePlayerData:
-        .byte $58, $01, $00, $60, $ff, $04
+        .db $58, $01, $00, $60, $ff, $04
 
 DrawPlayer_Intermediate:
           ldx #$05                       ;store data into zero page memory
@@ -13768,8 +13738,8 @@ GetGfxOffsetAdder:
 SzOfs:  rts             ;go back
 
 ChangeSizeOffsetAdder:
-        .byte $00, $01, $00, $01, $00, $01, $02, $00, $01, $02
-        .byte $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
+        .db $00, $01, $00, $01, $00, $01, $02, $00, $01, $02
+        .db $02, $00, $02, $00, $02, $00, $02, $00, $02, $00
 
 HandleChangeSize:
          ldy PlayerAnimCtrl           ;get animation frame control
@@ -13923,7 +13893,7 @@ GetMiscOffscreenBits:
         jmp GetOffScreenBitsSet  ;and get offscreen information about misc object
 
 ObjOffsetData:
-        .byte $07, $16, $0d
+        .db $07, $16, $0d
 
 GetProperObjOffset:
         txa                  ;move offset to A
@@ -13981,11 +13951,11 @@ RunOffscrBitsSubs:
 ;$07 - used to store difference between coordinates of object and screen edges
 
 XOffscreenBitsData:
-        .byte $7f, $3f, $1f, $0f, $07, $03, $01, $00
-        .byte $80, $c0, $e0, $f0, $f8, $fc, $fe, $ff
+        .db $7f, $3f, $1f, $0f, $07, $03, $01, $00
+        .db $80, $c0, $e0, $f0, $f8, $fc, $fe, $ff
 
 DefaultXOnscreenOfs:
-        .byte $07, $0f, $07
+        .db $07, $0f, $07
 
 GetXOffscreenBits:
           stx $04                     ;save position in buffer to here
@@ -14017,15 +13987,15 @@ ExXOfsBS: rts
 ;--------------------------------
 
 YOffscreenBitsData:
-        .byte $0f, $07, $03, $01
-        .byte $00, $08, $0c, $0e
-        .byte $00
+        .db $0f, $07, $03, $01
+        .db $00, $08, $0c, $0e
+        .db $00
 
 DefaultYOnscreenOfs:
-        .byte $04, $00, $04
+        .db $04, $00, $04
 
 HighPosUnitData:
-        .byte $00, $ff
+        .db $00, $ff
 
 GetYOffscreenBits:
           stx $04                      ;save position in buffer to here
@@ -14119,7 +14089,7 @@ SetHFAt: ora $04                    ;add other OAM attributes if necessary
 ;-------------------------------------------------------------------------------------
  
 ;unused byte
- .byte $ff
+ .db $ff
 
 ;-------------------------------------------------------------------------------------
 
@@ -14127,22 +14097,22 @@ AttractModeSubs:
       lda OperMode_Task
       jsr JumpEngine
 
-      .word AttractModeDiskRoutines
-      .word InitializeGame
-      .word ScreenRoutines
-      .word PrimaryGameSetup
-      .word GameMenuRoutine
-      .word HardWorldsCheckpoint
+      .dw AttractModeDiskRoutines
+      .dw InitializeGame
+      .dw ScreenRoutines
+      .dw PrimaryGameSetup
+      .dw GameMenuRoutine
+      .dw HardWorldsCheckpoint
 
 HardWorldsCheckpoint:
       lda DiskIOTask
       jsr JumpEngine
 
-      .word DiskScreen
-      .word LoadHardWorlds
-      .word WaitForEject
-      .word WaitForReinsert
-      .word ResetDiskVars
+      .dw DiskScreen
+      .dw LoadHardWorlds
+      .dw WaitForEject
+      .dw WaitForReinsert
+      .dw ResetDiskVars
 
 LoadHardWorlds:
          lda HardWorldFlag         ;if this is not set, skip this
@@ -14171,11 +14141,11 @@ AttractModeDiskRoutines:
       lda DiskIOTask
       jsr JumpEngine
 
-      .word DiskScreen
-      .word LoadWorlds1Thru4
-      .word WaitForEject
-      .word WaitForReinsert
-      .word ResetDiskVars
+      .dw DiskScreen
+      .dw LoadWorlds1Thru4
+      .dw WaitForEject
+      .dw WaitForReinsert
+      .dw ResetDiskVars
 
 LoadWorlds1Thru4:
            lda NotColdFlag       ;if not set, just cold booted, thus no need to check world info
@@ -14212,11 +14182,11 @@ GameModeDiskRoutines:
       lda DiskIOTask
       jsr JumpEngine
 
-      .word DiskScreen
-      .word LoadWorlds5Thru8
-      .word WaitForEject
-      .word WaitForReinsert
-      .word ResetDiskVars
+      .dw DiskScreen
+      .dw LoadWorlds5Thru8
+      .dw WaitForEject
+      .dw WaitForReinsert
+      .dw ResetDiskVars
 
 LoadWorlds5Thru8:
       lda WorldNumber       ;if in worlds 1-4 or A-D
@@ -14252,11 +14222,11 @@ VictoryModeDiskRoutines:
       lda DiskIOTask
       jsr JumpEngine
 
-      .word DiskScreen
-      .word LoadEnding
-      .word WaitForEject
-      .word WaitForReinsert
-      .word ResetDiskVars
+      .dw DiskScreen
+      .dw LoadEnding
+      .dw WaitForEject
+      .dw WaitForReinsert
+      .dw ResetDiskVars
 
 LoadEnding:
         lda #$02                 ;set filelist number to load SM2DATA3, SM2CHAR2 and SM2SAVE
@@ -14288,27 +14258,27 @@ CheckFileCount:
 ;disk ID string copy used in FDS BIOS load routine
 ;to compare to original at the disk info block
 DiskIDString:
-      .byte $01, $53, $4d, $42, $20
-      .byte $00, $00, $00, $00, $00
+      .db $01, $53, $4d, $42, $20
+      .db $00, $00, $00, $00, $00
 
 FileListAddrLow:
-      .byte <World14List, <World58List, <EndingList, <WorldADList
+      .db <World14List, <World58List, <EndingList, <WorldADList
 FileListAddrHigh:
-      .byte >World14List, >World58List, >EndingList, >WorldADList
+      .db >World14List, >World58List, >EndingList, >WorldADList
 
 ;file lists used by FDS bios to load files
 ;value $ff is end terminator
 World14List:
-      .byte $01, $05, $0f, $ff
+      .db $01, $05, $0f, $ff
 World58List:
-      .byte $20, $ff
+      .db $20, $ff
 EndingList:
-      .byte $10, $30, $0f, $ff
+      .db $10, $30, $0f, $ff
 WorldADList:
-      .byte $40, $ff
+      .db $40, $ff
 
 FileCount:
-      .byte $03, $01, $03, $01
+      .db $03, $01, $03, $01
 
 LoadFiles:
       ldx FileListNumber      ;get address to file list
@@ -14319,16 +14289,16 @@ LoadFiles:
       jsr FDSBIOS_LOADFILES   ;now load the files
 
 ;used by FDS BIOS routine
-             .word DiskIDString
-ListPointer: .word World14List  ;overwritten in RAM
+             .dw DiskIDString
+ListPointer: .dw World14List  ;overwritten in RAM
 
 ;execution continues here
       rts
 
 DiskScreenPalette:
-  .byte $3f, $00, $04
-  .byte $0f, $30, $30, $0f
-  .byte $00
+  .db $3f, $00, $04
+  .db $0f, $30, $30, $0f
+  .db $00
 
 DiskScreen:
       lda #$00
@@ -14365,26 +14335,26 @@ ResetDiskVars:
       rts
 
 DiskErrorMainMsg:
-  .byte $21, $e6, $08
-  .byte $24, $24, $24, $24, $24, $24, $24, $24
-  .byte $21, $f4, $06
-  .byte $0e, $1b, $1b, $24, $00, $01
-  .byte $00
+  .db $21, $e6, $08
+  .db $24, $24, $24, $24, $24, $24, $24, $24
+  .db $21, $f4, $06
+  .db $0e, $1b, $1b, $24, $00, $01
+  .db $00
 
 ;disk error message offsets
 ;note these actually point to the last byte
 DiskErrorMsgOffsets:
-  .byte $07, $0f, $17, $1f
+  .db $07, $0f, $17, $1f
 
 DiskErrorMsgs:
 ;"        "
-  .byte $24, $24, $24, $24, $24, $24, $24, $24
+  .db $24, $24, $24, $24, $24, $24, $24, $24
 ;"DISK SET"
-  .byte $0d, $12, $1c, $14, $24, $1c, $0e, $1d
+  .db $0d, $12, $1c, $14, $24, $1c, $0e, $1d
 ;"BATTERY "
-  .byte $0b, $0a, $1d, $1d, $0e, $1b, $22, $24
+  .db $0b, $0a, $1d, $1d, $0e, $1b, $22, $24
 ;"A B SIDE"
-  .byte $0a, $24, $0b, $24, $1c, $12, $0d, $0e
+  .db $0a, $24, $0b, $24, $1c, $12, $0d, $0e
 
 DiskErrorHandler:
   pha
@@ -14423,10 +14393,10 @@ LELoop:
   jmp InitializeNameTables
 
 GameOverCursorData:
-  .byte $5b, $02, $48
+  .db $5b, $02, $48
 
 GameOverCursorY:
-  .byte $77, $8f
+  .db $77, $8f
 
 GameOverMenu:
             lda SavedJoypadBits          ;if player pressed the start button
@@ -14477,15 +14447,15 @@ ISCont: sta ScoreAndCoinDisplay,y   ;reset score
 ;jump, fall and friction physics data used with mario and luigi
 ;note luigi's higher jump, but with lesser friction
 JumpFrictionData:
-  .byte $20, $20, $1e, $28, $28, $0d, $04
-  .byte $70, $70, $60, $90, $90, $0a, $09
+  .db $20, $20, $1e, $28, $28, $0d, $04
+  .db $70, $70, $60, $90, $90, $0a, $09
 
-  .byte $e4, $98, $d0
+  .db $e4, $98, $d0
 
-  .byte $18, $18, $18, $22, $22, $0d, $04
-  .byte $42, $42, $3e, $5d, $5d, $0a, $09
+  .db $18, $18, $18, $22, $22, $0d, $04
+  .db $42, $42, $3e, $5d, $5d, $0a, $09
 
-  .byte $b4, $68, $a0
+  .db $b4, $68, $a0
 
 LoadPhysicsData:
   ldx #$60               ;use luigi's offsets and RTS opcode
@@ -14507,7 +14477,7 @@ MPhyLoop:
   rts
 
 ;unused bytes
-  .byte $ff, $ff
+  .db $ff, $ff
 
 ;-------------------------------------------------------------------------------------
 
@@ -14515,22 +14485,22 @@ MPhyLoop:
 E_GroundArea10:
 E_GroundArea21:
 E_GroundArea28:
-  .byte $ff
+  .db $ff
 
 ;exit area used in levels 1-2, 3-2, 5-2, 6-2, A-2 and B-2
 L_GroundArea28:
-  .byte $90, $31, $39, $f1, $bf, $37, $33, $e7, $a3, $03, $a7, $03, $cd, $41, $0f, $a6
-  .byte $ed, $47, $fd
+  .db $90, $31, $39, $f1, $bf, $37, $33, $e7, $a3, $03, $a7, $03, $cd, $41, $0f, $a6
+  .db $ed, $47, $fd
 
 ;pipe intro area
 L_GroundArea10:
-  .byte $38, $11, $0f, $26, $ad, $40, $3d, $c7, $fd
+  .db $38, $11, $0f, $26, $ad, $40, $3d, $c7, $fd
 
 ;warp zone area used in levels 1-2 and 5-2
 L_GroundArea21:
-  .byte $10, $00, $0b, $13, $5b, $14, $6a, $42, $c7, $12, $c6, $42, $1b, $94, $2a, $42
-  .byte $53, $13, $62, $41, $97, $17, $a6, $45, $6e, $81, $8f, $37, $02, $e8, $12, $3a
-  .byte $68, $7a, $de, $0f, $6d, $c5, $fd
+  .db $10, $00, $0b, $13, $5b, $14, $6a, $42, $c7, $12, $c6, $42, $1b, $94, $2a, $42
+  .db $53, $13, $62, $41, $97, $17, $a6, $45, $6e, $81, $8f, $37, $02, $e8, $12, $3a
+  .db $68, $7a, $de, $0f, $6d, $c5, $fd
 
 LoadAreaPointer:
              jsr FindAreaPointer  ;find it and store it here
@@ -14637,56 +14607,56 @@ StoreStyle: sta AreaStyle
 ;-------------------------------------------------------------------------------------
 
 WorldAddrOffsets:
-  .byte World1Areas-AreaAddrOffsets, World2Areas-AreaAddrOffsets
-  .byte World3Areas-AreaAddrOffsets, World4Areas-AreaAddrOffsets
-  .byte World5Areas-AreaAddrOffsets, World6Areas-AreaAddrOffsets
-  .byte World7Areas-AreaAddrOffsets, World8Areas-AreaAddrOffsets
-  .byte World9Areas-AreaAddrOffsets
+  .db World1Areas-AreaAddrOffsets, World2Areas-AreaAddrOffsets
+  .db World3Areas-AreaAddrOffsets, World4Areas-AreaAddrOffsets
+  .db World5Areas-AreaAddrOffsets, World6Areas-AreaAddrOffsets
+  .db World7Areas-AreaAddrOffsets, World8Areas-AreaAddrOffsets
+  .db World9Areas-AreaAddrOffsets
 
 AreaAddrOffsets:
-World1Areas: .byte $20, $29, $40, $21, $60
-World2Areas: .byte $22, $23, $24, $61
-World3Areas: .byte $25, $29, $00, $26, $62
-World4Areas: .byte $27, $28, $2a, $63
-World5Areas: .byte $2b, $29, $43, $2c, $64
-World6Areas: .byte $2d, $29, $01, $2e, $65
-World7Areas: .byte $2f, $30, $31, $66
-World8Areas: .byte $32, $35, $36, $67
-World9Areas: .byte $38, $06, $68, $07
+World1Areas: .db $20, $29, $40, $21, $60
+World2Areas: .db $22, $23, $24, $61
+World3Areas: .db $25, $29, $00, $26, $62
+World4Areas: .db $27, $28, $2a, $63
+World5Areas: .db $2b, $29, $43, $2c, $64
+World6Areas: .db $2d, $29, $01, $2e, $65
+World7Areas: .db $2f, $30, $31, $66
+World8Areas: .db $32, $35, $36, $67
+World9Areas: .db $38, $06, $68, $07
 
 AreaDataOfsLoopback:
-  .byte $0c, $0c, $42, $42, $10, $10, $30, $30, $06, $0c, $54, $06
+  .db $0c, $0c, $42, $42, $10, $10, $30, $30, $06, $0c, $54, $06
 
 EnemyAddrHOffsets:
-  .byte $2c, $0a, $27, $00
+  .db $2c, $0a, $27, $00
 
 EnemyDataAddrs:
-  .word E_CastleArea1, E_CastleArea2, E_CastleArea3, E_CastleArea4, E_CastleArea5, E_CastleArea6
-  .word E_CastleArea7, E_CastleArea8, E_CastleArea9, E_CastleArea10, E_GroundArea1, E_GroundArea2
-  .word E_GroundArea3, E_GroundArea4, E_GroundArea5, E_GroundArea6, E_GroundArea7, E_GroundArea8
-  .word E_GroundArea9, E_GroundArea10, E_GroundArea11, E_GroundArea12, E_GroundArea13, E_GroundArea14
-  .word E_GroundArea15, E_GroundArea16, E_GroundArea17, E_GroundArea18, E_GroundArea19, E_GroundArea20
-  .word E_GroundArea21, E_GroundArea22, E_GroundArea23, E_GroundArea24, E_GroundArea25, E_GroundArea26
-  .word E_GroundArea27, E_GroundArea28, E_GroundArea29, E_UndergroundArea1, E_UndergroundArea2
-  .word E_UndergroundArea3, E_UndergroundArea4, E_UndergroundArea5, E_WaterArea1, E_WaterArea2
-  .word E_WaterArea3, E_WaterArea4, E_WaterArea5, E_WaterArea6, E_WaterArea7, E_WaterArea8
+  .dw E_CastleArea1, E_CastleArea2, E_CastleArea3, E_CastleArea4, E_CastleArea5, E_CastleArea6
+  .dw E_CastleArea7, E_CastleArea8, E_CastleArea9, E_CastleArea10, E_GroundArea1, E_GroundArea2
+  .dw E_GroundArea3, E_GroundArea4, E_GroundArea5, E_GroundArea6, E_GroundArea7, E_GroundArea8
+  .dw E_GroundArea9, E_GroundArea10, E_GroundArea11, E_GroundArea12, E_GroundArea13, E_GroundArea14
+  .dw E_GroundArea15, E_GroundArea16, E_GroundArea17, E_GroundArea18, E_GroundArea19, E_GroundArea20
+  .dw E_GroundArea21, E_GroundArea22, E_GroundArea23, E_GroundArea24, E_GroundArea25, E_GroundArea26
+  .dw E_GroundArea27, E_GroundArea28, E_GroundArea29, E_UndergroundArea1, E_UndergroundArea2
+  .dw E_UndergroundArea3, E_UndergroundArea4, E_UndergroundArea5, E_WaterArea1, E_WaterArea2
+  .dw E_WaterArea3, E_WaterArea4, E_WaterArea5, E_WaterArea6, E_WaterArea7, E_WaterArea8
 
 AreaDataHOffsets:
-  .byte $2c, $0a, $27, $00
+  .db $2c, $0a, $27, $00
 
 AreaDataAddrs:
-  .word L_CastleArea1, L_CastleArea2, L_CastleArea3, L_CastleArea4, L_CastleArea5, L_CastleArea6
-  .word L_CastleArea7, L_CastleArea8, L_CastleArea9, L_CastleArea10, L_GroundArea1, L_GroundArea2
-  .word L_GroundArea3, L_GroundArea4, L_GroundArea5, L_GroundArea6, L_GroundArea7, L_GroundArea8
-  .word L_GroundArea9, L_GroundArea10, L_GroundArea11, L_GroundArea12, L_GroundArea13, L_GroundArea14
-  .word L_GroundArea15, L_GroundArea16, L_GroundArea17, L_GroundArea18, L_GroundArea19, L_GroundArea20
-  .word L_GroundArea21, L_GroundArea22, L_GroundArea23, L_GroundArea24, L_GroundArea25, L_GroundArea26
-  .word L_GroundArea27, L_GroundArea28, L_GroundArea29, L_UndergroundArea1, L_UndergroundArea2
-  .word L_UndergroundArea3, L_UndergroundArea4, L_UndergroundArea5, L_WaterArea1, L_WaterArea2
-  .word L_WaterArea3, L_WaterArea4, L_WaterArea5, L_WaterArea6, L_WaterArea7, L_WaterArea8
+  .dw L_CastleArea1, L_CastleArea2, L_CastleArea3, L_CastleArea4, L_CastleArea5, L_CastleArea6
+  .dw L_CastleArea7, L_CastleArea8, L_CastleArea9, L_CastleArea10, L_GroundArea1, L_GroundArea2
+  .dw L_GroundArea3, L_GroundArea4, L_GroundArea5, L_GroundArea6, L_GroundArea7, L_GroundArea8
+  .dw L_GroundArea9, L_GroundArea10, L_GroundArea11, L_GroundArea12, L_GroundArea13, L_GroundArea14
+  .dw L_GroundArea15, L_GroundArea16, L_GroundArea17, L_GroundArea18, L_GroundArea19, L_GroundArea20
+  .dw L_GroundArea21, L_GroundArea22, L_GroundArea23, L_GroundArea24, L_GroundArea25, L_GroundArea26
+  .dw L_GroundArea27, L_GroundArea28, L_GroundArea29, L_UndergroundArea1, L_UndergroundArea2
+  .dw L_UndergroundArea3, L_UndergroundArea4, L_UndergroundArea5, L_WaterArea1, L_WaterArea2
+  .dw L_WaterArea3, L_WaterArea4, L_WaterArea5, L_WaterArea6, L_WaterArea7, L_WaterArea8
 
 ;some unused bytes
-  .byte $ff, $ff
+  .db $ff, $ff
 
 GameMenuRoutine:
               lda SavedJoypadBits         ;check to see if the player pressed start
@@ -14760,12 +14730,12 @@ InitScore:    sta ScoreAndCoinDisplay,x   ;clear player score and coin display
 ExitMenu:     rts
 
 MenuCursorTemplate:
-  .byte $22, $4b, $83
-  .byte $ce, $24, $24
-  .byte $00
+  .db $22, $4b, $83
+  .db $ce, $24, $24
+  .db $00
 
 MenuCursorTiles:
-  .byte $ce, $24, $ce
+  .db $ce, $24, $ce
 
 DrawMenuCursor:
   lda #$1c                 ;set up VRAM address controller to draw cursor
@@ -14780,14 +14750,14 @@ SetupMenuCursor:
   rts
 
 DemoActionData:
-  .byte $01, $81, $01, $81, $01, $81, $02, $01
-  .byte $81, $00, $81, $00, $80, $01, $81, $01
-  .byte $00
+  .db $01, $81, $01, $81, $01, $81, $02, $01
+  .db $81, $00, $81, $00, $80, $01, $81, $01
+  .db $00
 
 DemoTimingData:
-  .byte $b0, $10, $10, $10, $28, $10, $28, $06
-  .byte $10, $10, $0c, $80, $10, $28, $08, $90
-  .byte $ff, $00
+  .db $b0, $10, $10, $10, $28, $10, $28, $06
+  .db $10, $10, $0c, $80, $10, $28, $08, $90
+  .db $ff, $00
 
 DemoEngine:
           ldx DemoAction         ;load current demo action
@@ -14869,15 +14839,15 @@ PrimaryGameSetup:
 ;-------------------------------------------------------------------------------------
 
 PlayerNameData:
-  .byte $16, $0a, $1b, $12, $18 ;"MARIO"
-  .byte $15, $1e, $12, $10, $12 ;"LUIGI"
+  .db $16, $0a, $1b, $12, $18 ;"MARIO"
+  .db $15, $1e, $12, $10, $12 ;"LUIGI"
 
 PlayerPaletteData:
-  .byte $22, $16, $27, $18
-  .byte $22, $30, $27, $19
+  .db $22, $16, $27, $18
+  .db $22, $30, $27, $19
 
 PlayerNameOffsets:
-  .byte $04, $09                       ;note that offsets point to last byte
+  .db $04, $09                       ;note that offsets point to last byte
 
 PatchPlayerNamePal:
            ldy SelectedPlayer        ;get offset based on selected player
@@ -14908,48 +14878,48 @@ PalPatch:  lda PlayerPaletteData,y   ;overwrite palette with the appropriate one
 ;-------------------------------------------------------------------------------------
 
 TitleScreenGfxData:
-       .byte $20, $84, $01, $44
-       .byte $20, $85, $57, $48
-       .byte $20, $9c, $01, $49
-       .byte $20, $a4, $c9, $46
-       .byte $20, $a5, $57, $26
-       .byte $20, $bc, $c9, $4a
-       .byte $20, $a5, $0a, $d0, $d1, $d8, $d8, $de, $d1, $d0, $da, $de, $d1
-       .byte $20, $c5, $17, $d2, $d3, $db, $db, $db, $d9, $db, $dc, $db, $df
-       .byte $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26
-       .byte $20, $e5, $17, $d4, $d5, $d4, $d9, $db, $e2, $d4, $da, $db, $e0
-       .byte $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26
-       .byte $21, $05, $57, $26
-       .byte $21, $05, $0a, $d6, $d7, $d6, $d7, $e1, $26, $d6, $dd, $e1, $e1
-       .byte $21, $25, $17, $d0, $e8, $d1, $d0, $d1, $de, $d1, $d8, $d0, $d1
-       .byte $26, $de, $d1, $de, $d1, $d0, $d1, $d0, $d1, $26, $26, $d0, $d1
-       .byte $21, $45, $17, $db, $42, $42, $db, $42, $db, $42, $db, $db, $42
-       .byte $26, $db, $42, $db, $42, $db, $42, $db, $42, $26, $26, $db, $42
-       .byte $21, $65, $46, $db
-       .byte $21, $6b, $11, $df, $db, $db, $db, $26, $db, $df, $db, $df, $db
-       .byte $db, $e4, $e5, $26, $26, $ec, $ed
-       .byte $21, $85, $17, $db, $db, $db, $de, $43, $db, $e0, $db, $db, $db
-       .byte $26, $db, $e3, $db, $e0, $db, $db, $e6, $e3, $26, $26, $ee, $ef
-       .byte $21, $a5, $17, $db, $db, $db, $db, $42, $db, $db, $db, $d4, $d9
-       .byte $26, $db, $d9, $db, $db, $d4, $d9, $d4, $d9, $e7, $26, $de, $da
-       .byte $21, $c4, $19, $5f, $95, $95, $95, $95, $95, $95, $95, $95, $97
-       .byte $98, $78, $95, $96, $95, $95, $97, $98, $97, $98, $95, $78, $95
-       .byte $f0, $7a
-       .byte $21, $ef, $0e, $cf, $01, $09, $08, $06, $24, $17, $12, $17, $1d
-       .byte $0e, $17, $0d, $18
-       .byte $22, $4d, $0a, $16, $0a, $1b, $12, $18, $24, $10, $0a, $16, $0e
-       .byte $22, $8d, $0a, $15, $1e, $12, $10, $12, $24, $10, $0a, $16, $0e
-       .byte $22, $eb, $04, $1d, $18, $19, $28
-       .byte $22, $f5, $01, $00
-       .byte $23, $c9, $47, $55
-       .byte $23, $d1, $47, $55
-       .byte $23, $d9, $47, $55
-       .byte $23, $cc, $43, $f5
-       .byte $23, $d6, $01, $dd
-       .byte $23, $de, $01, $5d
-       .byte $23, $e2, $04, $55, $aa, $aa, $aa
-       .byte $23, $ea, $04, $95, $aa, $aa, $2a
-       .byte $00, $ff, $ff
+       .db $20, $84, $01, $44
+       .db $20, $85, $57, $48
+       .db $20, $9c, $01, $49
+       .db $20, $a4, $c9, $46
+       .db $20, $a5, $57, $26
+       .db $20, $bc, $c9, $4a
+       .db $20, $a5, $0a, $d0, $d1, $d8, $d8, $de, $d1, $d0, $da, $de, $d1
+       .db $20, $c5, $17, $d2, $d3, $db, $db, $db, $d9, $db, $dc, $db, $df
+       .db $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26
+       .db $20, $e5, $17, $d4, $d5, $d4, $d9, $db, $e2, $d4, $da, $db, $e0
+       .db $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26, $26
+       .db $21, $05, $57, $26
+       .db $21, $05, $0a, $d6, $d7, $d6, $d7, $e1, $26, $d6, $dd, $e1, $e1
+       .db $21, $25, $17, $d0, $e8, $d1, $d0, $d1, $de, $d1, $d8, $d0, $d1
+       .db $26, $de, $d1, $de, $d1, $d0, $d1, $d0, $d1, $26, $26, $d0, $d1
+       .db $21, $45, $17, $db, $42, $42, $db, $42, $db, $42, $db, $db, $42
+       .db $26, $db, $42, $db, $42, $db, $42, $db, $42, $26, $26, $db, $42
+       .db $21, $65, $46, $db
+       .db $21, $6b, $11, $df, $db, $db, $db, $26, $db, $df, $db, $df, $db
+       .db $db, $e4, $e5, $26, $26, $ec, $ed
+       .db $21, $85, $17, $db, $db, $db, $de, $43, $db, $e0, $db, $db, $db
+       .db $26, $db, $e3, $db, $e0, $db, $db, $e6, $e3, $26, $26, $ee, $ef
+       .db $21, $a5, $17, $db, $db, $db, $db, $42, $db, $db, $db, $d4, $d9
+       .db $26, $db, $d9, $db, $db, $d4, $d9, $d4, $d9, $e7, $26, $de, $da
+       .db $21, $c4, $19, $5f, $95, $95, $95, $95, $95, $95, $95, $95, $97
+       .db $98, $78, $95, $96, $95, $95, $97, $98, $97, $98, $95, $78, $95
+       .db $f0, $7a
+       .db $21, $ef, $0e, $cf, $01, $09, $08, $06, $24, $17, $12, $17, $1d
+       .db $0e, $17, $0d, $18
+       .db $22, $4d, $0a, $16, $0a, $1b, $12, $18, $24, $10, $0a, $16, $0e
+       .db $22, $8d, $0a, $15, $1e, $12, $10, $12, $24, $10, $0a, $16, $0e
+       .db $22, $eb, $04, $1d, $18, $19, $28
+       .db $22, $f5, $01, $00
+       .db $23, $c9, $47, $55
+       .db $23, $d1, $47, $55
+       .db $23, $d9, $47, $55
+       .db $23, $cc, $43, $f5
+       .db $23, $d6, $01, $dd
+       .db $23, $de, $01, $5d
+       .db $23, $e2, $04, $55, $aa, $aa, $aa
+       .db $23, $ea, $04, $95, $aa, $aa, $2a
+       .db $00, $ff, $ff
 
 ;-------------------------------------------------------------------------------------
 
@@ -14957,328 +14927,328 @@ TitleScreenGfxData:
 
 ;level 1-4
 E_CastleArea1:
-  .byte $35, $9d, $55, $9b, $c9, $1b, $59, $9d, $45, $9b, $c5, $1b, $26, $80, $45, $1b
-  .byte $b9, $1d, $f0, $15, $59, $9d, $0f, $08, $78, $2d, $96, $28, $90, $b5, $ff
+  .db $35, $9d, $55, $9b, $c9, $1b, $59, $9d, $45, $9b, $c5, $1b, $26, $80, $45, $1b
+  .db $b9, $1d, $f0, $15, $59, $9d, $0f, $08, $78, $2d, $96, $28, $90, $b5, $ff
 
 ;level 2-4
 E_CastleArea2:
-  .byte $74, $80, $f0, $38, $a0, $bb, $40, $bc, $8c, $1d, $c9, $9d, $05, $9b, $1c, $0c
-  .byte $59, $1b, $b5, $1d, $2c, $8c, $40, $15, $7c, $1b, $dc, $1d, $6c, $8c, $bc, $0c
-  .byte $78, $ad, $a5, $28, $90, $b5, $ff
+  .db $74, $80, $f0, $38, $a0, $bb, $40, $bc, $8c, $1d, $c9, $9d, $05, $9b, $1c, $0c
+  .db $59, $1b, $b5, $1d, $2c, $8c, $40, $15, $7c, $1b, $dc, $1d, $6c, $8c, $bc, $0c
+  .db $78, $ad, $a5, $28, $90, $b5, $ff
 
 ;level 3-4
 E_CastleArea3:
-  .byte $0f, $04, $9c, $0c, $0f, $07, $c5, $1b, $65, $9d, $49, $9d, $5c, $8c, $78, $2d
-  .byte $90, $b5, $ff
+  .db $0f, $04, $9c, $0c, $0f, $07, $c5, $1b, $65, $9d, $49, $9d, $5c, $8c, $78, $2d
+  .db $90, $b5, $ff
 
 ;level 4-4
 E_CastleArea4:
-  .byte $49, $9f, $67, $03, $79, $9d, $a0, $3a, $57, $9f, $bb, $1d, $d5, $25, $0f, $05
-  .byte $18, $1d, $74, $00, $84, $00, $94, $00, $c6, $29, $49, $9d, $db, $05, $0f, $08
-  .byte $05, $9b, $09, $1d, $b0, $38, $80, $95, $c0, $3c, $ec, $a8, $cc, $8c, $4a, $9b
-  .byte $78, $2d, $90, $b5, $ff
+  .db $49, $9f, $67, $03, $79, $9d, $a0, $3a, $57, $9f, $bb, $1d, $d5, $25, $0f, $05
+  .db $18, $1d, $74, $00, $84, $00, $94, $00, $c6, $29, $49, $9d, $db, $05, $0f, $08
+  .db $05, $9b, $09, $1d, $b0, $38, $80, $95, $c0, $3c, $ec, $a8, $cc, $8c, $4a, $9b
+  .db $78, $2d, $90, $b5, $ff
 
 ;level 1-1
 E_GroundArea1:
-  .byte $07, $8e, $47, $03, $0f, $03, $10, $38, $1b, $80, $53, $06, $77, $0e, $83, $83
-  .byte $a0, $3d, $90, $3b, $90, $b7, $60, $bc, $b7, $0e, $ee, $42, $00, $f7, $80, $6b
-  .byte $83, $1b, $83, $ab, $06, $ff
+  .db $07, $8e, $47, $03, $0f, $03, $10, $38, $1b, $80, $53, $06, $77, $0e, $83, $83
+  .db $a0, $3d, $90, $3b, $90, $b7, $60, $bc, $b7, $0e, $ee, $42, $00, $f7, $80, $6b
+  .db $83, $1b, $83, $ab, $06, $ff
 
 ;level 1-3
 E_GroundArea2:
-  .byte $96, $a4, $f9, $24, $d3, $83, $3a, $83, $5a, $03, $95, $07, $f4, $0f, $69, $a8
-  .byte $33, $87, $86, $24, $c9, $24, $4b, $83, $67, $83, $17, $83, $56, $28, $95, $24
-  .byte $0a, $a4, $ff
+  .db $96, $a4, $f9, $24, $d3, $83, $3a, $83, $5a, $03, $95, $07, $f4, $0f, $69, $a8
+  .db $33, $87, $86, $24, $c9, $24, $4b, $83, $67, $83, $17, $83, $56, $28, $95, $24
+  .db $0a, $a4, $ff
 
 ;level 2-1
 E_GroundArea3:
-  .byte $0f, $02, $47, $0e, $87, $0e, $c7, $0e, $f7, $0e, $27, $8e, $ee, $42, $25, $0f
-  .byte $06, $ac, $28, $8c, $a8, $4e, $b3, $20, $8b, $8e, $f7, $90, $36, $90, $e5, $8e
-  .byte $32, $8e, $c2, $06, $d2, $06, $e2, $06, $ff
+  .db $0f, $02, $47, $0e, $87, $0e, $c7, $0e, $f7, $0e, $27, $8e, $ee, $42, $25, $0f
+  .db $06, $ac, $28, $8c, $a8, $4e, $b3, $20, $8b, $8e, $f7, $90, $36, $90, $e5, $8e
+  .db $32, $8e, $c2, $06, $d2, $06, $e2, $06, $ff
 
 ;level 2-2
 E_GroundArea4:
-  .byte $15, $8e, $9b, $06, $e0, $37, $80, $bc, $0f, $04, $2b, $3b, $ab, $0e, $eb, $0e
-  .byte $0f, $06, $f0, $37, $4b, $8e, $6b, $80, $bb, $3c, $4b, $bb, $ee, $42, $20, $1b
-  .byte $bc, $cb, $00, $ab, $83, $eb, $bb, $0f, $0e, $1b, $03, $9b, $37, $d4, $0e, $a3
-  .byte $86, $b3, $06, $c3, $06, $ff
+  .db $15, $8e, $9b, $06, $e0, $37, $80, $bc, $0f, $04, $2b, $3b, $ab, $0e, $eb, $0e
+  .db $0f, $06, $f0, $37, $4b, $8e, $6b, $80, $bb, $3c, $4b, $bb, $ee, $42, $20, $1b
+  .db $bc, $cb, $00, $ab, $83, $eb, $bb, $0f, $0e, $1b, $03, $9b, $37, $d4, $0e, $a3
+  .db $86, $b3, $06, $c3, $06, $ff
 
 ;level 2-3
 E_GroundArea5:
-  .byte $c0, $be, $0f, $03, $38, $0e, $15, $8f, $aa, $83, $f8, $07, $0f, $07, $96, $10
-  .byte $0f, $09, $48, $10, $ba, $03, $ff
+  .db $c0, $be, $0f, $03, $38, $0e, $15, $8f, $aa, $83, $f8, $07, $0f, $07, $96, $10
+  .db $0f, $09, $48, $10, $ba, $03, $ff
 
 ;level 3-1
 E_GroundArea6:
-  .byte $87, $85, $a3, $05, $db, $83, $fb, $03, $93, $8f, $bb, $03, $ce, $42, $42, $9b
-  .byte $83, $ae, $b3, $40, $db, $00, $f4, $0f, $33, $8f, $74, $0f, $10, $bc, $f5, $0f
-  .byte $2e, $c2, $45, $b7, $03, $f7, $03, $c8, $90, $ff
+  .db $87, $85, $a3, $05, $db, $83, $fb, $03, $93, $8f, $bb, $03, $ce, $42, $42, $9b
+  .db $83, $ae, $b3, $40, $db, $00, $f4, $0f, $33, $8f, $74, $0f, $10, $bc, $f5, $0f
+  .db $2e, $c2, $45, $b7, $03, $f7, $03, $c8, $90, $ff
 
 ;level 3-3
 E_GroundArea7:
-  .byte $80, $be, $83, $03, $92, $10, $4b, $80, $b0, $3c, $07, $80, $b7, $24, $0c, $a4
-  .byte $96, $a9, $1b, $83, $7b, $24, $b7, $24, $97, $83, $e2, $0f, $a9, $a9, $38, $a9
-  .byte $0f, $0b, $74, $8f, $ff
+  .db $80, $be, $83, $03, $92, $10, $4b, $80, $b0, $3c, $07, $80, $b7, $24, $0c, $a4
+  .db $96, $a9, $1b, $83, $7b, $24, $b7, $24, $97, $83, $e2, $0f, $a9, $a9, $38, $a9
+  .db $0f, $0b, $74, $8f, $ff
 
 ;level 4-1
 E_GroundArea8:
-  .byte $e2, $91, $0f, $03, $42, $11, $0f, $06, $72, $11, $0f, $08, $ee, $02, $60, $02
-  .byte $91, $ee, $b3, $60, $d3, $86, $ff
+  .db $e2, $91, $0f, $03, $42, $11, $0f, $06, $72, $11, $0f, $08, $ee, $02, $60, $02
+  .db $91, $ee, $b3, $60, $d3, $86, $ff
 
 ;level 4-2
 E_GroundArea9:
-  .byte $0f, $02, $9b, $02, $ab, $02, $0f, $04, $13, $03, $92, $11, $60, $b7, $00, $bc
-  .byte $00, $bb, $0b, $83, $cb, $03, $7b, $85, $9e, $c2, $60, $e6, $05, $0f, $0c, $62
-  .byte $10, $ff
+  .db $0f, $02, $9b, $02, $ab, $02, $0f, $04, $13, $03, $92, $11, $60, $b7, $00, $bc
+  .db $00, $bb, $0b, $83, $cb, $03, $7b, $85, $9e, $c2, $60, $e6, $05, $0f, $0c, $62
+  .db $10, $ff
 
 ;level 4-3
 E_GroundArea11:
-  .byte $e6, $a9, $57, $a8, $b5, $24, $19, $a4, $76, $28, $a2, $0f, $95, $8f, $9d, $a8
-  .byte $0f, $07, $09, $29, $55, $24, $8b, $17, $a9, $24, $db, $83, $04, $a9, $24, $8f
-  .byte $65, $0f, $ff
+  .db $e6, $a9, $57, $a8, $b5, $24, $19, $a4, $76, $28, $a2, $0f, $95, $8f, $9d, $a8
+  .db $0f, $07, $09, $29, $55, $24, $8b, $17, $a9, $24, $db, $83, $04, $a9, $24, $8f
+  .db $65, $0f, $ff
 
 ;cloud level used in levels 2-1, 3-1 and 4-1
 E_GroundArea20:
-  .byte $0a, $aa, $1e, $22, $29, $1e, $25, $49, $2e, $27, $66, $ff
+  .db $0a, $aa, $1e, $22, $29, $1e, $25, $49, $2e, $27, $66, $ff
 
 ;level 1-2
 E_UndergroundArea1:
-  .byte $0a, $8e, $de, $b4, $00, $e0, $37, $5b, $82, $2b, $a9, $aa, $29, $29, $a9, $a8
-  .byte $29, $0f, $08, $f0, $3c, $79, $a9, $c5, $26, $cd, $26, $ee, $3b, $01, $67, $b4
-  .byte $0f, $0c, $2e, $c1, $00, $ff
+  .db $0a, $8e, $de, $b4, $00, $e0, $37, $5b, $82, $2b, $a9, $aa, $29, $29, $a9, $a8
+  .db $29, $0f, $08, $f0, $3c, $79, $a9, $c5, $26, $cd, $26, $ee, $3b, $01, $67, $b4
+  .db $0f, $0c, $2e, $c1, $00, $ff
 
 ;warp zone area used by level 1-2
 E_UndergroundArea2:
-  .byte $09, $a9, $19, $a9, $de, $42, $02, $7b, $83, $ff
+  .db $09, $a9, $19, $a9, $de, $42, $02, $7b, $83, $ff
 
 ;underground bonus rooms used in many levels
 E_UndergroundArea3:
-  .byte $1e, $a0, $0a, $1e, $23, $2b, $1e, $28, $6b, $0f, $03, $1e, $40, $08, $1e, $25
-  .byte $4e, $0f, $06, $1e, $22, $25, $1e, $25, $45, $ff
+  .db $1e, $a0, $0a, $1e, $23, $2b, $1e, $28, $6b, $0f, $03, $1e, $40, $08, $1e, $25
+  .db $4e, $0f, $06, $1e, $22, $25, $1e, $25, $45, $ff
 
 ;level 3-2
 E_WaterArea1:
-  .byte $0f, $01, $2a, $07, $2e, $3b, $41, $e9, $07, $0f, $03, $6b, $07, $f9, $07, $b8
-  .byte $80, $2a, $87, $4a, $87, $b3, $0f, $84, $87, $47, $83, $87, $07, $0a, $87, $42
-  .byte $87, $1b, $87, $6b, $03, $ff
+  .db $0f, $01, $2a, $07, $2e, $3b, $41, $e9, $07, $0f, $03, $6b, $07, $f9, $07, $b8
+  .db $80, $2a, $87, $4a, $87, $b3, $0f, $84, $87, $47, $83, $87, $07, $0a, $87, $42
+  .db $87, $1b, $87, $6b, $03, $ff
 
 ;water area used by level 4-1
 E_WaterArea3:
-  .byte $1e, $a7, $6a, $5b, $82, $74, $07, $d8, $07, $e8, $02, $0f, $04, $26, $07, $ff
+  .db $1e, $a7, $6a, $5b, $82, $74, $07, $d8, $07, $e8, $02, $0f, $04, $26, $07, $ff
 
 ;level 1-4
 L_CastleArea1:
-  .byte $9b, $07, $05, $32, $06, $33, $07, $34, $33, $8e, $4e, $0a, $7e, $06, $9e, $0a
-  .byte $ce, $06, $e3, $00, $ee, $0a, $1e, $87, $53, $0e, $8e, $02, $9c, $00, $c7, $0e
-  .byte $d7, $37, $57, $8e, $6c, $05, $da, $60, $e9, $61, $f8, $62, $fe, $0b, $43, $8e
-  .byte $c3, $0e, $43, $8e, $b7, $0e, $ee, $09, $fe, $0a, $3e, $86, $57, $0e, $6e, $0a
-  .byte $7e, $06, $ae, $0a, $be, $06, $fe, $07, $15, $e2, $55, $62, $95, $62, $fe, $0a
-  .byte $0d, $c4, $cd, $43, $ce, $09, $de, $0b, $dd, $42, $fe, $02, $5d, $c7, $fd
+  .db $9b, $07, $05, $32, $06, $33, $07, $34, $33, $8e, $4e, $0a, $7e, $06, $9e, $0a
+  .db $ce, $06, $e3, $00, $ee, $0a, $1e, $87, $53, $0e, $8e, $02, $9c, $00, $c7, $0e
+  .db $d7, $37, $57, $8e, $6c, $05, $da, $60, $e9, $61, $f8, $62, $fe, $0b, $43, $8e
+  .db $c3, $0e, $43, $8e, $b7, $0e, $ee, $09, $fe, $0a, $3e, $86, $57, $0e, $6e, $0a
+  .db $7e, $06, $ae, $0a, $be, $06, $fe, $07, $15, $e2, $55, $62, $95, $62, $fe, $0a
+  .db $0d, $c4, $cd, $43, $ce, $09, $de, $0b, $dd, $42, $fe, $02, $5d, $c7, $fd
 
 ;level 2-4
 L_CastleArea2:
-  .byte $9b, $07, $05, $32, $06, $33, $07, $34, $03, $e2, $0e, $06, $1e, $0c, $7e, $0a
-  .byte $8e, $05, $8e, $82, $8a, $8e, $8e, $0a, $ee, $02, $0a, $e0, $19, $61, $23, $06
-  .byte $28, $62, $2e, $0b, $7e, $0a, $81, $62, $87, $30, $8e, $04, $a7, $31, $c7, $0e
-  .byte $d7, $33, $fe, $03, $03, $8e, $0e, $0a, $11, $62, $1e, $04, $27, $32, $4e, $0a
-  .byte $51, $62, $57, $0e, $5e, $04, $67, $34, $9e, $0a, $a1, $62, $ae, $03, $b3, $0e
-  .byte $be, $0b, $ee, $09, $fe, $0a, $2e, $82, $7a, $0e, $7e, $0a, $97, $31, $be, $04
-  .byte $da, $0e, $ee, $0a, $f1, $62, $fe, $02, $3e, $8a, $7e, $06, $ae, $0a, $ce, $06
-  .byte $fe, $0a, $0d, $c4, $11, $53, $21, $52, $24, $0b, $51, $52, $61, $52, $cd, $43
-  .byte $ce, $09, $dd, $42, $de, $0b, $fe, $02, $5d, $c7, $fd
+  .db $9b, $07, $05, $32, $06, $33, $07, $34, $03, $e2, $0e, $06, $1e, $0c, $7e, $0a
+  .db $8e, $05, $8e, $82, $8a, $8e, $8e, $0a, $ee, $02, $0a, $e0, $19, $61, $23, $06
+  .db $28, $62, $2e, $0b, $7e, $0a, $81, $62, $87, $30, $8e, $04, $a7, $31, $c7, $0e
+  .db $d7, $33, $fe, $03, $03, $8e, $0e, $0a, $11, $62, $1e, $04, $27, $32, $4e, $0a
+  .db $51, $62, $57, $0e, $5e, $04, $67, $34, $9e, $0a, $a1, $62, $ae, $03, $b3, $0e
+  .db $be, $0b, $ee, $09, $fe, $0a, $2e, $82, $7a, $0e, $7e, $0a, $97, $31, $be, $04
+  .db $da, $0e, $ee, $0a, $f1, $62, $fe, $02, $3e, $8a, $7e, $06, $ae, $0a, $ce, $06
+  .db $fe, $0a, $0d, $c4, $11, $53, $21, $52, $24, $0b, $51, $52, $61, $52, $cd, $43
+  .db $ce, $09, $dd, $42, $de, $0b, $fe, $02, $5d, $c7, $fd
 
 ;level 3-4
 L_CastleArea3:
-  .byte $5b, $09, $05, $34, $06, $35, $6e, $06, $7e, $0a, $ae, $02, $fe, $02, $0d, $01
-  .byte $0e, $0e, $2e, $0a, $6e, $09, $be, $0a, $ed, $4b, $e4, $60, $ee, $0d, $5e, $82
-  .byte $78, $72, $a4, $3d, $a5, $3e, $a6, $3f, $a3, $be, $a6, $3e, $a9, $32, $e9, $3a
-  .byte $9c, $80, $a3, $33, $a6, $33, $a9, $33, $e5, $06, $ed, $4b, $f3, $30, $f6, $30
-  .byte $f9, $30, $fe, $02, $0d, $05, $3c, $01, $57, $73, $7c, $02, $93, $30, $a7, $73
-  .byte $b3, $37, $cc, $01, $07, $83, $17, $03, $27, $03, $37, $03, $64, $3b, $77, $3a
-  .byte $0c, $80, $2e, $0e, $9e, $02, $a5, $62, $b6, $61, $cc, $02, $c3, $33, $ed, $4b
-  .byte $03, $b7, $07, $37, $83, $37, $87, $37, $dd, $4b, $03, $b5, $07, $35, $5e, $0a
-  .byte $8e, $02, $ae, $0a, $de, $06, $fe, $0a, $0d, $c4, $cd, $43, $ce, $09, $dd, $42
-  .byte $de, $0b, $fe, $02, $5d, $c7, $fd
+  .db $5b, $09, $05, $34, $06, $35, $6e, $06, $7e, $0a, $ae, $02, $fe, $02, $0d, $01
+  .db $0e, $0e, $2e, $0a, $6e, $09, $be, $0a, $ed, $4b, $e4, $60, $ee, $0d, $5e, $82
+  .db $78, $72, $a4, $3d, $a5, $3e, $a6, $3f, $a3, $be, $a6, $3e, $a9, $32, $e9, $3a
+  .db $9c, $80, $a3, $33, $a6, $33, $a9, $33, $e5, $06, $ed, $4b, $f3, $30, $f6, $30
+  .db $f9, $30, $fe, $02, $0d, $05, $3c, $01, $57, $73, $7c, $02, $93, $30, $a7, $73
+  .db $b3, $37, $cc, $01, $07, $83, $17, $03, $27, $03, $37, $03, $64, $3b, $77, $3a
+  .db $0c, $80, $2e, $0e, $9e, $02, $a5, $62, $b6, $61, $cc, $02, $c3, $33, $ed, $4b
+  .db $03, $b7, $07, $37, $83, $37, $87, $37, $dd, $4b, $03, $b5, $07, $35, $5e, $0a
+  .db $8e, $02, $ae, $0a, $de, $06, $fe, $0a, $0d, $c4, $cd, $43, $ce, $09, $dd, $42
+  .db $de, $0b, $fe, $02, $5d, $c7, $fd
 
 ;level 4-4
 L_CastleArea4:
-  .byte $9b, $07, $05, $32, $06, $33, $07, $34, $4e, $03, $5c, $02, $0c, $f1, $27, $00
-  .byte $3c, $74, $47, $0e, $fc, $00, $fe, $0b, $77, $8e, $ee, $09, $fe, $0a, $45, $b2
-  .byte $55, $0e, $99, $32, $b9, $0e, $fe, $02, $0e, $85, $fe, $02, $16, $8e, $2e, $0c
-  .byte $ae, $0a, $ee, $05, $1e, $82, $47, $0e, $07, $bd, $c4, $72, $de, $0a, $fe, $02
-  .byte $03, $8e, $07, $0e, $13, $3c, $17, $3d, $e3, $03, $ee, $0a, $f3, $06, $f7, $03
-  .byte $fe, $0e, $fe, $8a, $38, $e4, $4a, $72, $68, $64, $37, $b0, $98, $64, $a8, $64
-  .byte $e8, $64, $f8, $64, $0d, $c4, $71, $64, $cd, $43, $ce, $09, $dd, $42, $de, $0b
-  .byte $fe, $02, $5d, $c7, $fd
+  .db $9b, $07, $05, $32, $06, $33, $07, $34, $4e, $03, $5c, $02, $0c, $f1, $27, $00
+  .db $3c, $74, $47, $0e, $fc, $00, $fe, $0b, $77, $8e, $ee, $09, $fe, $0a, $45, $b2
+  .db $55, $0e, $99, $32, $b9, $0e, $fe, $02, $0e, $85, $fe, $02, $16, $8e, $2e, $0c
+  .db $ae, $0a, $ee, $05, $1e, $82, $47, $0e, $07, $bd, $c4, $72, $de, $0a, $fe, $02
+  .db $03, $8e, $07, $0e, $13, $3c, $17, $3d, $e3, $03, $ee, $0a, $f3, $06, $f7, $03
+  .db $fe, $0e, $fe, $8a, $38, $e4, $4a, $72, $68, $64, $37, $b0, $98, $64, $a8, $64
+  .db $e8, $64, $f8, $64, $0d, $c4, $71, $64, $cd, $43, $ce, $09, $dd, $42, $de, $0b
+  .db $fe, $02, $5d, $c7, $fd
 
 ;level 1-1
 L_GroundArea1:
-  .byte $50, $31, $0f, $26, $13, $e4, $23, $24, $27, $23, $37, $07, $66, $61, $ac, $74
-  .byte $c7, $01, $0b, $f1, $77, $73, $b6, $04, $db, $71, $5c, $82, $83, $2d, $a2, $47
-  .byte $a7, $0a, $b7, $29, $4f, $b3, $87, $0b, $93, $23, $cc, $06, $e3, $2c, $3a, $e0
-  .byte $7c, $71, $97, $01, $ac, $73, $e6, $61, $0e, $b1, $b7, $f3, $dc, $02, $d3, $25
-  .byte $07, $fb, $2c, $01, $e7, $73, $2c, $f2, $34, $72, $57, $00, $7c, $02, $39, $f1
-  .byte $bf, $37, $33, $e7, $cd, $41, $0f, $a6, $ed, $47, $fd
+  .db $50, $31, $0f, $26, $13, $e4, $23, $24, $27, $23, $37, $07, $66, $61, $ac, $74
+  .db $c7, $01, $0b, $f1, $77, $73, $b6, $04, $db, $71, $5c, $82, $83, $2d, $a2, $47
+  .db $a7, $0a, $b7, $29, $4f, $b3, $87, $0b, $93, $23, $cc, $06, $e3, $2c, $3a, $e0
+  .db $7c, $71, $97, $01, $ac, $73, $e6, $61, $0e, $b1, $b7, $f3, $dc, $02, $d3, $25
+  .db $07, $fb, $2c, $01, $e7, $73, $2c, $f2, $34, $72, $57, $00, $7c, $02, $39, $f1
+  .db $bf, $37, $33, $e7, $cd, $41, $0f, $a6, $ed, $47, $fd
 
 ;level 1-3
 L_GroundArea2:
-  .byte $50, $11, $0f, $26, $fe, $10, $47, $92, $56, $40, $ac, $16, $af, $12, $0f, $95
-  .byte $73, $16, $82, $44, $ec, $48, $bc, $c2, $1c, $b1, $b3, $16, $c2, $44, $86, $c0
-  .byte $9c, $14, $9f, $12, $a6, $40, $df, $15, $0b, $96, $43, $12, $97, $31, $d3, $12
-  .byte $03, $92, $27, $14, $63, $00, $c7, $15, $d6, $43, $ac, $97, $af, $11, $1f, $96
-  .byte $64, $13, $e3, $12, $2e, $91, $9d, $41, $ae, $42, $df, $20, $cd, $c7, $fd
+  .db $50, $11, $0f, $26, $fe, $10, $47, $92, $56, $40, $ac, $16, $af, $12, $0f, $95
+  .db $73, $16, $82, $44, $ec, $48, $bc, $c2, $1c, $b1, $b3, $16, $c2, $44, $86, $c0
+  .db $9c, $14, $9f, $12, $a6, $40, $df, $15, $0b, $96, $43, $12, $97, $31, $d3, $12
+  .db $03, $92, $27, $14, $63, $00, $c7, $15, $d6, $43, $ac, $97, $af, $11, $1f, $96
+  .db $64, $13, $e3, $12, $2e, $91, $9d, $41, $ae, $42, $df, $20, $cd, $c7, $fd
 
 ;level 2-1
 L_GroundArea3:
-  .byte $52, $21, $0f, $20, $6e, $64, $4f, $b2, $7c, $5f, $7c, $3f, $7c, $d8, $7c, $38
-  .byte $83, $02, $a3, $00, $c3, $02, $f7, $16, $5c, $d6, $cf, $35, $d3, $20, $e3, $0a
-  .byte $f3, $20, $25, $b5, $2c, $53, $6a, $7a, $8c, $54, $da, $72, $fc, $50, $0c, $d2
-  .byte $39, $73, $5c, $54, $aa, $72, $cc, $53, $f7, $16, $33, $83, $40, $06, $5c, $5b
-  .byte $09, $93, $27, $0f, $3c, $5c, $0a, $b0, $63, $27, $78, $72, $93, $09, $97, $03
-  .byte $a7, $03, $b7, $22, $47, $81, $5c, $72, $2a, $b0, $28, $0f, $3c, $5f, $58, $31
-  .byte $b8, $31, $28, $b1, $3c, $5b, $98, $31, $fa, $30, $03, $b2, $20, $04, $7f, $b7
-  .byte $f3, $67, $8d, $c1, $bf, $26, $ad, $c7, $fd
+  .db $52, $21, $0f, $20, $6e, $64, $4f, $b2, $7c, $5f, $7c, $3f, $7c, $d8, $7c, $38
+  .db $83, $02, $a3, $00, $c3, $02, $f7, $16, $5c, $d6, $cf, $35, $d3, $20, $e3, $0a
+  .db $f3, $20, $25, $b5, $2c, $53, $6a, $7a, $8c, $54, $da, $72, $fc, $50, $0c, $d2
+  .db $39, $73, $5c, $54, $aa, $72, $cc, $53, $f7, $16, $33, $83, $40, $06, $5c, $5b
+  .db $09, $93, $27, $0f, $3c, $5c, $0a, $b0, $63, $27, $78, $72, $93, $09, $97, $03
+  .db $a7, $03, $b7, $22, $47, $81, $5c, $72, $2a, $b0, $28, $0f, $3c, $5f, $58, $31
+  .db $b8, $31, $28, $b1, $3c, $5b, $98, $31, $fa, $30, $03, $b2, $20, $04, $7f, $b7
+  .db $f3, $67, $8d, $c1, $bf, $26, $ad, $c7, $fd
 
 ;level 2-2
 L_GroundArea4:
-  .byte $54, $11, $0f, $26, $38, $f2, $ab, $71, $0b, $f1, $96, $42, $ce, $10, $1e, $91
-  .byte $29, $61, $3a, $60, $4e, $10, $78, $74, $8e, $11, $06, $c3, $1a, $e0, $1e, $10
-  .byte $5e, $11, $67, $63, $77, $63, $88, $62, $99, $61, $aa, $60, $be, $10, $0a, $f2
-  .byte $15, $45, $7e, $11, $7a, $31, $9a, $e0, $ac, $02, $d9, $61, $d4, $0a, $ec, $01
-  .byte $d6, $c2, $84, $c3, $98, $fa, $d3, $07, $d7, $0b, $e9, $61, $ee, $10, $2e, $91
-  .byte $39, $71, $93, $03, $a6, $03, $be, $10, $e1, $71, $e3, $31, $5e, $91, $69, $61
-  .byte $e6, $41, $28, $e2, $99, $71, $ae, $10, $ce, $11, $be, $90, $d6, $32, $3e, $91
-  .byte $5f, $37, $66, $60, $d3, $67, $6d, $c1, $af, $26, $9d, $c7, $fd
+  .db $54, $11, $0f, $26, $38, $f2, $ab, $71, $0b, $f1, $96, $42, $ce, $10, $1e, $91
+  .db $29, $61, $3a, $60, $4e, $10, $78, $74, $8e, $11, $06, $c3, $1a, $e0, $1e, $10
+  .db $5e, $11, $67, $63, $77, $63, $88, $62, $99, $61, $aa, $60, $be, $10, $0a, $f2
+  .db $15, $45, $7e, $11, $7a, $31, $9a, $e0, $ac, $02, $d9, $61, $d4, $0a, $ec, $01
+  .db $d6, $c2, $84, $c3, $98, $fa, $d3, $07, $d7, $0b, $e9, $61, $ee, $10, $2e, $91
+  .db $39, $71, $93, $03, $a6, $03, $be, $10, $e1, $71, $e3, $31, $5e, $91, $69, $61
+  .db $e6, $41, $28, $e2, $99, $71, $ae, $10, $ce, $11, $be, $90, $d6, $32, $3e, $91
+  .db $5f, $37, $66, $60, $d3, $67, $6d, $c1, $af, $26, $9d, $c7, $fd
 
 ;level 2-3
 L_GroundArea5:
-  .byte $54, $11, $0f, $26, $af, $32, $d8, $62, $e8, $62, $f8, $62, $fe, $10, $0c, $be
-  .byte $f8, $64, $0d, $c8, $2c, $43, $98, $64, $ac, $39, $48, $e4, $6a, $62, $7c, $47
-  .byte $fa, $62, $3c, $b7, $ea, $62, $fc, $4d, $f6, $02, $03, $80, $06, $02, $13, $02
-  .byte $da, $62, $0d, $c8, $0b, $17, $97, $16, $2c, $b1, $33, $43, $6c, $31, $ac, $31
-  .byte $17, $93, $73, $12, $cc, $31, $1a, $e2, $2c, $4b, $67, $48, $ea, $62, $0d, $ca
-  .byte $17, $12, $53, $12, $be, $11, $1d, $c1, $3e, $42, $6f, $20, $4d, $c7, $fd
+  .db $54, $11, $0f, $26, $af, $32, $d8, $62, $e8, $62, $f8, $62, $fe, $10, $0c, $be
+  .db $f8, $64, $0d, $c8, $2c, $43, $98, $64, $ac, $39, $48, $e4, $6a, $62, $7c, $47
+  .db $fa, $62, $3c, $b7, $ea, $62, $fc, $4d, $f6, $02, $03, $80, $06, $02, $13, $02
+  .db $da, $62, $0d, $c8, $0b, $17, $97, $16, $2c, $b1, $33, $43, $6c, $31, $ac, $31
+  .db $17, $93, $73, $12, $cc, $31, $1a, $e2, $2c, $4b, $67, $48, $ea, $62, $0d, $ca
+  .db $17, $12, $53, $12, $be, $11, $1d, $c1, $3e, $42, $6f, $20, $4d, $c7, $fd
 
 ;level 3-1
 L_GroundArea6:
-  .byte $52, $b1, $0f, $20, $6e, $75, $53, $aa, $57, $25, $b7, $0a, $c7, $23, $0c, $83
-  .byte $5c, $72, $87, $01, $c3, $00, $c7, $20, $dc, $65, $0c, $87, $c3, $22, $f3, $03
-  .byte $03, $a2, $27, $7b, $33, $03, $43, $23, $52, $42, $9c, $06, $a7, $20, $c3, $23
-  .byte $03, $a2, $0c, $02, $33, $09, $39, $71, $43, $23, $77, $06, $83, $67, $a7, $73
-  .byte $5c, $82, $c9, $11, $07, $80, $1c, $71, $98, $11, $9a, $10, $f3, $04, $16, $f4
-  .byte $3c, $02, $68, $7a, $8c, $01, $a7, $73, $e7, $73, $ac, $83, $09, $8f, $1c, $03
-  .byte $9f, $37, $13, $e7, $7c, $02, $ad, $41, $ef, $26, $0d, $0e, $39, $71, $7f, $37
-  .byte $f2, $68, $02, $e8, $12, $3a, $1c, $00, $68, $7a, $de, $3f, $6d, $c5, $fd
+  .db $52, $b1, $0f, $20, $6e, $75, $53, $aa, $57, $25, $b7, $0a, $c7, $23, $0c, $83
+  .db $5c, $72, $87, $01, $c3, $00, $c7, $20, $dc, $65, $0c, $87, $c3, $22, $f3, $03
+  .db $03, $a2, $27, $7b, $33, $03, $43, $23, $52, $42, $9c, $06, $a7, $20, $c3, $23
+  .db $03, $a2, $0c, $02, $33, $09, $39, $71, $43, $23, $77, $06, $83, $67, $a7, $73
+  .db $5c, $82, $c9, $11, $07, $80, $1c, $71, $98, $11, $9a, $10, $f3, $04, $16, $f4
+  .db $3c, $02, $68, $7a, $8c, $01, $a7, $73, $e7, $73, $ac, $83, $09, $8f, $1c, $03
+  .db $9f, $37, $13, $e7, $7c, $02, $ad, $41, $ef, $26, $0d, $0e, $39, $71, $7f, $37
+  .db $f2, $68, $02, $e8, $12, $3a, $1c, $00, $68, $7a, $de, $3f, $6d, $c5, $fd
 
 ;level 3-3
 L_GroundArea7:
-  .byte $55, $10, $0b, $1f, $0f, $26, $d6, $12, $07, $9f, $33, $1a, $fb, $1f, $f7, $94
-  .byte $53, $94, $71, $71, $cc, $15, $cf, $13, $1f, $98, $63, $12, $9b, $13, $a9, $71
-  .byte $fb, $17, $09, $f1, $13, $13, $21, $42, $59, $0f, $eb, $13, $33, $93, $40, $06
-  .byte $8c, $14, $8f, $17, $93, $40, $cf, $13, $0b, $94, $57, $15, $07, $93, $19, $f3
-  .byte $c6, $43, $c7, $13, $d3, $03, $e3, $03, $33, $b0, $4a, $72, $55, $46, $73, $31
-  .byte $a8, $74, $e3, $12, $8e, $91, $ad, $41, $ce, $42, $ef, $20, $dd, $c7, $fd
+  .db $55, $10, $0b, $1f, $0f, $26, $d6, $12, $07, $9f, $33, $1a, $fb, $1f, $f7, $94
+  .db $53, $94, $71, $71, $cc, $15, $cf, $13, $1f, $98, $63, $12, $9b, $13, $a9, $71
+  .db $fb, $17, $09, $f1, $13, $13, $21, $42, $59, $0f, $eb, $13, $33, $93, $40, $06
+  .db $8c, $14, $8f, $17, $93, $40, $cf, $13, $0b, $94, $57, $15, $07, $93, $19, $f3
+  .db $c6, $43, $c7, $13, $d3, $03, $e3, $03, $33, $b0, $4a, $72, $55, $46, $73, $31
+  .db $a8, $74, $e3, $12, $8e, $91, $ad, $41, $ce, $42, $ef, $20, $dd, $c7, $fd
 
 ;level 4-1
 L_GroundArea8:
-  .byte $52, $21, $0f, $20, $6e, $63, $a9, $f1, $fb, $71, $22, $83, $37, $0b, $36, $50
-  .byte $39, $51, $b8, $62, $57, $f3, $e8, $02, $f8, $02, $08, $82, $18, $02, $2d, $4a
-  .byte $28, $02, $38, $02, $48, $00, $a8, $0f, $aa, $30, $bc, $5a, $6a, $b0, $4f, $b6
-  .byte $b7, $04, $9a, $b0, $ac, $71, $c7, $01, $e6, $74, $0d, $09, $46, $02, $56, $00
-  .byte $6c, $01, $84, $79, $86, $02, $96, $02, $a4, $71, $a6, $02, $b6, $02, $c4, $71
-  .byte $c6, $02, $d6, $02, $39, $f1, $6c, $00, $77, $02, $a3, $09, $ac, $00, $b8, $72
-  .byte $dc, $01, $07, $f3, $4c, $00, $6f, $37, $e3, $03, $e6, $03, $5d, $ca, $6c, $00
-  .byte $7d, $41, $cf, $26, $9d, $c7, $fd
+  .db $52, $21, $0f, $20, $6e, $63, $a9, $f1, $fb, $71, $22, $83, $37, $0b, $36, $50
+  .db $39, $51, $b8, $62, $57, $f3, $e8, $02, $f8, $02, $08, $82, $18, $02, $2d, $4a
+  .db $28, $02, $38, $02, $48, $00, $a8, $0f, $aa, $30, $bc, $5a, $6a, $b0, $4f, $b6
+  .db $b7, $04, $9a, $b0, $ac, $71, $c7, $01, $e6, $74, $0d, $09, $46, $02, $56, $00
+  .db $6c, $01, $84, $79, $86, $02, $96, $02, $a4, $71, $a6, $02, $b6, $02, $c4, $71
+  .db $c6, $02, $d6, $02, $39, $f1, $6c, $00, $77, $02, $a3, $09, $ac, $00, $b8, $72
+  .db $dc, $01, $07, $f3, $4c, $00, $6f, $37, $e3, $03, $e6, $03, $5d, $ca, $6c, $00
+  .db $7d, $41, $cf, $26, $9d, $c7, $fd
 
 ;level 4-2
 L_GroundArea9:
-  .byte $50, $a1, $0f, $26, $17, $91, $19, $11, $48, $00, $68, $11, $6a, $10, $96, $14
-  .byte $d8, $0a, $e8, $02, $f8, $02, $dc, $81, $6c, $81, $89, $0f, $9c, $00, $c3, $29
-  .byte $f8, $62, $47, $a7, $c6, $61, $0d, $07, $56, $74, $b7, $00, $b9, $11, $cc, $76
-  .byte $ed, $4a, $1c, $80, $37, $01, $3a, $10, $de, $20, $e9, $0b, $ee, $21, $c8, $bc
-  .byte $9c, $f6, $bc, $00, $cb, $7a, $eb, $72, $0c, $82, $39, $71, $b7, $63, $cc, $03
-  .byte $e6, $60, $26, $e0, $4a, $30, $53, $31, $5c, $58, $ed, $41, $2f, $a6, $1d, $c7
-  .byte $fd
+  .db $50, $a1, $0f, $26, $17, $91, $19, $11, $48, $00, $68, $11, $6a, $10, $96, $14
+  .db $d8, $0a, $e8, $02, $f8, $02, $dc, $81, $6c, $81, $89, $0f, $9c, $00, $c3, $29
+  .db $f8, $62, $47, $a7, $c6, $61, $0d, $07, $56, $74, $b7, $00, $b9, $11, $cc, $76
+  .db $ed, $4a, $1c, $80, $37, $01, $3a, $10, $de, $20, $e9, $0b, $ee, $21, $c8, $bc
+  .db $9c, $f6, $bc, $00, $cb, $7a, $eb, $72, $0c, $82, $39, $71, $b7, $63, $cc, $03
+  .db $e6, $60, $26, $e0, $4a, $30, $53, $31, $5c, $58, $ed, $41, $2f, $a6, $1d, $c7
+  .db $fd
 
 ;level 4-3
 L_GroundArea11:
-  .byte $50, $11, $0f, $26, $fe, $10, $8b, $93, $a9, $0f, $14, $c1, $cc, $16, $cf, $11
-  .byte $2f, $95, $b7, $14, $c7, $96, $d6, $44, $2b, $92, $39, $0f, $72, $41, $a7, $00
-  .byte $1b, $95, $97, $13, $6c, $95, $6f, $11, $a2, $40, $bf, $15, $c2, $40, $0b, $9f
-  .byte $53, $16, $62, $44, $72, $c2, $9b, $1d, $b7, $e0, $ed, $4a, $03, $e0, $8e, $11
-  .byte $9d, $41, $be, $42, $ef, $20, $cd, $c7, $fd
+  .db $50, $11, $0f, $26, $fe, $10, $8b, $93, $a9, $0f, $14, $c1, $cc, $16, $cf, $11
+  .db $2f, $95, $b7, $14, $c7, $96, $d6, $44, $2b, $92, $39, $0f, $72, $41, $a7, $00
+  .db $1b, $95, $97, $13, $6c, $95, $6f, $11, $a2, $40, $bf, $15, $c2, $40, $0b, $9f
+  .db $53, $16, $62, $44, $72, $c2, $9b, $1d, $b7, $e0, $ed, $4a, $03, $e0, $8e, $11
+  .db $9d, $41, $be, $42, $ef, $20, $cd, $c7, $fd
 
 ;cloud level used in levels 2-1, 3-1 and 4-1
 L_GroundArea20:
-  .byte $00, $c1, $4c, $00, $03, $cf, $00, $d7, $23, $4d, $07, $af, $2a, $4c, $03, $cf
-  .byte $3e, $80, $f3, $4a, $bb, $c2, $bd, $c7, $fd
+  .db $00, $c1, $4c, $00, $03, $cf, $00, $d7, $23, $4d, $07, $af, $2a, $4c, $03, $cf
+  .db $3e, $80, $f3, $4a, $bb, $c2, $bd, $c7, $fd
 
 ;level 1-2
 L_UndergroundArea1:
-  .byte $48, $0f, $0e, $01, $5e, $02, $0a, $b0, $1c, $54, $6a, $30, $7f, $34, $c6, $64
-  .byte $d6, $64, $e6, $64, $f6, $64, $fe, $00, $f0, $07, $00, $a1, $1e, $02, $47, $73
-  .byte $7e, $04, $84, $52, $94, $50, $95, $0b, $96, $50, $a4, $52, $ae, $05, $b8, $51
-  .byte $c8, $51, $ce, $01, $17, $f3, $45, $03, $52, $09, $62, $21, $6f, $34, $81, $21
-  .byte $9e, $02, $b6, $64, $c6, $64, $c0, $0c, $d6, $64, $d0, $07, $e6, $64, $e0, $0c
-  .byte $f0, $07, $fe, $0a, $0d, $06, $0e, $01, $4e, $04, $67, $73, $8e, $02, $b7, $0a
-  .byte $bc, $03, $c4, $72, $c7, $22, $08, $f2, $2c, $02, $59, $71, $7c, $01, $96, $74
-  .byte $bc, $01, $d8, $72, $fc, $01, $39, $f1, $4e, $01, $9e, $04, $a7, $52, $b7, $0b
-  .byte $b8, $51, $c7, $51, $d7, $50, $de, $02, $3a, $e0, $3e, $0a, $9e, $00, $08, $d4
-  .byte $18, $54, $28, $54, $48, $54, $6e, $06, $9e, $01, $a8, $52, $af, $47, $b8, $52
-  .byte $c8, $52, $d8, $52, $de, $0f, $4d, $c7, $ce, $01, $dc, $01, $f9, $79, $1c, $82
-  .byte $48, $72, $7f, $37, $f2, $68, $01, $e9, $11, $3a, $68, $7a, $de, $0f, $6d, $c5
-  .byte $fd
+  .db $48, $0f, $0e, $01, $5e, $02, $0a, $b0, $1c, $54, $6a, $30, $7f, $34, $c6, $64
+  .db $d6, $64, $e6, $64, $f6, $64, $fe, $00, $f0, $07, $00, $a1, $1e, $02, $47, $73
+  .db $7e, $04, $84, $52, $94, $50, $95, $0b, $96, $50, $a4, $52, $ae, $05, $b8, $51
+  .db $c8, $51, $ce, $01, $17, $f3, $45, $03, $52, $09, $62, $21, $6f, $34, $81, $21
+  .db $9e, $02, $b6, $64, $c6, $64, $c0, $0c, $d6, $64, $d0, $07, $e6, $64, $e0, $0c
+  .db $f0, $07, $fe, $0a, $0d, $06, $0e, $01, $4e, $04, $67, $73, $8e, $02, $b7, $0a
+  .db $bc, $03, $c4, $72, $c7, $22, $08, $f2, $2c, $02, $59, $71, $7c, $01, $96, $74
+  .db $bc, $01, $d8, $72, $fc, $01, $39, $f1, $4e, $01, $9e, $04, $a7, $52, $b7, $0b
+  .db $b8, $51, $c7, $51, $d7, $50, $de, $02, $3a, $e0, $3e, $0a, $9e, $00, $08, $d4
+  .db $18, $54, $28, $54, $48, $54, $6e, $06, $9e, $01, $a8, $52, $af, $47, $b8, $52
+  .db $c8, $52, $d8, $52, $de, $0f, $4d, $c7, $ce, $01, $dc, $01, $f9, $79, $1c, $82
+  .db $48, $72, $7f, $37, $f2, $68, $01, $e9, $11, $3a, $68, $7a, $de, $0f, $6d, $c5
+  .db $fd
 
 ;warp zone area used by level 1-2
 L_UndergroundArea2:
-  .byte $0b, $0f, $0e, $01, $9c, $71, $b7, $00, $be, $00, $3e, $81, $47, $73, $5e, $00
-  .byte $63, $42, $8e, $01, $a7, $73, $be, $00, $7e, $81, $88, $72, $f0, $59, $fe, $00
-  .byte $00, $d9, $0e, $01, $39, $79, $a7, $03, $ae, $00, $b4, $03, $de, $0f, $0d, $05
-  .byte $0e, $02, $68, $7a, $be, $01, $de, $0f, $6d, $c5, $fd
+  .db $0b, $0f, $0e, $01, $9c, $71, $b7, $00, $be, $00, $3e, $81, $47, $73, $5e, $00
+  .db $63, $42, $8e, $01, $a7, $73, $be, $00, $7e, $81, $88, $72, $f0, $59, $fe, $00
+  .db $00, $d9, $0e, $01, $39, $79, $a7, $03, $ae, $00, $b4, $03, $de, $0f, $0d, $05
+  .db $0e, $02, $68, $7a, $be, $01, $de, $0f, $6d, $c5, $fd
 
 ;underground bonus rooms used with worlds 1-4
 L_UndergroundArea3:
-  .byte $08, $8f, $0e, $01, $17, $05, $2e, $02, $30, $07, $37, $03, $3a, $49, $44, $03
-  .byte $58, $47, $df, $4a, $6d, $c7, $0e, $81, $00, $5a, $2e, $02, $87, $52, $97, $2f
-  .byte $99, $4f, $0a, $90, $93, $56, $a3, $0b, $a7, $50, $b3, $55, $df, $4a, $6d, $c7
-  .byte $0e, $81, $00, $5a, $2e, $00, $3e, $02, $41, $56, $57, $25, $56, $45, $68, $51
-  .byte $7a, $43, $b7, $0b, $b8, $51, $df, $4a, $6d, $c7, $fd
+  .db $08, $8f, $0e, $01, $17, $05, $2e, $02, $30, $07, $37, $03, $3a, $49, $44, $03
+  .db $58, $47, $df, $4a, $6d, $c7, $0e, $81, $00, $5a, $2e, $02, $87, $52, $97, $2f
+  .db $99, $4f, $0a, $90, $93, $56, $a3, $0b, $a7, $50, $b3, $55, $df, $4a, $6d, $c7
+  .db $0e, $81, $00, $5a, $2e, $00, $3e, $02, $41, $56, $57, $25, $56, $45, $68, $51
+  .db $7a, $43, $b7, $0b, $b8, $51, $df, $4a, $6d, $c7, $fd
 
 ;level 3-2
 L_WaterArea1:
-  .byte $41, $01, $03, $b4, $04, $34, $05, $34, $5c, $02, $83, $37, $84, $37, $85, $37
-  .byte $09, $c2, $0c, $02, $1d, $49, $fa, $60, $09, $e1, $18, $62, $20, $63, $27, $63
-  .byte $33, $37, $37, $63, $47, $63, $5c, $05, $79, $43, $fe, $06, $35, $d2, $46, $48
-  .byte $91, $53, $d6, $51, $fe, $01, $0c, $83, $6c, $04, $b4, $62, $c4, $62, $d4, $62
-  .byte $e4, $62, $f4, $62, $18, $d2, $79, $51, $f4, $66, $fe, $02, $0c, $8a, $1d, $49
-  .byte $31, $55, $56, $41, $77, $41, $98, $41, $c5, $55, $fe, $01, $07, $e3, $17, $63
-  .byte $27, $63, $37, $63, $47, $63, $57, $63, $67, $63, $78, $62, $89, $61, $9a, $60
-  .byte $bc, $07, $ca, $42, $3a, $b3, $46, $53, $63, $34, $66, $44, $7c, $01, $9a, $33
-  .byte $b7, $52, $dc, $01, $fa, $32, $05, $d4, $2c, $0d, $43, $37, $47, $35, $b7, $30
-  .byte $c3, $64, $23, $e4, $29, $45, $33, $64, $43, $64, $53, $64, $63, $64, $73, $64
-  .byte $9a, $60, $a9, $61, $b8, $62, $be, $0b, $d4, $31, $d5, $0d, $de, $0f, $0d, $ca
-  .byte $7d, $47, $fd
+  .db $41, $01, $03, $b4, $04, $34, $05, $34, $5c, $02, $83, $37, $84, $37, $85, $37
+  .db $09, $c2, $0c, $02, $1d, $49, $fa, $60, $09, $e1, $18, $62, $20, $63, $27, $63
+  .db $33, $37, $37, $63, $47, $63, $5c, $05, $79, $43, $fe, $06, $35, $d2, $46, $48
+  .db $91, $53, $d6, $51, $fe, $01, $0c, $83, $6c, $04, $b4, $62, $c4, $62, $d4, $62
+  .db $e4, $62, $f4, $62, $18, $d2, $79, $51, $f4, $66, $fe, $02, $0c, $8a, $1d, $49
+  .db $31, $55, $56, $41, $77, $41, $98, $41, $c5, $55, $fe, $01, $07, $e3, $17, $63
+  .db $27, $63, $37, $63, $47, $63, $57, $63, $67, $63, $78, $62, $89, $61, $9a, $60
+  .db $bc, $07, $ca, $42, $3a, $b3, $46, $53, $63, $34, $66, $44, $7c, $01, $9a, $33
+  .db $b7, $52, $dc, $01, $fa, $32, $05, $d4, $2c, $0d, $43, $37, $47, $35, $b7, $30
+  .db $c3, $64, $23, $e4, $29, $45, $33, $64, $43, $64, $53, $64, $63, $64, $73, $64
+  .db $9a, $60, $a9, $61, $b8, $62, $be, $0b, $d4, $31, $d5, $0d, $de, $0f, $0d, $ca
+  .db $7d, $47, $fd
 
 ;water area used by level 4-1
 L_WaterArea3:
-  .byte $01, $01, $78, $52, $b5, $55, $da, $60, $e9, $61, $f8, $62, $fe, $0b, $fe, $81
-  .byte $0a, $cf, $36, $49, $62, $43, $fe, $07, $36, $c9, $fe, $01, $0c, $84, $65, $55
-  .byte $97, $52, $9a, $32, $a9, $31, $b8, $30, $c7, $63, $ce, $0f, $d5, $0d, $7d, $c7
-  .byte $fd
+  .db $01, $01, $78, $52, $b5, $55, $da, $60, $e9, $61, $f8, $62, $fe, $0b, $fe, $81
+  .db $0a, $cf, $36, $49, $62, $43, $fe, $07, $36, $c9, $fe, $01, $0c, $84, $65, $55
+  .db $97, $52, $9a, $32, $a9, $31, $b8, $30, $c7, $63, $ce, $0f, $d5, $0d, $7d, $c7
+  .db $fd
 
 ;a bunch of unused space
-  .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
-  .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
-  .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
-  .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
-  .byte $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
-  .byte $ff, $ff, $ff
+  .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+  .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+  .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+  .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+  .db $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff, $ff
+  .db $ff, $ff, $ff
 
 ;-------------------------------------------------------------------------------------
 
 ;this is overwritten by the contents of SM2SAVE
 GamesBeatenCount:
-       .byte $00
+       .db $00
 
 ;-------------------------------------------------------------------------------------
 
@@ -15408,8 +15378,8 @@ SetFreq_Tri:
 ;--------------------------------
 
 SwimStompEnvelopeData:
-      .byte $9f, $9b, $98, $96, $95, $94, $92, $90
-      .byte $90, $9a, $97, $95, $93, $92
+      .db $9f, $9b, $98, $96, $95, $94, $92, $90
+      .db $90, $9a, $97, $95, $93, $92
 
 PlayFlagpoleSlide:
        lda #$40               ;store length of flagpole sound
@@ -15584,21 +15554,21 @@ NoPDwnL: jmp DecrementSfx1Length
 ;--------------------------------
 
 ExtraLifeFreqData:
-      .byte $58, $02, $54, $56, $4e, $44
+      .db $58, $02, $54, $56, $4e, $44
 
 PowerUpGrabFreqData:
-      .byte $4c, $52, $4c, $48, $3e, $36, $3e, $36, $30
-      .byte $28, $4a, $50, $4a, $64, $3c, $32, $3c, $32
-      .byte $2c, $24, $3a, $64, $3a, $34, $2c, $22, $2c
+      .db $4c, $52, $4c, $48, $3e, $36, $3e, $36, $30
+      .db $28, $4a, $50, $4a, $64, $3c, $32, $3c, $32
+      .db $2c, $24, $3a, $64, $3a, $34, $2c, $22, $2c
 
 ;residual frequency data
-      .byte $22, $1c, $14
+      .db $22, $1c, $14
 
 PUp_VGrow_FreqData:
-      .byte $14, $04, $22, $24, $16, $04, $24, $26 ;used by both
-      .byte $18, $04, $26, $28, $1a, $04, $28, $2a
-      .byte $1c, $04, $2a, $2c, $1e, $04, $2c, $2e ;used by vinegrow
-      .byte $20, $04, $2e, $30, $22, $04, $30, $32
+      .db $14, $04, $22, $24, $16, $04, $24, $26 ;used by both
+      .db $18, $04, $26, $28, $1a, $04, $28, $2a
+      .db $1c, $04, $2a, $2c, $1e, $04, $2c, $2e ;used by vinegrow
+      .db $20, $04, $2e, $30, $22, $04, $30, $32
 
 PlayCoinGrab:
         lda #$35             ;load length of coin grab sound
@@ -15782,16 +15752,16 @@ StopGrowItems:
         jmp EmptySfx2Buffer       ;branch to stop playing sounds
 
 WindFreqEnvData:
-        .byte $37, $46, $55, $64, $74, $83, $93, $a2
-        .byte $b1, $c0, $d0, $e0, $f1, $f1, $f2, $e2
-        .byte $e2, $c3, $a3, $84, $64, $44, $35, $25
+        .db $37, $46, $55, $64, $74, $83, $93, $a2
+        .db $b1, $c0, $d0, $e0, $f1, $f1, $f2, $e2
+        .db $e2, $c3, $a3, $84, $64, $44, $35, $25
 
 BrickShatterFreqData:
-        .byte $01, $0e, $0e, $0d, $0b, $06, $0c, $0f
-        .byte $0a, $09, $03, $0d, $08, $0d, $06, $0c
+        .db $01, $0e, $0e, $0d, $0b, $06, $0c, $0f
+        .db $0a, $09, $03, $0d, $08, $0d, $06, $0c
 
 SkidSfxFreqData:
-        .byte $47, $49, $42, $4a, $43, $4b
+        .db $47, $49, $42, $4a, $43, $4b
 
 PlaySkidSfx:
         sty NoiseSoundBuffer
@@ -16251,34 +16221,34 @@ LoadWaterEventMusEnvData:
         rts
 
 MusicHeaderData:
-  .byte DeathMusHdr-MHD
-  .byte GameOverMusHdr-MHD
-  .byte GameOverMusHdr-MHD
-  .byte WinCastleMusHdr-MHD
-  .byte GameOverMusHdr-MHD
-  .byte EndOfLevelMusHdr-MHD
-  .byte TimeRunningOutHdr-MHD
-  .byte SilenceHdr-MHD
+  .db DeathMusHdr-MHD
+  .db GameOverMusHdr-MHD
+  .db GameOverMusHdr-MHD
+  .db WinCastleMusHdr-MHD
+  .db GameOverMusHdr-MHD
+  .db EndOfLevelMusHdr-MHD
+  .db TimeRunningOutHdr-MHD
+  .db SilenceHdr-MHD
 
-  .byte GroundLevelPart1Hdr-MHD   ;area music
-  .byte WaterMusHdr-MHD
-  .byte UndergroundMusHdr-MHD
-  .byte CastleMusHdr-MHD
-  .byte Star_CloudHdr-MHD
-  .byte GroundLevelLeadInHdr-MHD
-  .byte Star_CloudHdr-MHD
-  .byte SilenceHdr-MHD
+  .db GroundLevelPart1Hdr-MHD   ;area music
+  .db WaterMusHdr-MHD
+  .db UndergroundMusHdr-MHD
+  .db CastleMusHdr-MHD
+  .db Star_CloudHdr-MHD
+  .db GroundLevelLeadInHdr-MHD
+  .db Star_CloudHdr-MHD
+  .db SilenceHdr-MHD
 
-  .byte GroundLevelLeadInHdr-MHD  ;ground level music layout
-  .byte GroundLevelPart1Hdr-MHD, GroundLevelPart1Hdr-MHD
-  .byte GroundLevelPart2AHdr-MHD, GroundLevelPart2BHdr-MHD, GroundLevelPart2AHdr-MHD, GroundLevelPart2CHdr-MHD
-  .byte GroundLevelPart2AHdr-MHD, GroundLevelPart2BHdr-MHD, GroundLevelPart2AHdr-MHD, GroundLevelPart2CHdr-MHD
-  .byte GroundLevelPart3AHdr-MHD, GroundLevelPart3BHdr-MHD, GroundLevelPart3AHdr-MHD, GroundLevelLeadInHdr-MHD
-  .byte GroundLevelPart1Hdr-MHD, GroundLevelPart1Hdr-MHD
-  .byte GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
-  .byte GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
-  .byte GroundLevelPart3AHdr-MHD, GroundLevelPart3BHdr-MHD, GroundLevelPart3AHdr-MHD, GroundLevelLeadInHdr-MHD
-  .byte GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
+  .db GroundLevelLeadInHdr-MHD  ;ground level music layout
+  .db GroundLevelPart1Hdr-MHD, GroundLevelPart1Hdr-MHD
+  .db GroundLevelPart2AHdr-MHD, GroundLevelPart2BHdr-MHD, GroundLevelPart2AHdr-MHD, GroundLevelPart2CHdr-MHD
+  .db GroundLevelPart2AHdr-MHD, GroundLevelPart2BHdr-MHD, GroundLevelPart2AHdr-MHD, GroundLevelPart2CHdr-MHD
+  .db GroundLevelPart3AHdr-MHD, GroundLevelPart3BHdr-MHD, GroundLevelPart3AHdr-MHD, GroundLevelLeadInHdr-MHD
+  .db GroundLevelPart1Hdr-MHD, GroundLevelPart1Hdr-MHD
+  .db GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
+  .db GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
+  .db GroundLevelPart3AHdr-MHD, GroundLevelPart3BHdr-MHD, GroundLevelPart3AHdr-MHD, GroundLevelLeadInHdr-MHD
+  .db GroundLevelPart4AHdr-MHD, GroundLevelPart4BHdr-MHD, GroundLevelPart4AHdr-MHD, GroundLevelPart4CHdr-MHD
 
 ;music headers
 ;header format is as follows: 
@@ -16288,27 +16258,27 @@ MusicHeaderData:
 ;1 byte - square 1 data offset
 ;1 byte - noise data offset (not used by secondary music)
   
-TimeRunningOutHdr:     .byte $08, <TimeRunOutMusData, >TimeRunOutMusData, $27, $18
-Star_CloudHdr:         .byte $20, <Star_CloudMData, >Star_CloudMData, $2e, $1a, $40
-EndOfLevelMusHdr:      .byte $20, <WinLevelMusData, >WinLevelMusData, $3d, $21
-ResidualHeaderData:    .byte $20, $fb, $dc, $3f, $1d
-UndergroundMusHdr:     .byte $18, <UndergroundMusData, >UndergroundMusData, $00, $00
-SilenceHdr:            .byte $08, <SilenceData, >SilenceData, $00
-CastleMusHdr:          .byte $00, <CastleMusData, >CastleMusData, $93, $62
-GameOverMusHdr:        .byte $18, <GameOverMusData, >GameOverMusData, $1e, $14
-WaterMusHdr:           .byte $08, <WaterMusData, >WaterMusData, $a0, $70, $68
-WinCastleMusHdr:       .byte $08, <EndOfCastleMusData, >EndOfCastleMusData, $4c, $24
-GroundLevelPart1Hdr:   .byte $18, <GroundM_P1Data, >GroundM_P1Data, $2d, $1c, $b8
-GroundLevelPart2AHdr:  .byte $18, <GroundM_P2AData, >GroundM_P2AData, $20, $12, $70
-GroundLevelPart2BHdr:  .byte $18, <GroundM_P2BData, >GroundM_P2BData, $1b, $10, $44
-GroundLevelPart2CHdr:  .byte $18, <GroundM_P2CData, >GroundM_P2CData, $11, $0a, $1c
-GroundLevelPart3AHdr:  .byte $18, <GroundM_P3AData, >GroundM_P3AData, $2d, $10, $58
-GroundLevelPart3BHdr:  .byte $18, <GroundM_P3BData, >GroundM_P3BData, $14, $0d, $3f
-GroundLevelLeadInHdr:  .byte $18, <GroundMLdInData, >GroundMLdInData, $15, $0d, $21
-GroundLevelPart4AHdr:  .byte $18, <GroundM_P4AData, >GroundM_P4AData, $18, $10, $7a
-GroundLevelPart4BHdr:  .byte $18, <GroundM_P4BData, >GroundM_P4BData, $19, $0f, $54
-GroundLevelPart4CHdr:  .byte $18, <GroundM_P4CData, >GroundM_P4CData, $1e, $12, $2b
-DeathMusHdr:           .byte $18, <DeathMusData, >DeathMusData, $1e, $0f, $2d
+TimeRunningOutHdr:     .db $08, <TimeRunOutMusData, >TimeRunOutMusData, $27, $18
+Star_CloudHdr:         .db $20, <Star_CloudMData, >Star_CloudMData, $2e, $1a, $40
+EndOfLevelMusHdr:      .db $20, <WinLevelMusData, >WinLevelMusData, $3d, $21
+ResidualHeaderData:    .db $20, $fb, $dc, $3f, $1d
+UndergroundMusHdr:     .db $18, <UndergroundMusData, >UndergroundMusData, $00, $00
+SilenceHdr:            .db $08, <SilenceData, >SilenceData, $00
+CastleMusHdr:          .db $00, <CastleMusData, >CastleMusData, $93, $62
+GameOverMusHdr:        .db $18, <GameOverMusData, >GameOverMusData, $1e, $14
+WaterMusHdr:           .db $08, <WaterMusData, >WaterMusData, $a0, $70, $68
+WinCastleMusHdr:       .db $08, <EndOfCastleMusData, >EndOfCastleMusData, $4c, $24
+GroundLevelPart1Hdr:   .db $18, <GroundM_P1Data, >GroundM_P1Data, $2d, $1c, $b8
+GroundLevelPart2AHdr:  .db $18, <GroundM_P2AData, >GroundM_P2AData, $20, $12, $70
+GroundLevelPart2BHdr:  .db $18, <GroundM_P2BData, >GroundM_P2BData, $1b, $10, $44
+GroundLevelPart2CHdr:  .db $18, <GroundM_P2CData, >GroundM_P2CData, $11, $0a, $1c
+GroundLevelPart3AHdr:  .db $18, <GroundM_P3AData, >GroundM_P3AData, $2d, $10, $58
+GroundLevelPart3BHdr:  .db $18, <GroundM_P3BData, >GroundM_P3BData, $14, $0d, $3f
+GroundLevelLeadInHdr:  .db $18, <GroundMLdInData, >GroundMLdInData, $15, $0d, $21
+GroundLevelPart4AHdr:  .db $18, <GroundM_P4AData, >GroundM_P4AData, $18, $10, $7a
+GroundLevelPart4BHdr:  .db $18, <GroundM_P4BData, >GroundM_P4BData, $19, $0f, $54
+GroundLevelPart4CHdr:  .db $18, <GroundM_P4CData, >GroundM_P4CData, $1e, $12, $2b
+DeathMusHdr:           .db $18, <DeathMusData, >DeathMusData, $1e, $0f, $2d
 
 ;--------------------------------
 
@@ -16338,290 +16308,290 @@ DeathMusHdr:           .byte $18, <DeathMusData, >DeathMusData, $1e, $0f, $2d
 ;square 2, square 1, triangle, noise
 
 Star_CloudMData:
-      .byte $84, $2c, $2c, $2c, $82, $04, $2c, $04, $85, $2c, $84, $2c, $2c
-      .byte $2a, $2a, $2a, $82, $04, $2a, $04, $85, $2a, $84, $2a, $2a, $00
+      .db $84, $2c, $2c, $2c, $82, $04, $2c, $04, $85, $2c, $84, $2c, $2c
+      .db $2a, $2a, $2a, $82, $04, $2a, $04, $85, $2a, $84, $2a, $2a, $00
 
-      .byte $1f, $1f, $1f, $98, $1f, $1f, $98, $9e, $98, $1f
-      .byte $1d, $1d, $1d, $94, $1d, $1d, $94, $9c, $94, $1d
+      .db $1f, $1f, $1f, $98, $1f, $1f, $98, $9e, $98, $1f
+      .db $1d, $1d, $1d, $94, $1d, $1d, $94, $9c, $94, $1d
 
-      .byte $86, $18, $85, $26, $30, $84, $04, $26, $30
-      .byte $86, $14, $85, $22, $2c, $84, $04, $22, $2c
+      .db $86, $18, $85, $26, $30, $84, $04, $26, $30
+      .db $86, $14, $85, $22, $2c, $84, $04, $22, $2c
 
-      .byte $21, $d0, $c4, $d0, $31, $d0, $c4, $d0, $00
+      .db $21, $d0, $c4, $d0, $31, $d0, $c4, $d0, $00
 
 GroundM_P1Data:
-      .byte $85, $2c, $22, $1c, $84, $26, $2a, $82, $28, $26, $04
-      .byte $87, $22, $34, $3a, $82, $40, $04, $36, $84, $3a, $34
-      .byte $82, $2c, $30, $85, $2a
+      .db $85, $2c, $22, $1c, $84, $26, $2a, $82, $28, $26, $04
+      .db $87, $22, $34, $3a, $82, $40, $04, $36, $84, $3a, $34
+      .db $82, $2c, $30, $85, $2a
 
 SilenceData:
-      .byte $00
+      .db $00
 
-      .byte $5d, $55, $4d, $15, $19, $96, $15, $d5, $e3, $eb
-      .byte $2d, $a6, $2b, $27, $9c, $9e, $59
+      .db $5d, $55, $4d, $15, $19, $96, $15, $d5, $e3, $eb
+      .db $2d, $a6, $2b, $27, $9c, $9e, $59
 
-      .byte $85, $22, $1c, $14, $84, $1e, $22, $82, $20, $1e, $04, $87
-      .byte $1c, $2c, $34, $82, $36, $04, $30, $34, $04, $2c, $04, $26
-      .byte $2a, $85, $22
+      .db $85, $22, $1c, $14, $84, $1e, $22, $82, $20, $1e, $04, $87
+      .db $1c, $2c, $34, $82, $36, $04, $30, $34, $04, $2c, $04, $26
+      .db $2a, $85, $22
 
 GroundM_P2AData:
-      .byte $84, $04, $82, $3a, $38, $36, $32, $04, $34
-      .byte $04, $24, $26, $2c, $04, $26, $2c, $30, $00
+      .db $84, $04, $82, $3a, $38, $36, $32, $04, $34
+      .db $04, $24, $26, $2c, $04, $26, $2c, $30, $00
 
-      .byte $05, $b4, $b2, $b0, $2b, $ac, $84
-      .byte $9c, $9e, $a2, $84, $94, $9c, $9e
+      .db $05, $b4, $b2, $b0, $2b, $ac, $84
+      .db $9c, $9e, $a2, $84, $94, $9c, $9e
 
-      .byte $85, $14, $22, $84, $2c, $85, $1e
-      .byte $82, $2c, $84, $2c, $1e
+      .db $85, $14, $22, $84, $2c, $85, $1e
+      .db $82, $2c, $84, $2c, $1e
 
 GroundM_P2BData:
-      .byte $84, $04, $82, $3a, $38, $36, $32, $04, $34
-      .byte $04, $64, $04, $64, $86, $64, $00
+      .db $84, $04, $82, $3a, $38, $36, $32, $04, $34
+      .db $04, $64, $04, $64, $86, $64, $00
 
-      .byte $05, $b4, $b2, $b0, $2b, $ac, $84
-      .byte $37, $b6, $b6, $45
+      .db $05, $b4, $b2, $b0, $2b, $ac, $84
+      .db $37, $b6, $b6, $45
 
-      .byte $85, $14, $1c, $82, $22, $84, $2c
-      .byte $4e, $82, $4e, $84, $4e, $22
+      .db $85, $14, $1c, $82, $22, $84, $2c
+      .db $4e, $82, $4e, $84, $4e, $22
 
 GroundM_P2CData:
-      .byte $84, $04, $85, $32, $85, $30, $86, $2c, $04, $00
+      .db $84, $04, $85, $32, $85, $30, $86, $2c, $04, $00
 
-      .byte $05, $a4, $05, $9e, $05, $9d, $85
+      .db $05, $a4, $05, $9e, $05, $9d, $85
       
-      .byte $84, $14, $85, $24, $28, $2c, $82
-      .byte $22, $84, $22, $14
+      .db $84, $14, $85, $24, $28, $2c, $82
+      .db $22, $84, $22, $14
 
-      .byte $21, $d0, $c4, $d0, $31, $d0, $c4, $d0, $00
+      .db $21, $d0, $c4, $d0, $31, $d0, $c4, $d0, $00
 
 GroundM_P3AData:
-      .byte $82, $2c, $84, $2c, $2c, $82, $2c, $30
-      .byte $04, $34, $2c, $04, $26, $86, $22, $00
+      .db $82, $2c, $84, $2c, $2c, $82, $2c, $30
+      .db $04, $34, $2c, $04, $26, $86, $22, $00
 
-      .byte $a4, $25, $25, $a4, $29, $a2, $1d, $9c, $95
+      .db $a4, $25, $25, $a4, $29, $a2, $1d, $9c, $95
 
 GroundM_P3BData:
-      .byte $82, $2c, $2c, $04, $2c, $04, $2c, $30, $85, $34, $04, $04, $00
+      .db $82, $2c, $2c, $04, $2c, $04, $2c, $30, $85, $34, $04, $04, $00
 
-      .byte $a4, $25, $25, $a4, $a8, $63, $04
+      .db $a4, $25, $25, $a4, $a8, $63, $04
 
 ;triangle data used by both sections of third part
-      .byte $85, $0e, $1a, $84, $24, $85, $22, $14, $84, $0c
+      .db $85, $0e, $1a, $84, $24, $85, $22, $14, $84, $0c
 
 GroundMLdInData:
-      .byte $82, $34, $84, $34, $34, $82, $2c, $84, $34, $86, $3a, $04, $00
+      .db $82, $34, $84, $34, $34, $82, $2c, $84, $34, $86, $3a, $04, $00
 
-      .byte $a0, $21, $21, $a0, $21, $2b, $05, $a3
+      .db $a0, $21, $21, $a0, $21, $2b, $05, $a3
 
-      .byte $82, $18, $84, $18, $18, $82, $18, $18, $04, $86, $3a, $22
+      .db $82, $18, $84, $18, $18, $82, $18, $18, $04, $86, $3a, $22
 
 ;noise data used by lead-in and third part sections
-      .byte $31, $90, $31, $90, $31, $71, $31, $90, $90, $90, $00
+      .db $31, $90, $31, $90, $31, $71, $31, $90, $90, $90, $00
 
 GroundM_P4AData:
-      .byte $82, $34, $84, $2c, $85, $22, $84, $24
-      .byte $82, $26, $36, $04, $36, $86, $26, $00
+      .db $82, $34, $84, $2c, $85, $22, $84, $24
+      .db $82, $26, $36, $04, $36, $86, $26, $00
 
-      .byte $ac, $27, $5d, $1d, $9e, $2d, $ac, $9f
+      .db $ac, $27, $5d, $1d, $9e, $2d, $ac, $9f
 
-      .byte $85, $14, $82, $20, $84, $22, $2c
-      .byte $1e, $1e, $82, $2c, $2c, $1e, $04
+      .db $85, $14, $82, $20, $84, $22, $2c
+      .db $1e, $1e, $82, $2c, $2c, $1e, $04
 
 GroundM_P4BData:
-      .byte $87, $2a, $40, $40, $40, $3a, $36 
-      .byte $82, $34, $2c, $04, $26, $86, $22, $00
+      .db $87, $2a, $40, $40, $40, $3a, $36 
+      .db $82, $34, $2c, $04, $26, $86, $22, $00
 
-      .byte $e3, $f7, $f7, $f7, $f5, $f1, $ac, $27, $9e, $9d
+      .db $e3, $f7, $f7, $f7, $f5, $f1, $ac, $27, $9e, $9d
 
-      .byte $85, $18, $82, $1e, $84, $22, $2a
-      .byte $22, $22, $82, $2c, $2c, $22, $04
+      .db $85, $18, $82, $1e, $84, $22, $2a
+      .db $22, $22, $82, $2c, $2c, $22, $04
 
 DeathMusData:
-      .byte $86, $04 ;death music share data with fourth part c of ground level music 
+      .db $86, $04 ;death music share data with fourth part c of ground level music 
 
 GroundM_P4CData:
-      .byte $82, $2a, $36, $04, $36, $87, $36, $34, $30, $86, $2c, $04, $00
+      .db $82, $2a, $36, $04, $36, $87, $36, $34, $30, $86, $2c, $04, $00
       
-      .byte $00, $68, $6a, $6c, $45 ;death music only
+      .db $00, $68, $6a, $6c, $45 ;death music only
 
-      .byte $a2, $31, $b0, $f1, $ed, $eb, $a2, $1d, $9c, $95
+      .db $a2, $31, $b0, $f1, $ed, $eb, $a2, $1d, $9c, $95
 
-      .byte $86, $04 ;death music only
+      .db $86, $04 ;death music only
 
-      .byte $85, $22, $82, $22, $87, $22, $26, $2a, $84, $2c, $22, $86, $14
+      .db $85, $22, $82, $22, $87, $22, $26, $2a, $84, $2c, $22, $86, $14
 
 ;noise data used by fourth part sections
-      .byte $51, $90, $31, $11, $00
+      .db $51, $90, $31, $11, $00
 
 CastleMusData:
-      .byte $80, $22, $28, $22, $26, $22, $24, $22, $26
-      .byte $22, $28, $22, $2a, $22, $28, $22, $26
-      .byte $22, $28, $22, $26, $22, $24, $22, $26
-      .byte $22, $28, $22, $2a, $22, $28, $22, $26
-      .byte $20, $26, $20, $24, $20, $26, $20, $28
-      .byte $20, $26, $20, $28, $20, $26, $20, $24
-      .byte $20, $26, $20, $24, $20, $26, $20, $28
-      .byte $20, $26, $20, $28, $20, $26, $20, $24
-      .byte $28, $30, $28, $32, $28, $30, $28, $2e
-      .byte $28, $30, $28, $2e, $28, $2c, $28, $2e
-      .byte $28, $30, $28, $32, $28, $30, $28, $2e
-      .byte $28, $30, $28, $2e, $28, $2c, $28, $2e, $00
+      .db $80, $22, $28, $22, $26, $22, $24, $22, $26
+      .db $22, $28, $22, $2a, $22, $28, $22, $26
+      .db $22, $28, $22, $26, $22, $24, $22, $26
+      .db $22, $28, $22, $2a, $22, $28, $22, $26
+      .db $20, $26, $20, $24, $20, $26, $20, $28
+      .db $20, $26, $20, $28, $20, $26, $20, $24
+      .db $20, $26, $20, $24, $20, $26, $20, $28
+      .db $20, $26, $20, $28, $20, $26, $20, $24
+      .db $28, $30, $28, $32, $28, $30, $28, $2e
+      .db $28, $30, $28, $2e, $28, $2c, $28, $2e
+      .db $28, $30, $28, $32, $28, $30, $28, $2e
+      .db $28, $30, $28, $2e, $28, $2c, $28, $2e, $00
 
-      .byte $04, $70, $6e, $6c, $6e, $70, $72, $70, $6e
-      .byte $70, $6e, $6c, $6e, $70, $72, $70, $6e
-      .byte $6e, $6c, $6e, $70, $6e, $70, $6e, $6c
-      .byte $6e, $6c, $6e, $70, $6e, $70, $6e, $6c
-      .byte $76, $78, $76, $74, $76, $74, $72, $74
-      .byte $76, $78, $76, $74, $76, $74, $72, $74
+      .db $04, $70, $6e, $6c, $6e, $70, $72, $70, $6e
+      .db $70, $6e, $6c, $6e, $70, $72, $70, $6e
+      .db $6e, $6c, $6e, $70, $6e, $70, $6e, $6c
+      .db $6e, $6c, $6e, $70, $6e, $70, $6e, $6c
+      .db $76, $78, $76, $74, $76, $74, $72, $74
+      .db $76, $78, $76, $74, $76, $74, $72, $74
 
-      .byte $84, $1a, $83, $18, $20, $84, $1e, $83, $1c, $28
-      .byte $26, $1c, $1a, $1c
+      .db $84, $1a, $83, $18, $20, $84, $1e, $83, $1c, $28
+      .db $26, $1c, $1a, $1c
 
 GameOverMusData:
-      .byte $82, $2c, $04, $04, $22, $04, $04, $84, $1c, $87
-      .byte $26, $2a, $26, $84, $24, $28, $24, $80, $22, $00
+      .db $82, $2c, $04, $04, $22, $04, $04, $84, $1c, $87
+      .db $26, $2a, $26, $84, $24, $28, $24, $80, $22, $00
 
-      .byte $9c, $05, $94, $05, $0d, $9f, $1e, $9c, $98, $9d
+      .db $9c, $05, $94, $05, $0d, $9f, $1e, $9c, $98, $9d
 
-      .byte $82, $22, $04, $04, $1c, $04, $04, $84, $14
-      .byte $86, $1e, $80, $16, $80, $14
+      .db $82, $22, $04, $04, $1c, $04, $04, $84, $14
+      .db $86, $1e, $80, $16, $80, $14
 
 TimeRunOutMusData:
-      .byte $81, $1c, $30, $04, $30, $30, $04, $1e, $32, $04, $32, $32
-      .byte $04, $20, $34, $04, $34, $34, $04, $36, $04, $84, $36, $00
+      .db $81, $1c, $30, $04, $30, $30, $04, $1e, $32, $04, $32, $32
+      .db $04, $20, $34, $04, $34, $34, $04, $36, $04, $84, $36, $00
 
-      .byte $46, $a4, $64, $a4, $48, $a6, $66, $a6, $4a, $a8, $68, $a8
-      .byte $6a, $44, $2b
+      .db $46, $a4, $64, $a4, $48, $a6, $66, $a6, $4a, $a8, $68, $a8
+      .db $6a, $44, $2b
 
-      .byte $81, $2a, $42, $04, $42, $42, $04, $2c, $64, $04, $64, $64
-      .byte $04, $2e, $46, $04, $46, $46, $04, $22, $04, $84, $22
+      .db $81, $2a, $42, $04, $42, $42, $04, $2c, $64, $04, $64, $64
+      .db $04, $2e, $46, $04, $46, $46, $04, $22, $04, $84, $22
 
 WinLevelMusData:
-      .byte $87, $04, $06, $0c, $14, $1c, $22, $86, $2c, $22
-      .byte $87, $04, $60, $0e, $14, $1a, $24, $86, $2c, $24
-      .byte $87, $04, $08, $10, $18, $1e, $28, $86, $30, $30
-      .byte $80, $64, $00
+      .db $87, $04, $06, $0c, $14, $1c, $22, $86, $2c, $22
+      .db $87, $04, $60, $0e, $14, $1a, $24, $86, $2c, $24
+      .db $87, $04, $08, $10, $18, $1e, $28, $86, $30, $30
+      .db $80, $64, $00
 
-      .byte $cd, $d5, $dd, $e3, $ed, $f5, $bb, $b5, $cf, $d5
-      .byte $db, $e5, $ed, $f3, $bd, $b3, $d1, $d9, $df, $e9
-      .byte $f1, $f7, $bf, $ff, $ff, $ff, $34
-      .byte $00 ;unused byte
+      .db $cd, $d5, $dd, $e3, $ed, $f5, $bb, $b5, $cf, $d5
+      .db $db, $e5, $ed, $f3, $bd, $b3, $d1, $d9, $df, $e9
+      .db $f1, $f7, $bf, $ff, $ff, $ff, $34
+      .db $00 ;unused byte
 
-      .byte $86, $04, $87, $14, $1c, $22, $86, $34, $84, $2c
-      .byte $04, $04, $04, $87, $14, $1a, $24, $86, $32, $84
-      .byte $2c, $04, $86, $04, $87, $18, $1e, $28, $86, $36
-      .byte $87, $30, $30, $30, $80, $2c
+      .db $86, $04, $87, $14, $1c, $22, $86, $34, $84, $2c
+      .db $04, $04, $04, $87, $14, $1a, $24, $86, $32, $84
+      .db $2c, $04, $86, $04, $87, $18, $1e, $28, $86, $36
+      .db $87, $30, $30, $30, $80, $2c
 
 ;square 2 and triangle use the same data, square 1 is unused
 UndergroundMusData:
-      .byte $82, $14, $2c, $62, $26, $10, $28, $80, $04
-      .byte $82, $14, $2c, $62, $26, $10, $28, $80, $04
-      .byte $82, $08, $1e, $5e, $18, $60, $1a, $80, $04
-      .byte $82, $08, $1e, $5e, $18, $60, $1a, $86, $04
-      .byte $83, $1a, $18, $16, $84, $14, $1a, $18, $0e, $0c
-      .byte $16, $83, $14, $20, $1e, $1c, $28, $26, $87
-      .byte $24, $1a, $12, $10, $62, $0e, $80, $04, $04
-      .byte $00
+      .db $82, $14, $2c, $62, $26, $10, $28, $80, $04
+      .db $82, $14, $2c, $62, $26, $10, $28, $80, $04
+      .db $82, $08, $1e, $5e, $18, $60, $1a, $80, $04
+      .db $82, $08, $1e, $5e, $18, $60, $1a, $86, $04
+      .db $83, $1a, $18, $16, $84, $14, $1a, $18, $0e, $0c
+      .db $16, $83, $14, $20, $1e, $1c, $28, $26, $87
+      .db $24, $1a, $12, $10, $62, $0e, $80, $04, $04
+      .db $00
 
 ;noise data directly follows square 2 here unlike in other songs
 WaterMusData:
-      .byte $82, $18, $1c, $20, $22, $26, $28 
-      .byte $81, $2a, $2a, $2a, $04, $2a, $04, $83, $2a, $82, $22
-      .byte $86, $34, $32, $34, $81, $04, $22, $26, $2a, $2c, $30
-      .byte $86, $34, $83, $32, $82, $36, $84, $34, $85, $04, $81, $22
-      .byte $86, $30, $2e, $30, $81, $04, $22, $26, $2a, $2c, $2e
-      .byte $86, $30, $83, $22, $82, $36, $84, $34, $85, $04, $81, $22
-      .byte $86, $3a, $3a, $3a, $82, $3a, $81, $40, $82, $04, $81, $3a
-      .byte $86, $36, $36, $36, $82, $36, $81, $3a, $82, $04, $81, $36
-      .byte $86, $34, $82, $26, $2a, $36
-      .byte $81, $34, $34, $85, $34, $81, $2a, $86, $2c, $00
+      .db $82, $18, $1c, $20, $22, $26, $28 
+      .db $81, $2a, $2a, $2a, $04, $2a, $04, $83, $2a, $82, $22
+      .db $86, $34, $32, $34, $81, $04, $22, $26, $2a, $2c, $30
+      .db $86, $34, $83, $32, $82, $36, $84, $34, $85, $04, $81, $22
+      .db $86, $30, $2e, $30, $81, $04, $22, $26, $2a, $2c, $2e
+      .db $86, $30, $83, $22, $82, $36, $84, $34, $85, $04, $81, $22
+      .db $86, $3a, $3a, $3a, $82, $3a, $81, $40, $82, $04, $81, $3a
+      .db $86, $36, $36, $36, $82, $36, $81, $3a, $82, $04, $81, $36
+      .db $86, $34, $82, $26, $2a, $36
+      .db $81, $34, $34, $85, $34, $81, $2a, $86, $2c, $00
 
-      .byte $84, $90, $b0, $84, $50, $50, $b0, $00
+      .db $84, $90, $b0, $84, $50, $50, $b0, $00
 
-      .byte $98, $96, $94, $92, $94, $96, $58, $58, $58, $44
-      .byte $5c, $44, $9f, $a3, $a1, $a3, $85, $a3, $e0, $a6
-      .byte $23, $c4, $9f, $9d, $9f, $85, $9f, $d2, $a6, $23
-      .byte $c4, $b5, $b1, $af, $85, $b1, $af, $ad, $85, $95
-      .byte $9e, $a2, $aa, $6a, $6a, $6b, $5e, $9d
+      .db $98, $96, $94, $92, $94, $96, $58, $58, $58, $44
+      .db $5c, $44, $9f, $a3, $a1, $a3, $85, $a3, $e0, $a6
+      .db $23, $c4, $9f, $9d, $9f, $85, $9f, $d2, $a6, $23
+      .db $c4, $b5, $b1, $af, $85, $b1, $af, $ad, $85, $95
+      .db $9e, $a2, $aa, $6a, $6a, $6b, $5e, $9d
 
-      .byte $84, $04, $04, $82, $22, $86, $22
-      .byte $82, $14, $22, $2c, $12, $22, $2a, $14, $22, $2c
-      .byte $1c, $22, $2c, $14, $22, $2c, $12, $22, $2a, $14
-      .byte $22, $2c, $1c, $22, $2c, $18, $22, $2a, $16, $20
-      .byte $28, $18, $22, $2a, $12, $22, $2a, $18, $22, $2a
-      .byte $12, $22, $2a, $14, $22, $2c, $0c, $22, $2c, $14, $22, $34, $12
-      .byte $22, $30, $10, $22, $2e, $16, $22, $34, $18, $26
-      .byte $36, $16, $26, $36, $14, $26, $36, $12, $22, $36
-      .byte $5c, $22, $34, $0c, $22, $22, $81, $1e, $1e, $85, $1e
-      .byte $81, $12, $86, $14
+      .db $84, $04, $04, $82, $22, $86, $22
+      .db $82, $14, $22, $2c, $12, $22, $2a, $14, $22, $2c
+      .db $1c, $22, $2c, $14, $22, $2c, $12, $22, $2a, $14
+      .db $22, $2c, $1c, $22, $2c, $18, $22, $2a, $16, $20
+      .db $28, $18, $22, $2a, $12, $22, $2a, $18, $22, $2a
+      .db $12, $22, $2a, $14, $22, $2c, $0c, $22, $2c, $14, $22, $34, $12
+      .db $22, $30, $10, $22, $2e, $16, $22, $34, $18, $26
+      .db $36, $16, $26, $36, $14, $26, $36, $12, $22, $36
+      .db $5c, $22, $34, $0c, $22, $22, $81, $1e, $1e, $85, $1e
+      .db $81, $12, $86, $14
 
 EndOfCastleMusData:
-      .byte $81, $2c, $22, $1c, $2c, $22, $1c, $85, $2c, $04
-      .byte $81, $2e, $24, $1e, $2e, $24, $1e, $85, $2e, $04
-      .byte $81, $32, $28, $22, $32, $28, $22, $85, $32
-      .byte $87, $36, $36, $36, $84, $3a, $00
+      .db $81, $2c, $22, $1c, $2c, $22, $1c, $85, $2c, $04
+      .db $81, $2e, $24, $1e, $2e, $24, $1e, $85, $2e, $04
+      .db $81, $32, $28, $22, $32, $28, $22, $85, $32
+      .db $87, $36, $36, $36, $84, $3a, $00
 
-      .byte $5c, $54, $4c, $5c, $54, $4c
-      .byte $5c, $1c, $1c, $5c, $5c, $5c, $5c
-      .byte $5e, $56, $4e, $5e, $56, $4e
-      .byte $5e, $1e, $1e, $5e, $5e, $5e, $5e
-      .byte $62, $5a, $50, $62, $5a, $50
-      .byte $62, $22, $22, $62, $e7, $e7, $e7, $2b
+      .db $5c, $54, $4c, $5c, $54, $4c
+      .db $5c, $1c, $1c, $5c, $5c, $5c, $5c
+      .db $5e, $56, $4e, $5e, $56, $4e
+      .db $5e, $1e, $1e, $5e, $5e, $5e, $5e
+      .db $62, $5a, $50, $62, $5a, $50
+      .db $62, $22, $22, $62, $e7, $e7, $e7, $2b
 
-      .byte $86, $14, $81, $14, $80, $14, $14, $81, $14, $14, $14, $14
-      .byte $86, $16, $81, $16, $80, $16, $16, $81, $16, $16, $16, $16
-      .byte $81, $28, $22, $1a, $28, $22, $1a, $28, $80, $28, $28
-      .byte $81, $28, $87, $2c, $2c, $2c, $84, $30
+      .db $86, $14, $81, $14, $80, $14, $14, $81, $14, $14, $14, $14
+      .db $86, $16, $81, $16, $80, $16, $16, $81, $16, $16, $16, $16
+      .db $81, $28, $22, $1a, $28, $22, $1a, $28, $80, $28, $28
+      .db $81, $28, $87, $2c, $2c, $2c, $84, $30
 
 ;unused byte
-      .byte $ff
+      .db $ff
 
 FreqRegLookupTbl:
-      .byte $00, $88, $00, $2f, $00, $00
-      .byte $02, $a6, $02, $80, $02, $5c, $02, $3a
-      .byte $02, $1a, $01, $df, $01, $c4, $01, $ab
-      .byte $01, $93, $01, $7c, $01, $67, $01, $53
-      .byte $01, $40, $01, $2e, $01, $1d, $01, $0d
-      .byte $00, $fe, $00, $ef, $00, $e2, $00, $d5
-      .byte $00, $c9, $00, $be, $00, $b3, $00, $a9
-      .byte $00, $a0, $00, $97, $00, $8e, $00, $86
-      .byte $00, $77, $00, $7e, $00, $71, $00, $54
-      .byte $00, $64, $00, $5f, $00, $59, $00, $50
-      .byte $00, $47, $00, $43, $00, $3b, $00, $35
-      .byte $00, $2a, $00, $23, $04, $75, $03, $57
-      .byte $02, $f9, $02, $cf, $01, $fc, $00, $6a
+      .db $00, $88, $00, $2f, $00, $00
+      .db $02, $a6, $02, $80, $02, $5c, $02, $3a
+      .db $02, $1a, $01, $df, $01, $c4, $01, $ab
+      .db $01, $93, $01, $7c, $01, $67, $01, $53
+      .db $01, $40, $01, $2e, $01, $1d, $01, $0d
+      .db $00, $fe, $00, $ef, $00, $e2, $00, $d5
+      .db $00, $c9, $00, $be, $00, $b3, $00, $a9
+      .db $00, $a0, $00, $97, $00, $8e, $00, $86
+      .db $00, $77, $00, $7e, $00, $71, $00, $54
+      .db $00, $64, $00, $5f, $00, $59, $00, $50
+      .db $00, $47, $00, $43, $00, $3b, $00, $35
+      .db $00, $2a, $00, $23, $04, $75, $03, $57
+      .db $02, $f9, $02, $cf, $01, $fc, $00, $6a
 
 MusicLengthLookupTbl:
-      .byte $05, $0a, $14, $28, $50, $1e, $3c, $02
-      .byte $04, $08, $10, $20, $40, $18, $30, $0c
-      .byte $03, $06, $0c, $18, $30, $12, $24, $08
-      .byte $36, $03, $09, $06, $12, $1b, $24, $0c
-      .byte $24, $02, $06, $04, $0c, $12, $18, $08
-      .byte $12, $01, $03, $02, $06, $09, $0c, $04
+      .db $05, $0a, $14, $28, $50, $1e, $3c, $02
+      .db $04, $08, $10, $20, $40, $18, $30, $0c
+      .db $03, $06, $0c, $18, $30, $12, $24, $08
+      .db $36, $03, $09, $06, $12, $1b, $24, $0c
+      .db $24, $02, $06, $04, $0c, $12, $18, $08
+      .db $12, $01, $03, $02, $06, $09, $0c, $04
 
 EndOfCastleMusicEnvData:
-      .byte $98, $99, $9a, $9b
+      .db $98, $99, $9a, $9b
 
 AreaMusicEnvData:
-      .byte $90, $94, $94, $95, $95, $96, $97, $98
+      .db $90, $94, $94, $95, $95, $96, $97, $98
 
 WaterEventMusEnvData:
-      .byte $90, $91, $92, $92, $93, $93, $93, $94
-      .byte $94, $94, $94, $94, $94, $95, $95, $95
-      .byte $95, $95, $95, $96, $96, $96, $96, $96
-      .byte $96, $96, $96, $96, $96, $96, $96, $96
-      .byte $96, $96, $96, $96, $95, $95, $94, $93
+      .db $90, $91, $92, $92, $93, $93, $93, $94
+      .db $94, $94, $94, $94, $94, $95, $95, $95
+      .db $95, $95, $95, $96, $96, $96, $96, $96
+      .db $96, $96, $96, $96, $96, $96, $96, $96
+      .db $96, $96, $96, $96, $95, $95, $94, $93
 
 BowserFlameEnvData:
-      .byte $15, $16, $16, $17, $17, $18, $19, $19
-      .byte $1a, $1a, $1c, $1d, $1d, $1e, $1e, $1f
-      .byte $1f, $1f, $1f, $1e, $1d, $1c, $1e, $1f
-      .byte $1f, $1e, $1d, $1c, $1a, $18, $16, $14
+      .db $15, $16, $16, $17, $17, $18, $19, $19
+      .db $1a, $1a, $1c, $1d, $1d, $1e, $1e, $1f
+      .db $1f, $1f, $1f, $1e, $1d, $1c, $1e, $1f
+      .db $1f, $1e, $1d, $1c, $1a, $18, $16, $14
 
 BrickShatterEnvData:
-      .byte $15, $16, $16, $17, $17, $18, $19, $19
-      .byte $1a, $1a, $1c, $1d, $1d, $1e, $1e, $1f
+      .db $15, $16, $16, $17, $17, $18, $19, $19
+      .db $1a, $1a, $1c, $1d, $1d, $1e, $1e, $1f
 
-        .word NMIHandler
-        .word Start
-        .word IRQHandler
+        .dw NMIHandler
+        .dw Start
+        .dw IRQHandler
