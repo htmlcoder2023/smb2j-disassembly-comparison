@@ -34,55 +34,14 @@ NoiseSoundQueue       = $fd
 
 MetatileBuffer        = $06a1
 
-; import from other files
-.import GetPipeHeight
-.import FindEmptyEnemySlot
-.import SetupPiranhaPlant
-.import VerticalPipeData
-.import RenderUnderPart
-; export to other files
-.export E_CastleArea5
-.export E_CastleArea6
-.export E_CastleArea7
-.export E_CastleArea8
-.export E_GroundArea12
-.export E_GroundArea13
-.export E_GroundArea14
-.export E_GroundArea15
-.export E_GroundArea16
-.export E_GroundArea17
-.export E_GroundArea18
-.export E_GroundArea19
-.export E_GroundArea22
-.export E_GroundArea23
-.export E_GroundArea24
-.export E_GroundArea29
-.export E_UndergroundArea4
-.export E_UndergroundArea5
-.export E_WaterArea2
-.export E_WaterArea4
-.export E_WaterArea5
-.export L_CastleArea5
-.export L_CastleArea6
-.export L_CastleArea7
-.export L_CastleArea8
-.export L_GroundArea12
-.export L_GroundArea13
-.export L_GroundArea14
-.export L_GroundArea15
-.export L_GroundArea16
-.export L_GroundArea17
-.export L_GroundArea18
-.export L_GroundArea19
-.export L_GroundArea22
-.export L_GroundArea23
-.export L_GroundArea24
-.export L_GroundArea29
-.export L_UndergroundArea4
-.export L_UndergroundArea5
-.export L_WaterArea2
-.export L_WaterArea4
-.export L_WaterArea5
+;SUBROUTINES IN SM2MAIN
+GetPipeHeight      = $7761
+FindEmptyEnemySlot = $7791
+SetupPiranhaPlant  = $7772
+VerticalPipeData   = $7729
+RenderUnderPart    = $79c6
+ 
+ base $c470
 
 ;-------------------------------------------------------------------------------------------------
 ;$06 - used to store vertical length of pipe

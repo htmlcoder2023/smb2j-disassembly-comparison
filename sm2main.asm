@@ -549,6 +549,105 @@ FDSBIOS_DELAY     = $e149
 FDSBIOS_LOADFILES = $e1f8
 FDSBIOS_WRITEFILE = $e239
 
+;SUBROUTINES IN SM2DATA2 AND SM2DATA4
+UpsideDownPipe_High    = $c470
+UpsideDownPipe_Low     = $c475
+WindOn                 = $c5be
+WindOff                = $c5c2
+SimulateWind           = $c550
+BlowPlayerAround       = $c4fe
+MoveUpsideDownPiranhaP = $c4c0
+
+;SUBROUTINES IN SM2DATA3
+EraseLivesLines           = $c710
+RunMushroomRetainers      = $c727
+EndingDiskRoutines        = $c738
+ChangeHalfwayPages        = $c3d6
+AwardExtraLives           = $c686
+PrintVictoryMsgsForWorld8 = $c642
+FadeToBlue                = $c6ca
+ScreenSubsForFinalRoom    = $c5fe
+
+;LABELS FROM SM2DATA3
+WriteNameToVictoryMsg = $c858
+UnusedAttribData      = $c876
+FinalRoomPalette      = $c87f
+ThankYouMessageFinal  = $c893
+PeaceIsPavedMsg       = $c8ab
+WithKingdomSavedMsg   = $c8c1
+HurrahMsg             = $c8d7
+OurOnlyHeroMsg        = $c8eb
+ThisEndsYourTripMsg   = $c8fc
+OfALongFriendshipMsg  = $c913
+PointsAddedMsg        = $c92b
+ForEachPlayerLeftMsg  = $c943
+PrincessPeachsRoom    = $c95c
+FantasyWorld9Msg      = $c97d
+SuperPlayerMsg        = $c9c0
+
+;level labels from other files
+;from sm2data2
+E_CastleArea5      = $c5d0
+E_CastleArea6      = $c609
+E_CastleArea7      = $c630
+E_CastleArea8      = $c66f
+E_GroundArea12     = $c6af
+E_GroundArea13     = $c6e0
+E_GroundArea14     = $c708
+E_GroundArea15     = $c72c
+E_GroundArea16     = $c749
+E_GroundArea17     = $c77a
+E_GroundArea18     = $c7a6
+E_GroundArea19     = $c7bf
+E_GroundArea22     = $c7e7
+E_GroundArea23     = $c80a
+E_GroundArea24     = $c831
+E_GroundArea29     = $c832
+E_UndergroundArea4 = $c83b
+E_UndergroundArea5 = $c85c
+E_WaterArea2       = $c876
+E_WaterArea4       = $c8a6
+E_WaterArea5       = $c8b4
+L_CastleArea5      = $c8c9
+L_CastleArea6      = $c996
+L_CastleArea7      = $ca25
+L_CastleArea8      = $cab8
+L_GroundArea12     = $cb8f
+L_GroundArea13     = $cc30
+L_GroundArea14     = $cc8f
+L_GroundArea15     = $cd0e
+L_GroundArea16     = $cd7b
+L_GroundArea17     = $cdfe
+L_GroundArea18     = $ce5b
+L_GroundArea19     = $ced6
+L_GroundArea22     = $cf4b
+L_GroundArea23     = $cfb6
+L_GroundArea24     = $d01a
+L_GroundArea29     = $d01b
+L_UndergroundArea4 = $d052
+L_UndergroundArea5 = $d11f
+L_WaterArea2       = $d160
+L_WaterArea4       = $d229
+L_WaterArea5       = $d242
+
+;from sm2data3
+E_CastleArea9      = $ca80
+E_CastleArea10     = $ca8a
+E_GroundArea25     = $ca90
+E_GroundArea26     = $ca94
+E_GroundArea27     = $ca94
+E_WaterArea6       = $ca94
+E_WaterArea7       = $cab5
+E_WaterArea8       = $caba
+L_CastleArea9      = $cacb
+L_CastleArea10     = $cb2e
+L_GroundArea25     = $cb3f
+L_GroundArea26     = $cb4e
+L_GroundArea27     = $cb4f
+L_WaterArea6       = $cb50
+L_WaterArea7       = $cb97
+L_WaterArea8       = $cbda
+
 ;-------------------------------------------------------------------------------------
 ;CONSTANTS
 
@@ -663,137 +762,10 @@ GameMode              = 1
 VictoryMode           = 2
 GameOverMode          = 3
 
-; imports from other files
-;SUBROUTINES IN SM2DATA2 AND SM2DATA4
-.import UpsideDownPipe_High
-.import UpsideDownPipe_Low
-.import WindOn
-.import WindOff
-.import SimulateWind
-.import BlowPlayerAround
-.import MoveUpsideDownPiranhaP
-.import ChangeHalfwayPages
-;SUBROUTINES IN SM2DATA3
-.import EraseLivesLines
-.import RunMushroomRetainers
-.import EndingDiskRoutines
-.import AwardExtraLives
-.import PrintVictoryMsgsForWorld8
-.import FadeToBlue
-.import ScreenSubsForFinalRoom
-;LABELS FROM SM2DATA3
-.import WriteNameToVictoryMsg
-.import UnusedAttribData
-.import FinalRoomPalette
-.import ThankYouMessageFinal
-.import PeaceIsPavedMsg
-.import WithKingdomSavedMsg
-.import HurrahMsg
-.import OurOnlyHeroMsg
-.import ThisEndsYourTripMsg
-.import OfALongFriendshipMsg
-.import PointsAddedMsg
-.import ForEachPlayerLeftMsg
-.import PrincessPeachsRoom
-.import FantasyWorld9Msg
-.import SuperPlayerMsg
-;from sm2data2
-.import E_CastleArea5
-.import E_CastleArea6
-.import E_CastleArea7
-.import E_CastleArea8
-.import E_GroundArea12
-.import E_GroundArea13
-.import E_GroundArea14
-.import E_GroundArea15
-.import E_GroundArea16
-.import E_GroundArea17
-.import E_GroundArea18
-.import E_GroundArea19
-.import E_GroundArea22
-.import E_GroundArea23
-.import E_GroundArea24
-.import E_GroundArea29
-.import E_UndergroundArea4
-.import E_UndergroundArea5
-.import E_WaterArea2
-.import E_WaterArea4
-.import E_WaterArea5
-.import L_CastleArea5
-.import L_CastleArea6
-.import L_CastleArea7
-.import L_CastleArea8
-.import L_GroundArea12
-.import L_GroundArea13
-.import L_GroundArea14
-.import L_GroundArea15
-.import L_GroundArea16
-.import L_GroundArea17
-.import L_GroundArea18
-.import L_GroundArea19
-.import L_GroundArea22
-.import L_GroundArea23
-.import L_GroundArea24
-.import L_GroundArea29
-.import L_UndergroundArea4
-.import L_UndergroundArea5
-.import L_WaterArea2
-.import L_WaterArea4
-.import L_WaterArea5
-;from sm2data3
-.import E_CastleArea9
-.import E_CastleArea10
-.import E_GroundArea25
-.import E_GroundArea26
-.import E_GroundArea27
-.import E_WaterArea6
-.import E_WaterArea7
-.import E_WaterArea8
-.import L_CastleArea9
-.import L_CastleArea10
-.import L_GroundArea25
-.import L_GroundArea26
-.import L_GroundArea27
-.import L_WaterArea6
-.import L_WaterArea7
-.import L_WaterArea8
+;-------------------------------------------------------------------------------------
+;DIRECTIVES
 
-; exports to other files
-.export SoundEngineJSRCode
-.export MoveSpritesOffscreen
-.export FreqRegLookupTbl
-.export NextWorld
-.export WriteTopStatusLine
-.export WriteBottomStatusLine
-.export GetAreaPalette
-.export GetBackgroundColor
-.export EndAreaPoints
-.export JumpEngine
-.export Square2SfxHandler
-.export PrintStatusBarNumbers
-.export DiskIDString
-.export EnemyGfxHandler
-.export SoundEngine
-.export DiskScreen
-.export WaitForEject
-.export WaitForReinsert
-.export ResetDiskVars
-.export DiskErrorHandler
-.export AttractModeSubs
-.export InitScreenPalette
-; sm2data4
-.export HalfwayPageNybbles
-.export GetPipeHeight
-.export FindEmptyEnemySlot
-.export SetupPiranhaPlant
-.export VerticalPipeData
-.export RenderUnderPart
-.export MetatileBuffer
-.export GetAreaType
-.export E_GroundArea21
-.export E_GroundArea28
-.export L_GroundArea10
-.export L_GroundArea28
+       .base $6000
 
 ;-------------------------------------------------------------------------------------
 
@@ -912,7 +884,6 @@ InitVRAMVars:
    lda Mirror_PPU_MASK
    sta PPU_MASK              ;dump PPU control register 2
    cli
-SoundEngineJSRCode:
    jsr SoundEngine           ;run subs that need to be run on every frame
    jsr ReadJoypads
    jsr PauseRoutine
@@ -1446,7 +1417,6 @@ InitScreen:
       jsr InitializeNameTables    ;and erase both name and attribute tables
       lda OperMode
       beq NextSubtask             ;if in attact mode, do not set pointer control
-InitScreenPalette:
       ldx #$03                    ;otherwise set for underground palette
       jmp SetVRAMAddr_A
 
@@ -1690,10 +1660,10 @@ WarpZoneNumbers:
   .db $02, $03, $04, $01, $06, $07, $08, $05, $0b, $0c, $0d
 
 GameTextOffsets:
-   .db <(TopStatusBarLine-GameText)
-   .db <(WorldLivesDisplay-GameText)
-   .db <(TimeUp-GameText)
-   .db <(GameOver-GameText)
+   .db <TopStatusBarLine-GameText
+   .db <WorldLivesDisplay-GameText
+   .db <TimeUp-GameText
+   .db <GameOver-GameText
 
 WriteGameText:
                pha                       ;save text number to stack and use as offset

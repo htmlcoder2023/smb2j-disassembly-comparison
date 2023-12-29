@@ -25,6 +25,7 @@ Player_X_Position     = $86
 
 AreaObjectLength      = $0730
 WindFlag              = $07f9
+AreaType              = $074e
 
 TimerControl          = $0747
 EnemyFrameTimer       = $078a
@@ -37,6 +38,11 @@ Sprite_X_Position     = $0203
 Alt_SprDataOffset     = $06ec
 
 NoiseSoundQueue       = $fd
+
+MetatileBuffer        = $06a1
+
+TimerControl          = $0747
+EnemyFrameTimer       = $078a
 
 TerrainControl        = $0727
 AreaStyle             = $0733
@@ -56,29 +62,22 @@ EntrancePage          = $0751
 WorldNumber           = $075f
 AreaNumber            = $0760 ;internal number used to find areas
 
-; imports from other files
-.import HalfwayPageNybbles
-.import GetPipeHeight
-.import FindEmptyEnemySlot
-.import SetupPiranhaPlant
-.import VerticalPipeData
-.import RenderUnderPart
-.import MetatileBuffer
-.import GetAreaType
-.import E_GroundArea21
-.import E_GroundArea28
-.import L_GroundArea10
-.import L_GroundArea28
+HalfwayPageNybbles = $6ffd
+GetPipeHeight      = $7761
+FindEmptyEnemySlot = $7791
+SetupPiranhaPlant  = $7772
+VerticalPipeData   = $7729
+RenderUnderPart    = $79c6
+MetatileBuffer     = $06a1
+GetAreaType        = $c2aa
 
-; exports to other files
-.export UpsideDownPipe_High
-.export UpsideDownPipe_Low
-.export WindOn
-.export WindOff
-.export SimulateWind
-.export BlowPlayerAround
-.export MoveUpsideDownPiranhaP
-.export ChangeHalfwayPages
+;labels from SM2MAIN
+E_GroundArea21     = $c260
+E_GroundArea28     = $c260
+L_GroundArea21     = $c274
+L_GroundArea28     = $c261
+
+ .base $c2b4
 
 ;-------------------------------------------------------------------------------------------------
 
@@ -199,7 +198,7 @@ AreaDataHOffsets:
 AreaDataAddrs:
      .dw L_CastleArea11, L_CastleArea12, L_CastleArea13, L_CastleArea14, L_GroundArea30, L_GroundArea31
      .dw L_GroundArea32, L_GroundArea33, L_GroundArea34, L_GroundArea35, L_GroundArea36, L_GroundArea37
-     .dw L_GroundArea38, L_GroundArea39, L_GroundArea40, L_GroundArea41, L_GroundArea10, L_GroundArea28
+     .dw L_GroundArea38, L_GroundArea39, L_GroundArea40, L_GroundArea41, L_GroundArea21, L_GroundArea28
      .dw L_UndergroundArea6, L_UndergroundArea7, L_WaterArea9
 
 AtoDHalfwayPages:
@@ -216,20 +215,11 @@ CHalfL: lda AtoDHalfwayPages,y     ;load new halfway nybbles over the old ones
         bpl CHalfL
         rts
 
-; unused space
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-
 ;-------------------------------------------------------------------------------------------------
 ;$06 - used to store vertical length of pipe
 ;$07 - starts with adder from area parser, used to store row offset
+
+ .pad $c470
 
 UpsideDownPipe_High:
        lda #$01                     ;start at second row

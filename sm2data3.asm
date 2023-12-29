@@ -18,6 +18,7 @@ FantasyW9MsgFlag      = $07f5
 
 IRQUpdateFlag        = $0722
 IRQAckFlag           = $077b
+VRAM_Buffer_AddrCtrl = $0773
 
 FDSBIOS_DELAY     = $e149
 FDSBIOS_LOADFILES = $e1f8
@@ -111,6 +112,35 @@ CurrentFlashMRet      = $0763
 
 MHD = MusicHeaderOffsetData
 
+;data/code addrs relevant to other files
+MoveSpritesOffscreen   = $628a
+SoundEngineAddr        = $611d
+FreqRegLookupTbl       = $df00
+NextWorld              = $63d7
+InitScreenPalette      = $64f6
+WriteTopStatusLine     = $65a7
+WriteBottomStatusLine  = $65af
+GetAreaPalette         = $651f
+GetBackgroundColor     = $653f
+EndAreaPoints          = $9f70
+JumpEngine             = $6c7d
+Square2SfxHandler      = $d54c
+PrintStatusBarNumbers  = $6d79
+FDSBIOS_WRITEFILE      = $e239
+Sfx_ExtraLife          = %01000000
+Sfx_CoinGrab           = %00000001
+VictoryMusic           = %00000100
+DiskIDString           = $c0d2
+EnemyGfxHandler        = $b52c
+SoundEngine            = $d2a0
+SoundEngineVector      = $611d
+DiskScreen             = $c113
+WaitForEject           = $c126
+WaitForReinsert        = $c138
+ResetDiskVars          = $c140
+DiskErrorHandler       = $c182
+AttractModeSubs        = $bfb0
+
 GameOverMode          = 3
 
 SND_REGISTER          = $4000
@@ -144,73 +174,8 @@ FDSSND_MODTBLAPPEND    = $4088
 FDSSND_WAVEENABLEWR    = $4089
 FDSSND_WAVERAM         = $4040
 
-Sfx_ExtraLife          = %01000000
-Sfx_CoinGrab           = %00000001
-VictoryMusic           = %00000100
-
-; imports from other files
-.import MoveSpritesOffscreen
-.import FreqRegLookupTbl
-.import NextWorld
-.import WriteTopStatusLine
-.import WriteBottomStatusLine
-.import GetAreaPalette
-.import GetBackgroundColor
-.import EndAreaPoints
-.import JumpEngine
-.import Square2SfxHandler
-.import PrintStatusBarNumbers
-.import DiskIDString
-.import EnemyGfxHandler
-.import SoundEngine
-.import DiskScreen
-.import WaitForEject
-.import WaitForReinsert
-.import ResetDiskVars
-.import DiskErrorHandler
-.import AttractModeSubs
-.import SoundEngineJSRCode
-.import InitScreenPalette
-
-; exports to other files
-.export EraseLivesLines
-.export RunMushroomRetainers
-.export EndingDiskRoutines
-.export AwardExtraLives
-.export PrintVictoryMsgsForWorld8
-.export FadeToBlue
-.export ScreenSubsForFinalRoom
-.export WriteNameToVictoryMsg
-.export UnusedAttribData
-.export FinalRoomPalette
-.export ThankYouMessageFinal
-.export PeaceIsPavedMsg
-.export WithKingdomSavedMsg
-.export HurrahMsg
-.export OurOnlyHeroMsg
-.export ThisEndsYourTripMsg
-.export OfALongFriendshipMsg
-.export PointsAddedMsg
-.export ForEachPlayerLeftMsg
-.export PrincessPeachsRoom
-.export FantasyWorld9Msg
-.export SuperPlayerMsg
-.export E_CastleArea9
-.export E_CastleArea10
-.export E_GroundArea25
-.export E_GroundArea26
-.export E_GroundArea27
-.export E_WaterArea6
-.export E_WaterArea7
-.export E_WaterArea8
-.export L_CastleArea9
-.export L_CastleArea10
-.export L_GroundArea25
-.export L_GroundArea26
-.export L_GroundArea27
-.export L_WaterArea6
-.export L_WaterArea7
-.export L_WaterArea8
+ base $c5d0
+ fillvalue $ff
 
 ;-------------------------------------------------------------------------------------
 
@@ -260,9 +225,9 @@ RevealPrincess:
     lda #$a2                   ;print game timer
     jsr PrintStatusBarNumbers
     lda #>AlternateSoundEngine
-    sta SoundEngineJSRCode+2      ;change sound engine address
+    sta SoundEngineAddr+1      ;change sound engine address
     lda #<AlternateSoundEngine ;to run the alt music engine on every NMI
-    sta SoundEngineJSRCode+1
+    sta SoundEngineAddr
     lda #$01
     sta AreaMusicQueue         ;play the only song available to it
     lda #$00                   ;aka the victory music
@@ -427,9 +392,9 @@ UpdateGamesBeaten:
 
 BackToNormal:
     lda #>SoundEngine        ;reset sound engine vector
-    sta SoundEngineJSRCode+2  ;to run the original one
+    sta SoundEngineVector+1  ;to run the original one
     lda #<SoundEngine
-    sta SoundEngineJSRCode+1
+    sta SoundEngineVector
     lda #$00
     sta DiskIOTask           ;erase task numbers
     sta OperMode_Task
@@ -668,14 +633,7 @@ SuperPlayerMsg:
 
 ;-------------------------------------------------------------------------------------
 
-; unused space
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
+ .pad $ca80
 
 ;level 9-3
 E_CastleArea9:
@@ -760,12 +718,7 @@ L_WaterArea8:
 
 ;-------------------------------------------------------------------------------------
 
-; unused space
-
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
-.db $ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff,$ff
+ .pad $cc5f
 
 AlternateSoundEngine:
     lda GamePauseStatus     ;check to see if game is paused
